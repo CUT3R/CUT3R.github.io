@@ -27,6 +27,14 @@
   <title>Continuous 3D Perception Model with Persistent State</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="static/css/style.css" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons-outline.min.css"
+    rel="stylesheet"
+  />
 
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -131,7 +139,7 @@
     </h1>
     <p id="authors">
       <span>
-        <a href="https://junyi42.github.io/">Qianqian Wang<sup>1</sup></a>
+        <a href="">Qianqian Wang<sup>1</sup></a>
       </span>
       <!-- <span>
         <a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ">Charles Herrmann<sup>2,+</sup></a>
@@ -190,6 +198,88 @@
         <a href="TODO" target="_blank">[BibTeX]</a>
       </p>
     </font>
+  </div>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We propose a novel unified framework capable of solving a broad range of 3D tasks. At the core of our approach is an online stateful recurrent model that continuously updates its state representation with each new observation. Given a stream of images, our method leverages the evolving state to generate metric-scale pointmaps for each input in an online manner. These pointmaps reside within a common coordinate system, accumulating into a coherent 3D scene reconstruction. Our model captures rich priors of real-world scenes: not only can it predict accurate pointmaps from image observations, but it can also infer unseen structures beyond the coverage of the input images through a raymap probe. Our method is simple yet highly flexible, naturally accepting varying lengths of image sequences and working seamlessly with both video streams and unordered photo collections. We evaluate our method on various 3D/4D tasks including monocular/video depth estimation, camera estimation, multi-view reconstruction, and achieve competitive or state-of-the-art performance. Additionally, we showcase intriguing behaviors enabled by our state representation.
+            </p>
+          </div>
+        </div>
+      </div>
+      </div><br>
+      <!--/ Abstract. -->
+  </section>
+
+  <div class="content">
+    <h2>Interactive Results</h2>
+      <p style="text-align: center">
+        Click below to explore some example outputs!
+      </p>
+      <a
+        href="./interactive.html"
+        target="_blank"
+        style="position: relative; display: block; overflow: hidden"
+      >
+        <video
+          src="TODO"
+          style="opacity: 50%; display: block"
+          width="100%"
+          loop
+          autoplay
+          playsinline
+          muted
+          id="interactive-demo-video"
+        ></video>
+        <button
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #8e2de2;
+            /* background: linear-gradient(to right, #8e2de2, #4a00e0); */
+            box-shadow: 0 0 2em 0 rgba(255, 255, 50, 1);
+            whitespace: nowrap;
+          "
+        >
+          <i class="ti ti-hand-click"></i>
+          Open Interactive Results
+        </button>
+      </a>
+      <script>
+        // Make this video play slower.
+        document.addEventListener("DOMContentLoaded", function () {
+          var video = document.getElementById("interactive-demo-video");
+          video.playbackRate = 0.6;
+        });
+      </script>
+  </div>
+
+  <div class="content">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">More results</h2>
+    <p> TODO brief explanation. See more examples in our <a href="./gallery.html">gallery</a>.</p>
+  </div>
+  </div>
+  </div>
+  <div id="carousel-results" class="carousel">
+      <div class="item item-vid5">
+        <!-- cat-girl_sgd_cvd_hr.mp4 -->
+        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+          <source src="static/videos/gallery/codec/cat-girl_sgd_cvd_hr.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
   </div>
 
 
