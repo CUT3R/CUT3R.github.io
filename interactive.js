@@ -5,7 +5,7 @@ const results = [
         "/build/",
         "?playbackPath=/recordings/006545_mpii_test.viser",
         "&synchronizedVideoOverlay=/recordings/006545_mpii_test.mp4",
-        "&synchronizedVideoTimeOffset=-0.05",
+        "&synchronizedVideoTimeOffset=0.0",
         "&initialCameraPosition=0.0,0.0,0.0",
         "&initialCameraLookAt=0.0,0.0,0.0",
         "&baseSpeed=1.5",
