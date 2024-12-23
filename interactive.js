@@ -2,7 +2,7 @@ const results = [
     [
       "Test",
       [
-        "/viser-embed/",
+        "/build/",
         "?playbackPath=/recordings/006545_mpii_test.viser",
         "&synchronizedVideoOverlay=/recordings/006545_mpii_test.mp4",
         "&synchronizedVideoTimeOffset=-0.05",
