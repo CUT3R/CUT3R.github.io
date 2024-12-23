@@ -8,7 +8,7 @@ const results = [
         "&synchronizedVideoTimeOffset=0.0",
         "&initialCameraPosition=0.0,0.0,0.0",
         "&initialCameraLookAt=0.0,0.0,0.0",
-        "&baseSpeed=1.5",
+        "&baseSpeed=1.0",
         "&darkMode",
       ],
       "./recordings/006545_mpii_test.jpg",
