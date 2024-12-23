@@ -3,15 +3,15 @@ const results = [
       "Test",
       [
         "/viser-embed/",
-        "?playbackPath=/recordings/recording.viser",
-        "&synchronizedVideoOverlay=/splash-results/feb28_coffeemachine.mp4",
+        "?playbackPath=/recordings/006545_mpii_test.viser",
+        "&synchronizedVideoOverlay=/recordings/006545_mpii_test.mp4",
         "&synchronizedVideoTimeOffset=-0.05",
         "&initialCameraPosition=-0.27,-0.48,1.21",
         "&initialCameraLookAt=-0.635,-0.907,-0.503",
         "&baseSpeed=1.5",
         "&darkMode",
       ],
-      "./splash-results/feb28_coffeemachine_thumbnail.jpg",
+      "./recordings/006545_mpii_test.jpg",
     ]
   ];
   
