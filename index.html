@@ -77,6 +77,25 @@
       font-family: sans-serif;
     }
 
+    .header-title {
+        line-height: 0.75;
+    }
+
+    .header-icon {
+        width: 64px;  /* Default width */
+        vertical-align: middle;
+    }
+
+    .header-title strong {
+        font-size: 24px; /* Default font size for the title */
+    }
+
+    .video-content {
+        width: 100%;   /* Make video responsive within the container */
+        height: auto;  /* Maintain aspect ratio */
+        max-height: 450px; /* Maximum video height */
+    }
+
     iframe {
       border-radius: 0.5em;
       width: 27.5em;
@@ -158,15 +177,54 @@
           padding: 5px; /* Smaller buttons */
       }
     }
+
+    @media (max-width: 768px) {
+        .header-icon {
+            width: 48px;  /* Smaller icon size for smaller screens */
+        }
+
+        .header-title {
+            line-height: 1.2;  /* Increased line height for better readability on small screens */
+        }
+
+        .header-title strong {
+            font-size: 20px;  /* Smaller font size for smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header-icon {
+            width: 32px;  /* Even smaller icon size for very small screens */
+        }
+
+        .header-title strong {
+            font-size: 16px;  /* Further reduced font size for very small screens */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .item {
+            max-width: 100%;  /* Full width on smaller screens */
+        }
+        .video-content {
+            max-height: 300px; /* Smaller height on mobile devices */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .video-content {
+            max-height: 200px; /* Even smaller on very small screens */
+        }
+    }
   </style>
 </head>
 <body>
 
   <div class="content">
-    <h1 style="line-height: 0.75;">
-      <img src="TODO" alt="ICON" style="width: 64px; vertical-align: middle;">
-      <strong>Continuous 3D Perception Model with Persistent State</strong>
-    </h1>
+    <h1 class="header-title">
+        <img src="TODO" alt="ICON" class="header-icon">
+        <strong>Continuous 3D Perception Model with Persistent State</strong>
+    </h1>  
     <p id="authors">
       <span>
         <a href="">Authors<sup>1</sup></a>
@@ -301,32 +359,32 @@
     <p> TODO brief explanation. See more examples in our <a href="./gallery.html">gallery</a>.</p>
     <div id="carousel-results" class="carousel">
       <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <video poster="" id="" autoplay playsinline muted loop class="video-content">
           <source src="./static/videos/bike-packing_Free_1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <video poster="" id="" autoplay playsinline muted loop class="video-content">
           <source src="./static/videos/breakdance-flare_Free_1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <video poster="" id="" autoplay playsinline muted loop class="video-content">
           <source src="./static/videos/stunt_Free_1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <video poster="" id="" autoplay playsinline muted loop class="video-content">
           <source src="./static/videos/bus_Free_1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <video poster="" id="" autoplay playsinline muted loop class="video-content">
           <source src="./static/videos/camel_Free_1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <video poster="" id="" autoplay playsinline muted loop class="video-content">
           <source src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
         </video>
       </div>
