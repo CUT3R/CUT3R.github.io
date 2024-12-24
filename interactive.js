@@ -1,6 +1,6 @@
 const results = [
     [
-      "Test",
+      "people_dancing",
       [
         "/build/",
         "?playbackPath=/recordings/006545_mpii_test.viser",
@@ -10,6 +10,42 @@ const results = [
         "&darkMode",
       ],
       "./recordings/006545_mpii_test.jpg",
+    ],
+    [
+      "cars2",
+      [
+        "/build/",
+        "?playbackPath=recordings/cars2.viser",
+        "&synchronizedVideoOverlay=/recordings/cars2.mp4",
+        "&synchronizedVideoTimeOffset=0.0",
+        "&baseSpeed=1.0",
+        "&darkMode",
+      ],
+      "./recordings/cars2.png",
+    ],
+    [
+      "cats04",
+      [
+        "/build/",
+        "?playbackPath=/recordings/cats04.viser",
+        "&synchronizedVideoOverlay=/recordings/cats04.mp4",
+        "&synchronizedVideoTimeOffset=0.0",
+        "&baseSpeed=1.0",
+        "&darkMode",
+      ],
+      "./recordings/cats04.png",
+    ],
+    [
+      "people04",
+      [
+        "/build/",
+        "?playbackPath=/recordings/people04.viser",
+        "&synchronizedVideoOverlay=/recordings/people04.mp4",
+        "&synchronizedVideoTimeOffset=0.0",
+        "&baseSpeed=1.0",
+        "&darkMode",
+      ],
+      "./recordings/people04.png",
     ]
   ];
   
