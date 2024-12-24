@@ -113,7 +113,6 @@
     .carousel {
         display: flex;
         flex-wrap: wrap; /* Allows items to wrap onto the next line */
-        gap: 15px; /* Adds 10px gap between each item, both row and column gaps */
     }
 
     a,
@@ -316,7 +315,7 @@
   </div>
 
   <section class="content">
-          <h2 class="title is-3">Abstract</h2>
+          <h2>Abstract</h2>
           <p>
               We propose a novel unified framework capable of solving a broad range of 3D tasks. At the core of our approach is an online stateful recurrent model that continuously updates its state representation with each new observation. Given a stream of images, our method leverages the evolving state to generate metric-scale pointmaps for each input in an online manner. These pointmaps reside within a common coordinate system, accumulating into a coherent 3D scene reconstruction. Our model captures rich priors of real-world scenes: not only can it predict accurate pointmaps from image observations, but it can also infer unseen structures beyond the coverage of the input images through a raymap probe. Our method is simple yet highly flexible, naturally accepting varying lengths of image sequences and working seamlessly with both video streams and unordered photo collections. We evaluate our method on various 3D/4D tasks including monocular/video depth estimation, camera estimation, multi-view reconstruction, and achieve competitive or state-of-the-art performance. Additionally, we showcase intriguing behaviors enabled by our state representation.
             </p>
