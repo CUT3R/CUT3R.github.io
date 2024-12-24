@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 	var options = {
-			  slidesToScroll: 3,
-			  slidesToShow: 3,
+			  slidesToScroll: 2,
+			  slidesToShow: 2,
 			  loop: true,
 			  infinite: true,
 			  initialSlide: 2,
