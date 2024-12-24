@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Continuous 3D Perception Model with Persistent State</title>
+
+    <meta name="description" content="DESCRIPTION META TAG">
+    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+    <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+    <meta property="og:url" content="URL OF THE WEBSITE"/>
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/TODO.png" />
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+
+    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="TODO">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="static/css/app.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZERS5BVPS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8ZERS5BVPS');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <script src="static/js/app.js"></script>
+    <script src="static/js/synced_video_selector.js"></script>
+
+    <style>
+        .final-element {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body style="padding: 5%; padding-top: min(15px, 5%); width: 100%">
+    <div class="container-lg text-center" style="max-width: 100%; margin: auto;" id="main">
+        <!-- <div class="container" id="main"> -->
+        <div class="row">
+                <h2 class="col-md-12 text-center">
+                    Continuous 3D Perception Model with Persistent State
+                </h2>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-3">
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://qianqianwang68.github.io/">Qianqian Wang</a><sup>1,2</sup></span>&nbsp&nbsp&nbsp&nbsp
+              </span>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UC Berkeley </span>
+          </div>
+        </div>
+        
+
+    <div class="container video-gallery" id="videoGallery" style="max-width: 100%;">
+  
+      <!-- Thumbnails -->
+      <div id="thumbnails" class="card-columns captioned_videos list"></div>
+    </div>
+
+    <script src="static/js/stopExecutionTimeout.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+    <script src="static/js/yall.js"></script>
+    <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+
+/*
+const bucket = "https://storage.googleapis.com/gallery_videos/v0"
+
+async function listFolders() {
+    // Interacting with the google cloud storage APIS requires full on node installatiosn and such so meh, just parse the returned XML :) 
+    let xmlDoc = await fetch(bucket).then(response => response.text()).then(xmlString => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+        return xmlDoc;
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+    const contentsElements = xmlDoc.getElementsByTagName('Contents');
+    let nodeArray = [].slice.call(contentsElements);
+
+    function xmlToKey(folder) {
+        let key = folder.getElementsByTagName("Key")[0].textContent;
+        let parts = key.split("/");
+        return parts[0] + "/" + parts[1];
+    }
+
+    const keys = [...new Set(nodeArray.map(f => xmlToKey(f)))];
+    return keys.filter(f => f.includes(".mp4"))
+}   
+
+    let files = listFolders();
+    console.log(files)
+	console.log("hello")*/
+  
+    const shuffleArray = array => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+  
+    var videoPaths = [
+"bike-packing_Free_1.mp4",
+"breakdance-flare_Free_1.mp4",
+"stunt_Free_1",
+    ];
+
+
+var intervalId = window.setInterval(function(){
+  document.querySelectorAll('video').forEach(vid => vid.play());
+}, 1000);
+  
+    shuffleArray(videoPaths);
+  
+    // document.addEventListener("DOMContentLoaded", function() {
+      var thumbnails = document.getElementById("thumbnails");
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  
+  
+      for (var i = 0; i < videoPaths.length; i++) {
+        var outer = document.createElement("DIV");
+        outer.classList = "thumbnail outer card";
+        var inner = document.createElement("DIV");
+	inner.style.padding = "5px";
+        inner.classList = "inner card-body";
+  
+        let videoPath = videoPaths[i];
+        let caption = videoPath.replace('.mp4', "").replace("cat3d_tags", " ").replaceAll("_", " ");
+
+        let captionShort = ""
+  
+        var componentVideo = document.createElement("VIDEO");
+        componentVideo.loop = true;
+        componentVideo.playsinline = true;
+        // componentVideo.preload = "metadata";
+        componentVideo.muted = true;
+        //componentVideo.width = "333";
+	      componentVideo.style.width = "100%"
+        componentVideo.autoplay = true;
+        if (isIOS) {
+          // Autoplay doesn't seem to work.
+          componentVideo.classList = "video";
+          componentVideo.src = './static/videos/gallery/codec/' + videoPath;
+          componentVideo.controls = false;
+        } else {
+          componentVideo.controls = false;
+          componentVideo.classList = "video lazy";
+          //componentVideo.onmouseout = componentVideo.play;
+          //componentVideo.onmouseover = componentVideo.pause;
+          componentVideo.onmousemove= componentVideo.play;
+          componentVideo.onmouseout = componentVideo.play;
+          componentVideo.onkeyup = componentVideo.play;
+          componentVideo.onmouseover = componentVideo.play;
+          componentSource = document.createElement("SOURCE")
+          componentSource.type = "video/mp4"
+          componentSource.setAttribute('data-src',
+            "./static/videos/gallery/codec/" + videoPath);
+          componentVideo.appendChild(componentSource);
+        }
+        inner.appendChild(componentVideo);
+  
+        var fullCaption = document.createElement("span");
+        fullCaption.classList = "name invisible";
+        fullCaption.style.display = "none";
+
+        fullCaption.style.fontSize = "3px";
+        fullCaption.appendChild(document.createTextNode(caption))
+        inner.appendChild(fullCaption);
+  
+        var componentCaption = document.createElement("h6");
+        componentCaption.classList = "caption";
+        componentCaption.title = caption;
+        componentCaption.appendChild(document.createTextNode(captionShort));
+        //inner.appendChild(componentCaption);
+  
+        outer.appendChild(inner);
+        thumbnails.appendChild(outer);
+      }
+  
+      if (!isIOS) {
+        yall({
+          observeChanges: false
+        });
+      }
+    // }
+    </script>
+  
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js'></script>
+    <script id="rendered-js" >
+  $(function () {
+  
+    // Search
+    var options = {
+      valueNames: ['name', 'category'] };
+  
+    var videoList = new List('videoGallery', options);
+  
+    function debounced(delay, fn) {
+      // https://jsfiddle.net/foxbunny/rL68o4ef/?utm_source=website&utm_medium=embed&utm_campaign=rL68o4ef.
+      let timerId;
+      return function (...args) {
+        if (timerId) {
+          clearTimeout(timerId);
+        }
+        timerId = setTimeout(() => {
+          fn(...args);
+          timerId = null;
+        }, delay);
+      }
+    }
+  
+    $("#search").change(debounced(1000, function () {
+      // smooth scroll to thumbnails
+      $('html, body').animate({
+        scrollTop: $("#thumbnails").offset().top - 60 },
+      1000);
+    }));
+  
+    // Filter
+    $('#filter').change(function () {
+      var selection = this.value;
+      if (selection) {
+        videoList.filter(function (item) {
+          return item.values().category == selection;
+        });
+      } else {
+        videoList.filter();
+      }
+    });
+  });
+  
+  //Get URL query string
+  function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+      var pair = vars[i].split("=");
+      if (pair[0] == variable) {return pair[1];}
+    }window.CP.exitedLoop(0);
+    return false;
+  }
+  // Get URL query string variables
+  var id = getQueryVariable("id");
+  var title = getQueryVariable("title");
+  
+  </script>
+
+
+</body>
+
+</html>
