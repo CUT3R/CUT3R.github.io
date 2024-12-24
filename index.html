@@ -193,34 +193,28 @@
       <p style="text-align: center;">
         <a href="TODO" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="TODO" target="_blank">[Arxiv]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#interactive" target="_blank" style="font-weight: bold; color: rgb(238, 60, 223);">[Interactive Results🔥]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#interactive" target="_blank" style="font-weight: bold; color: #8e2de2; text-shadow: 0 0 8px rgba(255, 255, 50, 1);">
+          [Interactive Results]
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="TODO" target="_blank">[Code]</a>&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="TODO" target="_blank">[BibTeX]</a>
       </p>
     </font>
   </div>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+  <section class="content">
           <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
+          <p>
               We propose a novel unified framework capable of solving a broad range of 3D tasks. At the core of our approach is an online stateful recurrent model that continuously updates its state representation with each new observation. Given a stream of images, our method leverages the evolving state to generate metric-scale pointmaps for each input in an online manner. These pointmaps reside within a common coordinate system, accumulating into a coherent 3D scene reconstruction. Our model captures rich priors of real-world scenes: not only can it predict accurate pointmaps from image observations, but it can also infer unseen structures beyond the coverage of the input images through a raymap probe. Our method is simple yet highly flexible, naturally accepting varying lengths of image sequences and working seamlessly with both video streams and unordered photo collections. We evaluate our method on various 3D/4D tasks including monocular/video depth estimation, camera estimation, multi-view reconstruction, and achieve competitive or state-of-the-art performance. Additionally, we showcase intriguing behaviors enabled by our state representation.
             </p>
-          </div>
-        </div>
-      </div>
-      </div><br>
+
       <!--/ Abstract. -->
   </section>
 
   <div class="content">
     <a id="interactive"></a>
     <h2>Interactive Results</h2>
-      <p style="text-align: center">
+      <p style="font-weight: bold; text-align: center">
         Click below to explore some example outputs!
       </p>
       <a
@@ -248,6 +242,12 @@
             /* background: linear-gradient(to right, #8e2de2, #4a00e0); */
             box-shadow: 0 0 2em 0 rgba(255, 255, 50, 1);
             whitespace: nowrap;
+            width: 200px;
+            height: 50px;
+            color: white;
+            font-size: 16px;
+            border-radius: 25px; /* Rounded corners */
+            border: none; /* Removes any border */
           "
         >
           <i class="ti ti-hand-click"></i>
@@ -295,17 +295,15 @@
   <div class="content">
     <h2>BibTex</h2>
     <font size="-0.">
-    <code> @article{zhang2024monst3r,<br>
-    &nbsp;&nbsp;title={MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion},<br>
-    &nbsp;&nbsp;author={Zhang, Junyi and Herrmann, Charles and Hur, Junhwa and Jampani, Varun and Darrell, Trevor and Cole, Forrester and Sun, Deqing and Yang, Ming-Hsuan},<br>
-    &nbsp;&nbsp;journal={arXiv preprint arxiv:2410.03825},<br>
-    &nbsp;&nbsp;year={2024}<br>
-    } </code>
+    <code style="background-color: #f4f4f4; color: #333; padding: 10px; display: block; overflow-x: auto;"> 
+      TODO
+    </code>
   </font>
   </div>
 
   <div class="content" id="acknowledgements">
-    <p><strong>Acknowledgements</strong>:
+    <h2>Acknowledgements</h2>
+    <p>
       Anything
     </p>
   </div>
