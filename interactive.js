@@ -15,7 +15,7 @@ const results = [
       "cars2",
       [
         "/build/",
-        "?playbackPath=recordings/cars2.viser",
+        "?playbackPath=/recordings/cars2.viser",
         "&synchronizedVideoOverlay=/recordings/cars2.mp4",
         "&synchronizedVideoTimeOffset=0.0",
         "&baseSpeed=1.0",
