@@ -42,7 +42,6 @@ const results = [
         "?playbackPath=/recordings/people04.viser",
         "&synchronizedVideoOverlay=/recordings/people04.mp4",
         "&synchronizedVideoTimeOffset=0.0",
-        "&initialCameraLookAt=0.8008,-1.1018,8.8158",
         "&baseSpeed=1.0",
         "&darkMode",
       ],
