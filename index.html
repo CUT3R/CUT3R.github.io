@@ -171,8 +171,11 @@
         padding: 10px;
       }
 
-      h1, h2 {
-          font-size: 24px; /* Smaller font size for smaller screens */
+      h1 {
+        font-size: 24px; /* Even smaller font size for mobile phones */
+      }
+      h2 {
+          font-size: 20px; /* Smaller font size for compact displays */
       }
 
       p, .instruction-item, .instruction-item_small {
@@ -186,7 +189,7 @@
 
     @media (max-width: 768px) {
         .header-icon {
-            width: 48px;  /* Smaller icon size for smaller screens */
+            width: 52px;  /* Smaller icon size for smaller screens */
         }
 
         .header-title {
@@ -200,11 +203,18 @@
 
     @media (max-width: 480px) {
         .header-icon {
-            width: 32px;  /* Even smaller icon size for very small screens */
+            width: 40px;  /* Even smaller icon size for very small screens */
         }
 
         .header-title strong {
             font-size: 20px;  /* Further reduced font size for very small screens */
+        }
+
+        h1 {
+        font-size: 20px; /* Even smaller font size for mobile phones */
+        }
+        h2 {
+            font-size: 16px; /* Smaller font size for compact displays */
         }
     }
 
