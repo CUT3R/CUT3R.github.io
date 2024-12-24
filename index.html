@@ -85,13 +85,6 @@
       box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
     }
 
-    @media (max-width: 768px) {
-      iframe {
-        width: 100%;
-        height: 30em;
-      }
-    }
-
     a,
     a:link {
       color: #777;
@@ -140,6 +133,26 @@
     .instruction-item_small img {
       width: 30px;
       height: 30px;
+    }
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 30em;
+      }
+
+      .content {
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+      }
+
+      h1, h2 {
+          font-size: 24px; /* Smaller font size for smaller screens */
+      }
+
+      p, .instruction-item, .instruction-item_small {
+          font-size: 14px; /* Adjust text sizes for readability on small devices */
+      }
     }
   </style>
 </head>
