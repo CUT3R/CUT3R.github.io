@@ -247,9 +247,8 @@
     <!--/ Abstract. -->
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3" id="_interactive">Interactive Results</h2>
@@ -270,9 +269,65 @@
       </div>
     </div>
     </div><br>
-    <!--/ Abstract. -->
-</section>
+</section> -->
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+  <a id="_interactive"></a>
+  <h2>Interactive Results</h2>
+    <p style="font-weight: bold; text-align: center">
+      Click below to explore some example outputs!
+    </p>
+    <a
+      href="./interactive.html"
+      target="_blank"
+      style="position: relative; display: block; overflow: hidden"
+    >
+      <video
+        src="recordings/teaser.mp4"
+        style="opacity: 50%; display: block"
+        width="100%"
+        loop
+        autoplay
+        playsinline
+        muted
+        id="interactive-demo-video"
+      ></video>
+      <button
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: #8e2de2;
+          /* background: linear-gradient(to right, #8e2de2, #4a00e0); */
+          box-shadow: 0 0 2em 0 rgba(255, 255, 50, 1);
+          whitespace: nowrap;
+          width: 200px;
+          height: 50px;
+          color: white;
+          font-size: 16px;
+          border-radius: 25px; /* Rounded corners */
+          border: none; /* Removes any border */
+        "
+      >
+        <i class="ti ti-hand-click"></i>
+        Open Interactive Results
+      </button>
+    </a>
+    <script>
+      // Make this video play slower.
+      document.addEventListener("DOMContentLoaded", function () {
+        var video = document.getElementById("interactive-demo-video");
+        video.playbackRate = 0.6;
+      });
+    </script>
+    </div>
+  </div>
+  </div><br>
+</section>
 
 
 <section class="section has-carousel" id="carousel" style="padding: 0; margin: auto; ">
@@ -327,7 +382,7 @@
 </section>
 
 
-<!-- <section class="section">
+<section class="section">
   <div class="columns is-centered has-text-centered">
     <div class="column is-half">
       <h2 class="title is-3">Explainer Video</h2>
@@ -335,11 +390,11 @@
         <a id="overview_video"></a>
         <video width="100%" controls>
           <source src="./static/videos/explainer.mp4" type="video/mp4">
-        </video> -->
+        </video>
         <!-- <iframe src="https://youtube.com/embed/swigYTCdoiw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe> -->
-      <!-- </div>
+      </div>
     </div>
-  </div> -->
+  </div>
 
 <div class="columns is-centered has-text-centered">
   <div class="column is-half"><br><br>
