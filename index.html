@@ -207,10 +207,79 @@
 <div class="columns is-centered">
 <div class="column is-centered is-full">
 <div class="notification is-centered is-info is-rounded" style="text-align: center; padding-bottom: 5px; padding-top: 5px; background-color: #d0d5ec;">
-<h6 style="text-align: center; color:rgb(0, 0, 0)"><strong>TL;DR</strong>: Our unified framework reasons about the 3D world in an <strong>online, sequential</strong> manner. It continuously updates an internal state using incoming images, enabling accurate <strong>metric-scale</strong> point cloud reconstructions. Along the way, it also recovers per-frame camera poses, intrinsics, and even infers <strong>unseen structures</strong>. It supports both video streams and unordered photo collections, and works seamlessly with both static and dynamic scenes.</h6>
+<h6 style="text-align: center; color:rgb(0, 0, 0)"> Our unified framework reasons about the 3D world in an <strong>online, sequential</strong> manner. It continuously updates an internal state using incoming images, enabling accurate <strong>metric-scale</strong> point cloud reconstructions. Along the way, it also recovers per-frame camera poses, intrinsics, and even infers <strong>unseen structures</strong>. It supports both video streams and unordered photo collections, and works seamlessly with both static and dynamic scenes.</h6>
                 </div>
 </div>
 </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose a novel unified framework capable of solving a broad range of 3D tasks. At the core of our approach is an online stateful recurrent model that continuously updates its state representation with each new observation. Given a stream of images, our method leverages the evolving state to generate metric-scale pointmaps for each input in an online manner. These pointmaps reside within a common coordinate system, accumulating into a coherent 3D scene reconstruction. Our model captures rich priors of real-world scenes: not only can it predict accurate pointmaps from image observations, but it can also infer unseen structures beyond the coverage of the input images through a raymap probe. Our method is simple yet highly flexible, naturally accepting varying lengths of image sequences and working seamlessly with both video streams and unordered photo collections. We evaluate our method on various 3D/4D tasks including monocular/video depth estimation, camera estimation, multi-view reconstruction, and achieve competitive or state-of-the-art performance. Additionally, we showcase intriguing behaviors enabled by our state representation.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div><br>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section has-carousel" id="carousel" style="padding: 0; margin: auto; ">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">More results</h2>
+	<p> Our method works for both static and dynamic scenes. See more examples in our <a href="./gallery.html">gallery</a>.</p>
+</div>
+</div>
+</div>
+<div id="carousel-results" class="carousel">
+    <div class="item item-vid5">
+      <!-- cat-girl_sgd_cvd_hr.mp4 -->
+      <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <source src="./static/videos/bike-packing_Free_1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="item item-vid5">
+      <!-- rallye_sgd_cvd_hr.mp4 -->
+      <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <source src="./static/videos/breakdance-flare_Free_1.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <div class="item item-vid5">
+      <!-- spin_mon.mp4 -->
+      <video poster="" id="" autoplay playsinline muted loop height="288px">
+        <source src="./static/videos/stunt_Free_1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="item item-vid5">
+      <!-- spin_sgd_cvd_hr.mp4 -->
+      <video poster="" id="" autoplay playsinline muted loop height="288px">
+        <source src="./static/videos/bus_Free_1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="item item-vid5">
+      <!-- pillow_sgd_cvd_hr.mp4 -->
+      <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto">
+        <source src="./static/videos/camel_Free_1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="item item-vid5">
+      <!-- shutterstock_1038326681_i1_sgd_cvd_hr.mp4 -->
+      <video poster="" id="" autoplay playsinline muted loop height="288px">
+        <source src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
