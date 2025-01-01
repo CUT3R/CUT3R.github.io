@@ -2,39 +2,37 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/TODO.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="description"
+        content="\methodname">
+  <meta name="keywords" content="\methodname">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>\methodname</title>
 
+  <link rel="icon" type="image/x-icon" href="static/images/android-chrome-512x512.png">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  <title>Continuous 3D Perception Model with Persistent State</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="static/css/style.css" rel="stylesheet">
-  <link
-    href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons-outline.min.css"
-    rel="stylesheet"
-  />
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <meta property="og:image" content="https://tmpcut3r.github.io/static/images/icon.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Continuous 3D Perception Model with Persistent State">
+<meta name="twitter:description" content="Our unified framework reasons about the 3D world in an online, sequential manner. It continuously updates an internal state using incoming images, enabling accurate metric-scale point cloud reconstructions. Along the way, it also recovers per-frame camera poses, intrinsics, and even infers unseen structures. It supports both video streams and unordered photo collections, and works seamlessly with both static and dynamic scenes.">
+<meta name="twitter:image" content="https://tmpcut3r.github.io/static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,600|Noto+Sans:400,600|Castoro:400,600"
+        rel="stylesheet">
+
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
@@ -45,418 +43,159 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/index.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-
-  <style>
-    .divider {
-      border-right: 2px dashed #737373;
-      width: 2px;
-    }
-  </style>
-  <style>
-    .divider_horizontal {
-      border-top: 2px dashed #737373;
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-    }
-  </style>
-  <!-- Begin new styles from demos page -->
-  <style>
-    body {
-      padding: 2em;
-      font-family: sans-serif;
-    }
-
-    .header-title {
-        line-height: 0.75;
-    }
-
-    .header-icon {
-        width: 64px;  /* Default width */
-        vertical-align: middle;
-    }
-
-    .header-title strong {
-        font-size: 32px; /* Default font size for the title */
-    }
-
-    .item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 900px;
-    } 
-
-    .video-content {
-        width: 100%;   /* Make video responsive within the container */
-        height: auto;  /* Maintain aspect ratio */
-        max-height: 450px; /* Maximum video height */
-    }
-
-    iframe {
-      border-radius: 0.5em;
-      width: 27.5em;
-      height: 27.5em;
-      border: none;
-      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
-    }
-
-    .carousel {
-        display: flex;
-        flex-wrap: wrap; /* Allows items to wrap onto the next line */
-    }
-
-    a,
-    a:link {
-      color: #777;
-    }
-
-    /* Styles for the instruction icons and text */
-    .instructions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.2em;
-      text-align: center;
-      padding: 0.6em;
-    }
-
-    .instruction-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-      font-size: 1.2em;
-    }
-
-    .instruction-item img {
-      width: 36px;
-      height: 36px;
-    }
-
-    .instructions_small {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1em;
-      text-align: center;
-      padding: 0.5em;
-    }
-
-    .instruction-item_small {
-      display: flex;
-      align-items: center;
-      gap: 0.3em;
-      font-size: 1.0em;
-    }
-
-    .instruction-item_small img {
-      width: 30px;
-      height: 30px;
-    }
-    @media (max-width: 768px) {
-      iframe {
-        width: 100%;
-        height: 30em;
-      }
-
-      .content {
-        max-width: 100%;
-        width: 100%;
-        padding: 10px;
-      }
-
-      .content h1 {
-        font-size: 24px; /* Even smaller font size for mobile phones */
-      }
-      .content h2 {
-          font-size: 20px; /* Smaller font size for compact displays */
-      }
-
-      p, .instruction-item, .instruction-item_small {
-          font-size: 14px; /* Adjust text sizes for readability on small devices */
-      }
-
-      .nav-button, #prevButton, #nextButton {
-          padding: 5px; /* Smaller buttons */
-      }
-    }
-
-    @media (max-width: 768px) {
-        .header-icon {
-            width: 52px;  /* Smaller icon size for smaller screens */
-        }
-
-        .header-title {
-            line-height: 1.2;  /* Increased line height for better readability on small screens */
-        }
-
-        .header-title strong {
-            font-size: 26px;  /* Smaller font size for smaller screens */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .header-icon {
-            width: 40px;  /* Even smaller icon size for very small screens */
-        }
-
-        .header-title strong {
-            font-size: 20px;  /* Further reduced font size for very small screens */
-        }
-
-        .content h1 {
-        font-size: 20px; /* Even smaller font size for mobile phones */
-        }
-        .content h2 {
-            font-size: 16px; /* Smaller font size for compact displays */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .item {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          max-width: 450px;  /* Full width on smaller screens */
-        }
-        .video-content {
-            max-height: 300px; /* Smaller height on mobile devices */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .item {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          max-width: 300px;  /* Full width on smaller screens */
-        }
-        .video-content {
-            max-height: 200px; /* Even smaller on very small screens */
-        }
-    }
-  </style>
+<style>
+#interactive {
+  position: relative;
+  display: inline-block;
+  width: 768px;
+  aspect-ratio: 16/9;
+  max-width: 100%;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 4px #000;
+  
+}
+#interactive canvas, #interactive #glfailed, #interactive #loading {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+#interactive #glfailed {
+  color: #f88;
+  background: black;
+  display: none;
+}
+#interactive #loading {
+  color: #000;
+  font-size: 32px;
+  font-weight: bold;
+  background: rgba(255,255,255,0.8);
+  display: none;
+}
+.load img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  margin: 4px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 4px #888;
+  border-radius: 6px;
+  vertical-align: bottom;
+}
+.load img:active {
+  box-shadow: 0 0 4px #000;
+  opacity: .8;
+}
+.megabuttons {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  text-transform: uppercase;
+  text-align: left;
+}
+</style>
 </head>
-<body>
 
-  <div class="content">
-    <h1 class="header-title">
-        <img src="./static/images/android-chrome-512x512.png" alt="ICON" class="header-icon">
-        <strong>Continuous 3D Perception Model with Persistent State</strong>
-    </h1>  
-    <p id="authors">
-      <span>
-        <a href="https://qianqianwang68.github.io/">Qianqian Wang<sup>1,2*</sup></a>
-      </span>
-      <span>
-        <a href="https://forrest-110.github.io/">Yifei Zhang<sup>1*</sup></a>
-      </span>
-      <span>
-        <a href="https://holynski.org/">Aleksander Holynski<sup>1,2</sup></a>
-      </span>
-      <span>
-        <a href="https://people.eecs.berkeley.edu/~efros/">Alexei A Efros<sup>1</sup></a>
-      </span>
-      <span>
-        <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa<sup>1</sup></a>
-      </span>
-      <!-- <span>
-        <a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ">Charles Herrmann<sup>2,+</sup></a>
-      </span>
-      <span>
-        <a href="https://hurjunhwa.github.io/">Junhwa Hur<sup>2</sup></a>
-      </span>
-      <span>
-        <a href="https://varunjampani.github.io/">Varun Jampani<sup>3</sup></a>
-      </span>
-      <span>
-        <a href="https://people.eecs.berkeley.edu/~trevor/">Trevor Darrell<sup>1</sup></a>
-      </span>
-      <br>
-      <span>
-        <a href="https://scholar.google.com/citations?user=xZRRr-IAAAAJ&hl">Forrester Cole<sup>2</sup></a>
-      </span>
-      <span>
-        <a href="https://deqings.github.io/">Deqing Sun<sup>2,*</sup></a>
-      </span>
-      <span>
-        <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang<sup>2,4,*</sup></a>
-      </span> -->
-      <br>
-      <span class="institution"><a href="https://bair.berkeley.edu/"><sup>1</sup> UC Berkeley</a>
-        <a href="https://deepmind.google/"><sup>2</sup> Google DeepMind</a>
-      </span>
-      <span class="institution"></span>
-      <span class="institution">(*: equal contribution)</span>
-    </p>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered" style="margin-bottom: 0em">
+        <div class="column is-max-desktop has-text-centered">
+          <h1 class="title is-1 publication-title" style="margin-bottom:0rem">
+            <img src="./static/images/android-chrome-512x512.png" alt="ICON" class="header-icon">
+            <strong>Continuous 3D Perception Model with Persistent State</strong>
+          </h1>
+          <!-- <h3 class="title is-3 publication-title">Accurate, Fast and Robust Structure and Motion from Casual Dynamic Videos</h3> -->
+	</div>
+	</div>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://qianqianwang68.github.io/">Qianqian Wang</a><sup>1,2*</sup></span>&nbsp&nbsp&nbsp&nbsp
+            <span class="author-block">
+              <a href="https://forrest-110.github.io/">Yifei Zhang</a><sup>1*</sup>&nbsp&nbsp&nbsp&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://holynski.org/">Aleksander Holynski</a> <sup>1,2</sup>&nbsp&nbsp&nbsp&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~efros/">Alexei A Efros</a><sup>1</sup>&nbsp&nbsp&nbsp&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a><sup>1</sup>&nbsp&nbsp&nbsp&nbsp
+            </span>
+          </div>
 
-    <!-- <br>
-        <img src="./files/teaser_monst3r.png" class="teaser-gif" style="width:100%;"><br> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UC Berkeley </span>
+            &nbsp&nbsp&nbsp&nbsp
+            <span class="author-block"><sup>2</sup>Google DeepMind </span>
+          </div>
 
-    <!-- add video files/teaser_vid_v2_lowres.mp4 -->
-    <video width="100%" controls>
-      <source src="./static/videos/teaser.mp4" type="video/mp4">
-    </video>
-    <br>
-    <br>
-
-    <a style="text-align:center">
-      <font size="+1">
-        Our unified framework reasons about the 3D world in an <strong>online, sequential</strong> manner. It continuously updates an internal state using incoming images, enabling accurate <strong>metric-scale</strong> point cloud reconstructions. Along the way, it also recovers per-frame camera poses, intrinsics, and even infers <strong>unseen structures</strong>. It supports both video streams and unordered photo collections, and works seamlessly with both static and dynamic scenes.
-        </font>
-    </a>
-    <br>
-    <br>
     
-    <font size="+2">
-      <p style="text-align: center;">
-        <a href="TODO" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="TODO" target="_blank">[Arxiv]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#interactive" target="_blank" style="font-weight: bold; color: #8e2de2; text-shadow: 0 0 8px rgba(255, 255, 50, 1);">
-          [Interactive Results]
-        </a> &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="gallery.html" target="_blank" style="font-weight: bold; color: #8e2de2; text-shadow: 0 0 8px rgba(255, 255, 50, 1);">
-          [Gallery]
-        </a> &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="TODO" target="_blank" disabled>[Code]</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="TODO" target="_blank">[BibTeX]</a>
-      </p>
-    </font>
-  </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="TODO"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
 
-  <section class="content">
-          <h2>Abstract</h2>
-          <p>
-              We propose a novel unified framework capable of solving a broad range of 3D tasks. At the core of our approach is an online stateful recurrent model that continuously updates its state representation with each new observation. Given a stream of images, our method leverages the evolving state to generate metric-scale pointmaps for each input in an online manner. These pointmaps reside within a common coordinate system, accumulating into a coherent 3D scene reconstruction. Our model captures rich priors of real-world scenes: not only can it predict accurate pointmaps from image observations, but it can also infer unseen structures beyond the coverage of the input images through a raymap probe. Our method is simple yet highly flexible, naturally accepting varying lengths of image sequences and working seamlessly with both video streams and unordered photo collections. We evaluate our method on various 3D/4D tasks including monocular/video depth estimation, camera estimation, multi-view reconstruction, and achieve competitive or state-of-the-art performance. Additionally, we showcase intriguing behaviors enabled by our state representation.
-            </p>
+              <span class="link-block">
+<a href="#interactive" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" style="fill: #ffdf0f"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 0c-25.3 0-47.2 14.7-57.6 36c-7-2.6-14.5-4-22.4-4c-35.3 0-64 28.7-64 64V261.5l-2.7-2.7c-25-25-65.5-25-90.5 0s-25 65.5 0 90.5L106.5 437c48 48 113.1 75 181 75H296h8c1.5 0 3-.1 4.5-.4c91.7-6.2 165-79.4 171.1-171.1c.3-1.5 .4-3 .4-4.5V160c0-35.3-28.7-64-64-64c-5.5 0-10.9 .7-16 2V96c0-35.3-28.7-64-64-64c-7.9 0-15.4 1.4-22.4 4C303.2 14.7 281.3 0 256 0zM240 96.1c0 0 0-.1 0-.1V64c0-8.8 7.2-16 16-16s16 7.2 16 16V95.9c0 0 0 .1 0 .1V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96c0 0 0 0 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16v55.9c0 0 0 .1 0 .1v80c0 13.3 10.7 24 24 24s24-10.7 24-24V160.1c0 0 0-.1 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16V332.9c-.1 .6-.1 1.3-.2 1.9c-3.4 69.7-59.3 125.6-129 129c-.6 0-1.3 .1-1.9 .2H296h-8.5c-55.2 0-108.1-21.9-147.1-60.9L52.7 315.3c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L119 336.4c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V96c0-8.8 7.2-16 16-16c8.8 0 16 7.1 16 15.9V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96.1z"></path></svg>
+                  </span>
+		
+                  <span>Interactive Results</span>
+                </a>
+              </span>
+              <!-- Supp Link. -->
+              <span class="link-block">
+                <a href="gallery.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-images"></i> 
+                  </span>
+                  <span>Gallery</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark"  disabled>
+                  <span class="icon">
+                      <i class="fab fa-github"></i> 
+                  </span>
+                  <span>Check back later</span>
+                </a>
+              </span>
 
-      <!--/ Abstract. -->
-  </section>
-  <div class="content">
-    <a id="interactive"></a>
-    <h2>Interactive Results</h2>
-      <p style="font-weight: bold; text-align: center">
-        Click below to explore some example outputs!
-      </p>
-      <a
-        href="./interactive.html"
-        target="_blank"
-        style="position: relative; display: block; overflow: hidden"
-      >
-        <video
-          src="recordings/teaser.mp4"
-          style="opacity: 50%; display: block"
-          width="100%"
-          loop
-          autoplay
-          playsinline
-          muted
-          id="interactive-demo-video"
-        ></video>
-        <button
-          style="
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #8e2de2;
-            /* background: linear-gradient(to right, #8e2de2, #4a00e0); */
-            box-shadow: 0 0 2em 0 rgba(255, 255, 50, 1);
-            whitespace: nowrap;
-            width: 200px;
-            height: 50px;
-            color: white;
-            font-size: 16px;
-            border-radius: 25px; /* Rounded corners */
-            border: none; /* Removes any border */
-          "
-        >
-          <i class="ti ti-hand-click"></i>
-          Open Interactive Results
-        </button>
-      </a>
-      <script>
-        // Make this video play slower.
-        document.addEventListener("DOMContentLoaded", function () {
-          var video = document.getElementById("interactive-demo-video");
-          video.playbackRate = 0.6;
-        });
-      </script>
-  </div>
 
-  <div class="content">
-          <h2>More Results</h2>
-    <p> Our method works for both static and dynamic scenes. See more examples in our <a href="./gallery.html">gallery</a>.</p>
-    <div id="carousel-results" class="carousel">
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop class="video-content">
-          <source src="./static/videos/bike-packing_Free_1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop class="video-content">
-          <source src="./static/videos/breakdance-flare_Free_1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop class="video-content">
-          <source src="./static/videos/stunt_Free_1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop class="video-content">
-          <source src="./static/videos/bus_Free_1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop class="video-content">
-          <source src="./static/videos/camel_Free_1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop class="video-content">
-          <source src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
-        </video>
+
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="content">
-    <h2>Explainer Video</h2>
-    <video width="100%" controls>
-      <source src="./static/videos/explainer.mp4" type="video/mp4">
-    </video>
-  </div>
 
-  <br>
-
-  <div class="content">
-    <h2>BibTex</h2>
-    <font size="-0.">
-    <code style="background-color: #f4f4f4; color: #333; padding: 10px; display: block; overflow-x: auto;"> 
-      TODO
-    </code>
-  </font>
-  </div>
-
-  <div class="content" id="acknowledgements">
-    <h2>Acknowledgements</h2>
-    <p>
-      Anything
-    </p>
-  </div>
-
+<body>
 </body>
 </html>
