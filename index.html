@@ -384,6 +384,38 @@
 
 
 <section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Method Overview</h2>
+        </div>
+        <img src="./static/images/method1.png" alt="Reconstruction" class="blend-img-background center-image"/>
+        </div>
+        <p>
+        Given a sequence of images as input, our method performs online dense 3D reconstruction. 
+
+        At the core of our method is a state representation that keeps updating as each new observation comes in.
+
+        Given the current image, we first use a vit encoder to encode it into token representations.
+        The image tokens then interact with the state tokens through a joint process of state update and state readout. The final outputs from state readout are the pointmaps and camera parameters for the current observation. At the same time, the state update module incorporates the current observation to update the state.
+
+        We repeat the process for every image, and their outputs accumulate into dense scene reconstruction over time.
+        </p>
+
+        </div>
+        <img src="./static/images/method2.png" alt="Inference" class="blend-img-background center-image"/>
+        </div>
+        <p>
+        Not only can our method reconstructs the scene given image observations, it can also infer new structures unseen by the input images.
+        Given a query camera as shown as the blue camera, we use its raymap to query the current state  to read out its corresponding point map.
+        Adding this inferred point map to the existing reconstruction makes the reconstruction more complete.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
   <!-- <div class="columns is-centered has-text-centered">
     <div class="column is-half">
       <h2 class="title is-3">Explainer Video</h2>
