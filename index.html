@@ -107,11 +107,63 @@
   box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
 }
 
+.siframe-class {
+  display: flex;              /* Place images and iframe side by side */
+  align-items: stretch;    /* Align them at the top */
+  gap: 1em;                   /* Spacing between images and iframe */
+}
+
+/* Column of images on the left */
+.siframe-class .image-column {
+  display: flex;
+  flex-direction: column;
+  height: 27.5em; /* match the iframe’s height */
+}
+
+.siframe-class .image-column img {
+  flex: 1 1 0;            /* each image gets an equal share of the column */
+  width: 100%;       /* fill the column's width */
+  height: 100%;      /* fill the image slot's height */
+  object-fit: fill;  /* distort to fill exactly, ignoring aspect ratio */
+  display: block;
+}
+
+/* The iframe styles you provided */
+.siframe-class iframe { 
+  border-radius: 0.5em;
+  width: 27.5em;
+  height: 27.5em;
+  border: none;
+  box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 768px) {
   .vframe {
     width: 100%;
     height: 30em;
   }
+
+  .siframe-class {
+        flex-direction: column;   /* Stack everything vertically */
+        align-items: center;      /* Center them horizontally */
+      }
+  .siframe-class .image-column {
+    flex-direction: row;      /* Place images in a row instead of a column */
+    width: 100%;              /* Let it fill available width */
+    height: auto;            /* Remove fixed height to allow flex wrapping */
+    margin-bottom: 1em;       /* Give some spacing below the images */
+  }
+  .siframe-class .image-column img {
+    flex: 1 1 0;
+    width: 25%;
+    height: 100%;     
+    object-fit: fill;
+  }
+
+  .siframe-class iframe {
+        width: 100%;             /* Make the iframe take full width on mobile */
+        height: auto;            /* Let the height adjust (you could set a ratio) */
+      }
 }
 .load img {
   width: 100px;
@@ -384,11 +436,29 @@
             align-items: center;
             gap: 2em;
           ">
-        <iframe class="vframe"
-          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/static/recordings/seq_013_1_0.mp4&synchronizedVideoTimeOffset=0.0"></iframe>
-          <iframe class="vframe"
-          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/static/recordings/seqs_017_1_0.mp4&synchronizedVideoTimeOffset=0.0"></iframe>
+          <div class="siframe-class">
+            <div class="image-column">
+              <img src="./static/recordings/seq_013_0001.png" alt="Image 1">
+              <img src="./static/recordings/seq_013_0002.png" alt="Image 2">
+              <img src="./static/recordings/seq_013_0003.png" alt="Image 3">
+              <img src="./static/recordings/seq_013_0004.png" alt="Image 4">
+            </div>
+        <iframe
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">
+        </iframe>
         </div>
+        <div class="siframe-class">
+          <div class="image-column">
+            <img src="./static/recordings/seqs_017_0001.png" alt="Image 1">
+            <img src="./static/recordings/seqs_017_0002.png" alt="Image 2">
+            <img src="./static/recordings/seqs_017_0003.png" alt="Image 3">
+            <img src="./static/recordings/seqs_017_0004.png" alt="Image 4">
+          </div>
+      <iframe
+        src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">
+      </iframe>
+      </div>
+          </div>
 
         <div
         class="hide-on-touchscreens"
