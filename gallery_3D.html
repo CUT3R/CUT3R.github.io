@@ -61,6 +61,12 @@
         .final-element {
             white-space: nowrap;
         }
+        .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        column-gap: 1em; /* optional spacing between columns */
+      }
     </style>
 </head>
 
@@ -134,35 +140,6 @@
     if (document.location.search.match(/type=embed/gi)) {
       window.parent.postMessage("resize", "*");
     }
-
-/*
-const bucket = "https://storage.googleapis.com/gallery_videos/v0"
-
-async function listFolders() {
-    // Interacting with the google cloud storage APIS requires full on node installatiosn and such so meh, just parse the returned XML :) 
-    let xmlDoc = await fetch(bucket).then(response => response.text()).then(xmlString => {
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
-        return xmlDoc;
-    }).catch(error => {
-        console.error('Error:', error);
-    });
-    const contentsElements = xmlDoc.getElementsByTagName('Contents');
-    let nodeArray = [].slice.call(contentsElements);
-
-    function xmlToKey(folder) {
-        let key = folder.getElementsByTagName("Key")[0].textContent;
-        let parts = key.split("/");
-        return parts[0] + "/" + parts[1];
-    }
-
-    const keys = [...new Set(nodeArray.map(f => xmlToKey(f)))];
-    return keys.filter(f => f.includes(".mp4"))
-}   
-
-    let files = listFolders();
-    console.log(files)
-	console.log("hello")*/
   
     const shuffleArray = array => {
       for (let i = array.length - 1; i > 0; i--) {
