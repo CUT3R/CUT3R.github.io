@@ -32,7 +32,14 @@
 <meta name="twitter:image" content="https://tmpcut3r.github.io/static/images/icon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,600|Noto+Sans:400,600|Castoro:400,600"
         rel="stylesheet">
-
+    <link
+    href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons-outline.min.css"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
@@ -94,7 +101,7 @@
 }
 .vframe {
   border-radius: 0.5em;
-  width: 27.5em;
+  width: 30em;
   height: 27.5em;
   border: none;
   box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
@@ -260,28 +267,7 @@
     <!--/ Abstract. -->
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3" id="_interactive">3D Video Reconstruction</h2>
-        <div id="wrapper" style="
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2em;
-          ">
-        <iframe class="vframe"
-          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_1_021.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
-          <iframe class="vframe"
-          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
-      </div>
-        <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global optimization.</p>
-      </div>
-    </div>
-    </div><br>
-</section>
+
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -290,6 +276,7 @@
   <a id="_interactive"></a>
   <h2 class="title is-3">Interactive Results</h2>
     <p>
+      Our method can reconstruct 4D dynamic scene in a feed-forward, online manner without global optimization.
       Click below to explore our interactive results!
     </p>
     <br>
@@ -342,13 +329,92 @@
   </div><br>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="_interactive">3D Video Reconstruction</h2>
+        <div id="wrapper" style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+          ">
+        <iframe class="vframe"
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_1_021.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+          <iframe class="vframe"
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+        </div>
+
+        <div id="wrapper" style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+          ">
+        <iframe class="vframe"
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+          <iframe class="vframe"
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+        </div>
+
+        <div
+        class="hide-on-touchscreens"
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 1.5em;
+          padding-top: 0.5em;
+        "
+      >
+        <div>
+          <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
+          drag to rotate
+        </div>
+        <div>
+          <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
+          drag or
+          <strong>WASD</strong>
+          to move
+        </div>
+        <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+      </div>
+
+        <br>
+      <br>
+        <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global optimization.</p>
+      </div>
+    </div>
+    </div><br>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+  <h2 class="title is-3">Infer Unseen Structure</h2>
+    <p>
+      Given a camera query and the current reconstruction result, our method can infer the unseen structure from a novel viewpoint, outputting both a depth map and RGB image at the new view.
+    </p>
+    <br>
+    <video width="100%" controls>
+      <source src="./static/videos/unseen.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+  </div><br>
+</section>
 
 <section class="section has-carousel" id="carousel" style="padding: 0; margin: auto; ">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">More Results</h2>
+        <h2 class="title is-3">More Reconstruction Results</h2>
 	<p> Our method works for both static and dynamic scenes. See more examples in our <a href="./gallery.html">gallery</a>.</p>
 </div>
 </div>
