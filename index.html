@@ -108,31 +108,34 @@
 }
 
 .siframe-class {
-  display: flex;              /* Place images and iframe side by side */
-  align-items: stretch;    /* Align them at the top */
-  gap: 1em;                   /* Spacing between images and iframe */
+  display: flex;                    /* side by side layout */
+  flex-wrap: wrap;                  /* allows items to wrap if not enough space */
+  justify-content: center;          /* center items horizontally in the container */
+  gap: 1vw;                         /* dynamic spacing based on viewport width */
+  padding: 1vw;                     /* padding around the container */
 }
 
-/* Column of images on the left */
-.siframe-class .image-column {
-  display: flex;
-  flex-direction: column;
-  height: 27.5em; /* match the iframe’s height */
+.siframe-class .image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two flexible columns */
+  grid-template-rows: repeat(2, 1fr);    /* two flexible rows */
+  gap: 1vw;                               /* dynamic spacing between images */
+  width: 50vw;                            /* grid takes up half of the viewport width */
+  max-width: 384px;                       /* max width based on original image width */
 }
 
-.siframe-class .image-column img {
-  flex: 1 1 0;            /* each image gets an equal share of the column */
-  width: 100%;       /* fill the column's width */
-  height: 100%;      /* fill the image slot's height */
-  object-fit: fill;  /* distort to fill exactly, ignoring aspect ratio */
-  display: block;
+.siframe-class .image-grid img {
+  width: 100%;                            /* fill grid cell width */
+  height: auto;                           /* auto height to maintain aspect ratio */
+  object-fit: cover;                      /* cover to ensure full cell coverage */
 }
 
-/* The iframe styles you provided */
-.siframe-class iframe { 
+.siframe-class iframe {
   border-radius: 0.5em;
-  width: 27.5em;
-  height: 27.5em;
+  width: 50vw;                            /* half of the viewport width */
+  max-width: 384px;                       /* max width matches the original design */
+  height: auto;                           /* auto height to maintain aspect ratio */
+  aspect-ratio: 3 / 4;                    /* maintain a fixed aspect ratio */
   border: none;
   box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
 }
@@ -142,28 +145,6 @@
     width: 100%;
     height: 30em;
   }
-
-  .siframe-class {
-        flex-direction: column;   /* Stack everything vertically */
-        align-items: center;      /* Center them horizontally */
-      }
-  .siframe-class .image-column {
-    flex-direction: row;      /* Place images in a row instead of a column */
-    width: 100%;              /* Let it fill available width */
-    height: auto;            /* Remove fixed height to allow flex wrapping */
-    margin-bottom: 1em;       /* Give some spacing below the images */
-  }
-  .siframe-class .image-column img {
-    flex: 1 1 0;
-    width: 25%;
-    height: 100%;     
-    object-fit: fill;
-  }
-
-  .siframe-class iframe {
-        width: 100%;             /* Make the iframe take full width on mobile */
-        height: auto;            /* Let the height adjust (you could set a ratio) */
-      }
 }
 .load img {
   width: 100px;
@@ -286,8 +267,8 @@
   <div class="container fluid">
     <div class="hero-body is-max-widescreen">
       <center>
-      <video id="teaser" autoplay muted loop playsinline width="100%">
-        <source src="./static/videos/teaser.mp4" type="video/mp4">
+      <video id="teaser" autoplay muted loop playsinline width="100%" style="pointer-events: none;">
+        <source src="./static/videos/teaser_compressed.mp4" type="video/mp4">
       </video>
       </center>
 <div class="columns is-centered">
@@ -326,7 +307,8 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
   <a id="_interactive"></a>
-  <h2 class="title is-3">Interactive Results</h2>
+  <h2 class="title is-3">Interactive Reconstruction Results</h2>
+    <h3 class="title is-4">4D Reconstruction</h3>
     <p>
       Our method can reconstruct 4D dynamic scene in a feed-forward, online manner without global optimization.
       Click below to explore our interactive results!
@@ -379,19 +361,20 @@
     </div>
   </div>
   </div><br>
-</section>
 
-<section class="section">
+  <br>
+  <br>
+
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">3D Reconstruction</h2>
+        <h2 class="title is-4">3D Reconstruction</h2>
         
         <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global optimization, both from videos and sparse image collections.</p>
         <br>
       <br>
-      <h3 class="title is-4">Video Reconstruction</h3>
-        <!-- <div id="wrapper" style="
+      <h3 class="title is-5">Video Reconstruction</h3>
+        <div id="wrapper" style="
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -399,11 +382,14 @@
             gap: 2em;
           ">
         <iframe class="vframe"
-          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_025.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_025_d4.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
           <iframe class="vframe"
-          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
-        </div> -->
-
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_d4.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+        </div>
+        <br>
+        <div>
+          (Results are downsampled <strong>4 times</strong> for efficient online rendering)
+        </div>
         <div
         class="hide-on-touchscreens"
         style="
@@ -428,7 +414,7 @@
 
       <br>
       <br>
-      <h3 class="title is-4">Sparse Image Collection</h3>
+      <h3 class="title is-5">Sparse Image Collection</h3>
         <div id="wrapper" style="
             display: flex;
             flex-wrap: wrap;
@@ -437,7 +423,7 @@
             gap: 2em;
           ">
           <div class="siframe-class">
-            <div class="image-column">
+            <div class="image-grid">
               <img src="./static/recordings/seq_013_0001.png" alt="Image 1">
               <img src="./static/recordings/seq_013_0002.png" alt="Image 2">
               <img src="./static/recordings/seq_013_0003.png" alt="Image 3">
@@ -448,7 +434,7 @@
         </iframe>
         </div>
         <div class="siframe-class">
-          <div class="image-column">
+          <div class="image-grid">
             <img src="./static/recordings/seqs_017_0001.png" alt="Image 1">
             <img src="./static/recordings/seqs_017_0002.png" alt="Image 2">
             <img src="./static/recordings/seqs_017_0003.png" alt="Image 3">
@@ -459,7 +445,10 @@
       </iframe>
       </div>
           </div>
-
+          <br>
+        <div>
+          (Results are downsampled <strong>4 times</strong> for efficient online rendering)
+        </div>
         <div
         class="hide-on-touchscreens"
         style="
@@ -489,22 +478,7 @@
 
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-  <h2 class="title is-3">Infer Unseen Structure</h2>
-    <p>
-      Given a camera query and the current reconstruction result, our method can infer the unseen structure from a novel viewpoint, outputting both a depth map and RGB image at the new view.
-    </p>
-    <br>
-    <video width="100%" controls>
-      <source src="./static/videos/unseen.mp4" type="video/mp4">
-    </video>
-    </div>
-  </div>
-  </div><br>
-</section>
+
 
 <section class="section has-carousel" id="carousel" style="padding: 0; margin: auto; ">
   <div class="container is-max-desktop">
@@ -557,6 +531,22 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+  <h2 class="title is-3">Infer Unseen Structure</h2>
+    <p>
+      Given a camera query and the current reconstruction result, our method can infer the unseen structure from a novel viewpoint, outputting both a depth map and RGB image at the new view.
+    </p>
+    <br>
+    <video width="100%" controls>
+      <source src="./static/videos/unseen.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+  </div><br>
+</section>
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
