@@ -333,7 +333,12 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3" id="_interactive">3D Video Reconstruction</h2>
+        <h2 class="title is-3">3D Reconstruction</h2>
+        
+        <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global optimization, both from videos and sparse image collections.</p>
+        <br>
+      <br>
+      <h3 class="title is-4">Video Reconstruction</h3>
         <div id="wrapper" style="
             display: flex;
             flex-wrap: wrap;
@@ -347,6 +352,31 @@
           src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
         </div>
 
+        <div
+        class="hide-on-touchscreens"
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 1.5em;
+          padding-top: 0.5em;
+        "
+      >
+        <div>
+          <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
+          drag to rotate
+        </div>
+        <div>
+          <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
+          drag or
+          <strong>WASD</strong>
+          to move
+        </div>
+        <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+      </div>
+
+      <br>
+      <br>
+      <h3 class="title is-4">Sparse Image Collection</h3>
         <div id="wrapper" style="
             display: flex;
             flex-wrap: wrap;
@@ -382,9 +412,6 @@
         <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
       </div>
 
-        <br>
-      <br>
-        <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global optimization.</p>
       </div>
     </div>
     </div><br>
