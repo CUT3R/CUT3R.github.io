@@ -616,6 +616,7 @@ model-viewer {
        * copy its camera to model2 (if we're not already syncing).
        */
       model1.addEventListener('camera-change-finished', () => {
+        console.log("Sync model2");
         if (!syncing) {
           syncing = true;
           copyCameraSettings(model1, model2);
@@ -631,6 +632,7 @@ model-viewer {
        * copy its camera to model1.
        */
       model2.addEventListener('camera-change-finished', () => {
+        console.log("Sync model1");
         if (!syncing) {
           syncing = true;
           copyCameraSettings(model2, model1);
