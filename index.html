@@ -578,6 +578,17 @@ model-viewer {
       </div>
         <br>
         <br>
+        
+        
+        <h3><strong>Input Images</strong></h3>
+        <div id="state-analysis-input" class="carousel">
+            <img src="./static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+            <img src="./static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+            <img src="./static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        </div>
+        
+        <br>
+        <br>
         <div id="wrapper" style="
         display: flex;
         flex-wrap: wrap;
@@ -606,8 +617,8 @@ model-viewer {
     </div>
     <script>
       // Grab references to both <model-viewer> elements
-      const model1 = document.getElementById('revisit1');
-      const model2 = document.getElementById('revisit2');
+      const model1 = document.getElementById('#revisit1');
+      const model2 = document.getElementById('#revisit2');
     
       let syncing = false; // Flag to prevent infinite loops
     
@@ -690,7 +701,17 @@ model-viewer {
 </div><br>
 </section>
 
+<script>
+  $(window).on('load', function () {
+      bulmaCarousel.attach('#state-analysis-input', {
+          slidesToScroll: 1,
+          slidesToShow: 1,
+          loop: false,
+          autoplay: false,
+      });
 
+  });
+</script>
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
