@@ -177,8 +177,16 @@ const results = [
       const iframe = createIframe(Array.isArray(src) ? src.join("") : src);
       wrapper.appendChild(iframe);
     }
+
+    function hideIframe() {
+        const wrapper = resultsElement.querySelector(".iframe-wrapper");
+        wrapper.innerHTML = ""; // Remove iframe from DOM
+    }
   
     function updateSelection(index) {
+      // if (currentIndex !== index) {
+      //     hideIframe(); // Hide previous iframe
+      // }
       currentIndex = index;
       resultsThumbnails
         .querySelectorAll("a")
