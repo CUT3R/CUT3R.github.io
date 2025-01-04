@@ -542,6 +542,63 @@
 </section>
 
 <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">State Analysis</h2>
+        <p>
+          Our model continuously updates
+ its state representation as new data arrives. As more observations accumulate, the state should
+ be able to refine its understanding of the 3D world, leading
+ to improved predictions. Compared to online, revisiting
+ incorporates global context which improves overall reconstruction
+ results, especially in the highlighted regions.
+        </p>
+
+        <div id="wrapper" style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+      ">
+    <iframe class="vframe"
+      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+      <iframe class="vframe"
+      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+    </div>
+    <br>
+    <div>
+      (Results are downsampled <strong>4 times</strong> for efficient online rendering)
+    </div>
+    <div
+    class="hide-on-touchscreens"
+    style="
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      padding-top: 0.5em;
+    "
+  >
+    <div>
+      <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
+      drag to rotate
+    </div>
+    <div>
+      <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
+      drag or
+      <strong>WASD</strong>
+      to move
+    </div>
+    <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+  </div>
+        
+</div>
+</div>
+</div><br>
+</section>
+
+<section class="section">
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
       <h2 class="title is-3">Method Overview</h2>
