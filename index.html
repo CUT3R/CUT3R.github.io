@@ -604,6 +604,59 @@ model-viewer {
     </model-viewer>
     </div>
     </div>
+    <script>
+      // Grab references to both <model-viewer> elements
+      const model1 = document.getElementById('revisit1');
+      const model2 = document.getElementById('revisit2');
+    
+      let syncing = false; // Flag to prevent infinite loops
+    
+      /**
+       * When camera movement finishes in model1,
+       * copy its camera to model2 (if we're not already syncing).
+       */
+      model1.addEventListener('camera-change-finished', () => {
+        if (!syncing) {
+          syncing = true;
+          copyCameraSettings(model1, model2);
+          // Use requestAnimationFrame to delay resetting the flag slightly
+          requestAnimationFrame(() => {
+            syncing = false;
+          });
+        }
+      });
+    
+      /**
+       * Likewise, when camera movement finishes in model2,
+       * copy its camera to model1.
+       */
+      model2.addEventListener('camera-change-finished', () => {
+        if (!syncing) {
+          syncing = true;
+          copyCameraSettings(model2, model1);
+          requestAnimationFrame(() => {
+            syncing = false;
+          });
+        }
+      });
+    
+      /**
+       * Copies the camera orbit and field of view from sourceModel to targetModel
+       * without forcing a new animation loop. 
+       */
+      function copyCameraSettings(sourceModel, targetModel) {
+        // Get current camera orbit and FOV from the source
+        const orbit = sourceModel.getCameraOrbit();
+        const fieldOfView = sourceModel.getFieldOfView();
+    
+        // Apply them to the target
+        targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
+        targetModel.fieldOfView = `${fieldOfView}deg`;
+        
+        // Optional: If you want an immediate snap to that camera position (no transition):
+        // targetModel.jumpCameraToGoal();
+      }
+    </script>
     <br>
     <div>
       (Results are downsampled <strong>4 times</strong> for efficient online rendering)
@@ -635,59 +688,7 @@ model-viewer {
 </div><br>
 </section>
 
-<script>
-  // Grab references to both <model-viewer> elements
-  const model1 = document.getElementById('revisit1');
-  const model2 = document.getElementById('revisit2');
 
-  let syncing = false; // Flag to prevent infinite loops
-
-  /**
-   * When camera movement finishes in model1,
-   * copy its camera to model2 (if we're not already syncing).
-   */
-  model1.addEventListener('camera-change-finished', () => {
-    if (!syncing) {
-      syncing = true;
-      copyCameraSettings(model1, model2);
-      // Use requestAnimationFrame to delay resetting the flag slightly
-      requestAnimationFrame(() => {
-        syncing = false;
-      });
-    }
-  });
-
-  /**
-   * Likewise, when camera movement finishes in model2,
-   * copy its camera to model1.
-   */
-  model2.addEventListener('camera-change-finished', () => {
-    if (!syncing) {
-      syncing = true;
-      copyCameraSettings(model2, model1);
-      requestAnimationFrame(() => {
-        syncing = false;
-      });
-    }
-  });
-
-  /**
-   * Copies the camera orbit and field of view from sourceModel to targetModel
-   * without forcing a new animation loop. 
-   */
-  function copyCameraSettings(sourceModel, targetModel) {
-    // Get current camera orbit and FOV from the source
-    const orbit = sourceModel.getCameraOrbit();
-    const fieldOfView = sourceModel.getFieldOfView();
-
-    // Apply them to the target
-    targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
-    targetModel.fieldOfView = `${fieldOfView}deg`;
-    
-    // Optional: If you want an immediate snap to that camera position (no transition):
-    // targetModel.jumpCameraToGoal();
-  }
-</script>
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
