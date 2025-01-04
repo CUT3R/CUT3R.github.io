@@ -546,6 +546,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">State Analysis</h2>
+        <div class="columns is-centered has-text-justified">
         <p>
           Our model continuously updates
  its state representation as new data arrives. As more observations accumulate, the state should
@@ -553,8 +554,14 @@
  to improved predictions. Compared to online, revisiting
  incorporates global context which improves overall reconstruction
  results, especially in the highlighted regions.
-        </p>
 
+          We demonstrate this capability of our method below.
+          we feed the observations twice, allowing the state to keep updating in the second pass, 
+          and report the reconstruction results <strong>before and after</strong> the revisiting process.
+        </p>
+      </div>
+        <br>
+        <br>
         <div id="wrapper" style="
         display: flex;
         flex-wrap: wrap;
@@ -562,10 +569,18 @@
         align-items: center;
         gap: 2em;
       ">
+      <div>
+        <h3><strong>Before Revisiting</strong></h3>
+        <br>
     <iframe class="vframe"
-      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5"></iframe>
+    </div>
+    <div>
+      <h3><strong>After Revisiting</strong></h3>
+      <br>
       <iframe class="vframe"
-      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"></iframe>
+      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5"></iframe>
+    </div>
     </div>
     <br>
     <div>
