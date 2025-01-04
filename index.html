@@ -617,56 +617,74 @@ model-viewer {
     </div>
     <script>
       // Grab references to both <model-viewer> elements
-      const model1 = document.getElementById('#revisit1');
-      const model2 = document.getElementById('#revisit2');
-    
-      let syncing = false; // Flag to prevent infinite loops
-    
+      const model1 = document.getElementById('model1');
+      const model2 = document.getElementById('model2');
+  
+      // This flag prevents us from triggering a sync loop
+      let syncing = false;
+  
+      // We'll use these variables to store the timeout IDs for debouncing
+      let syncTimeout1 = null;
+      let syncTimeout2 = null;
+  
+      // How long to wait (in ms) after the user stops moving the camera
+      // before we sync to the other model
+      const SYNC_DELAY_MS = 100;
+  
       /**
-       * When camera movement finishes in model1,
-       * copy its camera to model2 (if we're not already syncing).
+       * Whenever model1's camera changes, wait briefly to see if the user
+       * continues moving the camera. If they don't, sync model1's camera to model2.
        */
-      model1.addEventListener('camera-change-finished', () => {
-        console.log("Sync model2");
+      model1.addEventListener('camera-change', () => {
         if (!syncing) {
-          syncing = true;
-          copyCameraSettings(model1, model2);
-          // Use requestAnimationFrame to delay resetting the flag slightly
-          requestAnimationFrame(() => {
-            syncing = false;
-          });
+          // Clear any pending sync timeouts for model1
+          if (syncTimeout1) {
+            clearTimeout(syncTimeout1);
+          }
+          // Set a new timeout
+          syncTimeout1 = setTimeout(() => {
+            syncing = true;
+            copyCameraSettings(model1, model2);
+            // Use requestAnimationFrame to delay resetting the flag slightly
+            requestAnimationFrame(() => {
+              syncing = false;
+            });
+          }, SYNC_DELAY_MS);
         }
       });
-    
+  
       /**
-       * Likewise, when camera movement finishes in model2,
-       * copy its camera to model1.
+       * Whenever model2's camera changes, do the same but in reverse.
        */
-      model2.addEventListener('camera-change-finished', () => {
-        console.log("Sync model1");
+      model2.addEventListener('camera-change', () => {
         if (!syncing) {
-          syncing = true;
-          copyCameraSettings(model2, model1);
-          requestAnimationFrame(() => {
-            syncing = false;
-          });
+          if (syncTimeout2) {
+            clearTimeout(syncTimeout2);
+          }
+          syncTimeout2 = setTimeout(() => {
+            syncing = true;
+            copyCameraSettings(model2, model1);
+            requestAnimationFrame(() => {
+              syncing = false;
+            });
+          }, SYNC_DELAY_MS);
         }
       });
-    
+  
       /**
-       * Copies the camera orbit and field of view from sourceModel to targetModel
-       * without forcing a new animation loop. 
+       * Copies the camera orbit and field of view from sourceModel to targetModel.
+       * This function does NOT trigger a new animation loop automatically.
        */
       function copyCameraSettings(sourceModel, targetModel) {
         // Get current camera orbit and FOV from the source
-        const orbit = sourceModel.getCameraOrbit();
-        const fieldOfView = sourceModel.getFieldOfView();
-    
-        // Apply them to the target
+        const orbit = sourceModel.getCameraOrbit();    // returns {theta, phi, radius}
+        const fieldOfView = sourceModel.getFieldOfView(); // returns a number in degrees
+  
+        // Apply them to the target (in the correct format)
         targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
         targetModel.fieldOfView = `${fieldOfView}deg`;
-        
-        // Optional: If you want an immediate snap to that camera position (no transition):
+  
+        // If you want an immediate snap to that camera position (no transition), uncomment:
         // targetModel.jumpCameraToGoal();
       }
     </script>
