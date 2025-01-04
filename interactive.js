@@ -184,16 +184,16 @@ const results = [
     }
   
     function updateSelection(index) {
-      // if (currentIndex !== index) {
-      //     hideIframe(); // Hide previous iframe
-      // }
+      if (currentIndex !== index) {
+          hideIframe(); // Hide previous iframe
+      }
       currentIndex = index;
       resultsThumbnails
         .querySelectorAll("a")
         .forEach((a, i) =>
           a.setAttribute("data-selected", i === index ? "true" : "false"),
         );
-      showIframe(results[index][1]);
+      
       const selectedThumbnail = resultsThumbnails.children[index];
   
       // Scroll the selected thumbnail into view
@@ -211,6 +211,8 @@ const results = [
       const currentPath = window.location.pathname;
       const newUrl = `${currentPath}?result=${resultName}`;
       history.pushState(null, "", newUrl);
+
+      showIframe(results[index][1]);
     }
   
     results.forEach(([label, src, thumbnail], index) => {
