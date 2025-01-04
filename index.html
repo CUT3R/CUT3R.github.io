@@ -782,6 +782,195 @@ model-viewer {
     </div>
     <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
   </div>
+
+
+
+  <h3><strong>Input Images</strong></h3>
+  <div id="state-analysis-input-2" class="carousel">
+    <div class="item">
+      <img src="./static/glbs2/frame0235.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0215.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0195.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0175.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0155.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0135.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0115.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0095.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0075.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0055.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0035.png" alt="MY ALT TEXT"/>
+    </div>
+    <div class="item">
+      <img src="./static/glbs2/frame0015.png" alt="MY ALT TEXT"/>
+    </div>
+  </div>
+  <script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#state-analysis-input-2', {
+            slidesToScroll: 5,
+            slidesToShow: 5,
+            loop: false,
+            autoplay: false,
+        });
+  
+    });
+  </script>
+  
+  <br>
+  <br>
+  <div id="wrapper" style="
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+">
+<div>
+  <h3><strong>Streaming (1st visit)</strong></h3>
+  <br>
+<!-- <iframe class="vframe"
+src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+</iframe> -->
+<model-viewer id="model3" src="./static/glbs2/revisit-0.glb" alt="Streaming (1st visit)" camera-controls interaction-prompt="none">
+</model-viewer>
+</div>
+<div>
+<h3><strong>Revisiting (2nd visit)</strong></h3>
+<br>
+<!-- <iframe class="vframe"
+src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+</iframe> -->
+<model-viewer id="model4" src="./static/glbs2/revisit-1.glb" alt="Revisiting (2nd visit)" camera-controls interaction-prompt="none">
+</model-viewer>
+</div>
+</div>
+<script>
+  // Grab references to both <model-viewer> elements
+  const model3 = document.getElementById('model3');
+  const model4 = document.getElementById('model4');
+
+  // This flag prevents us from triggering a sync loop
+  let syncing2 = false;
+
+  // We'll use these variables to store the timeout IDs for debouncing
+  let syncTimeout12 = null;
+  let syncTimeout22 = null;
+
+  // How long to wait (in ms) after the user stops moving the camera
+  // before we sync to the other model
+  const SYNC_DELAY_MS2 = 100;
+
+  /**
+   * Whenever model1's camera changes, wait briefly to see if the user
+   * continues moving the camera. If they don't, sync model1's camera to model2.
+   */
+  model3.addEventListener('camera-change', () => {
+    if (!syncing2) {
+      // Clear any pending sync timeouts for model1
+      if (syncTimeout12) {
+        clearTimeout(syncTimeout12);
+      }
+      // Set a new timeout
+      syncTimeout12 = setTimeout(() => {
+        syncing2 = true;
+        copyCameraSettings(model3, model4);
+        // Use requestAnimationFrame to delay resetting the flag slightly
+        requestAnimationFrame(() => {
+          syncing2 = false;
+        });
+      }, SYNC_DELAY_MS2);
+    }
+  });
+
+  /**
+   * Whenever model2's camera changes, do the same but in reverse.
+   */
+  model4.addEventListener('camera-change', () => {
+    if (!syncing2) {
+      if (syncTimeout22) {
+        clearTimeout(syncTimeout22);
+      }
+      syncTimeout22 = setTimeout(() => {
+        syncing2 = true;
+        copyCameraSettings(model4, model3);
+        requestAnimationFrame(() => {
+          syncing2 = false;
+        });
+      }, SYNC_DELAY_MS2);
+    }
+  });
+
+  /**
+   * Copies the camera orbit and field of view from sourceModel to targetModel.
+   * This function does NOT trigger a new animation loop automatically.
+   */
+  function copyCameraSettings(sourceModel, targetModel) {
+    // Get current camera orbit and FOV from the source
+    const orbit = sourceModel.getCameraOrbit();    // returns {theta, phi, radius}
+    const fieldOfView = sourceModel.getFieldOfView(); // returns a number in degrees
+
+    // Apply them to the target (in the correct format)
+    targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
+    targetModel.fieldOfView = `${fieldOfView}deg`;
+
+    // If you want an immediate snap to that camera position (no transition), uncomment:
+    // targetModel.jumpCameraToGoal();
+  }
+</script>
+<br>
+<div>
+(Results are downsampled <strong>4 times</strong> for efficient online rendering)
+</div>
+<div
+class="hide-on-touchscreens"
+style="
+display: flex;
+justify-content: center;
+gap: 1.5em;
+padding-top: 0.5em;
+"
+>
+<div>
+<i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
+drag to rotate
+</div>
+<div>
+<i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
+drag or
+<strong>WASD</strong>
+to move
+</div>
+<div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+</div>
+
+
+
+
+
+
+
+
+
         
 </div>
 </div>
