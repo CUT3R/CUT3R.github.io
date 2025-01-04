@@ -50,6 +50,9 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@latest/dist/model-viewer.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -570,17 +573,21 @@
         gap: 2em;
       ">
       <div>
-        <h3><strong>Before Revisiting</strong></h3>
+        <h3><strong>Streaming (1st visit)</strong></h3>
         <br>
-    <iframe class="vframe"
-      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5"></iframe>
+    <!-- <iframe class="vframe"
+      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+    </iframe> -->
+    <model-viewer src="./static/glbs/revisit-0.glb" alt="Streaming (1st visit)" auto-rotate camera-controls ar>
+    </model-viewer>
     </div>
-    <div>
-      <h3><strong>After Revisiting</strong></h3>
+    <!-- <div>
+      <h3><strong>Revisiting (2nd visit)</strong></h3>
       <br>
       <iframe class="vframe"
-      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5"></iframe>
-    </div>
+      src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+    </iframe>
+    </div> -->
     </div>
     <br>
     <div>

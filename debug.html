@@ -1,59 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Test .siframe-class</title>
-  <style>
-.siframe-class {
-  display: flex;                    /* side by side layout */
-  flex-wrap: wrap;                  /* allows items to wrap if not enough space */
-  justify-content: center;          /* center items horizontally in the container */
-  gap: 1vw;                         /* dynamic spacing based on viewport width */
-  padding: 1vw;                     /* padding around the container */
-}
-
-.siframe-class .image-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* two flexible columns */
-  grid-template-rows: repeat(2, 1fr);    /* two flexible rows */
-  gap: 1vw;                               /* dynamic spacing between images */
-  width: 50vw;                            /* grid takes up half of the viewport width */
-  max-width: 384px;                       /* max width based on original image width */
-}
-
-.siframe-class .image-grid img {
-  width: 100%;                            /* fill grid cell width */
-  height: auto;                           /* auto height to maintain aspect ratio */
-  object-fit: cover;                      /* cover to ensure full cell coverage */
-}
-
-.siframe-class iframe {
-  border-radius: 0.5em;
-  width: 50vw;                            /* half of the viewport width */
-  max-width: 384px;                       /* max width matches the original design */
-  height: auto;                           /* auto height to maintain aspect ratio */
-  aspect-ratio: 3 / 4;                    /* maintain a fixed aspect ratio */
-  border: none;
-  box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
-}
-
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Viewer Example</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
-
-  <div class="siframe-class">
-    <div class="image-grid">
-      <!-- Use any images you like; these placeholders are for example -->
-      <img src="./static/recordings/seqs_017_0001.png" alt="Image 1">
-      <img src="./static/recordings/seqs_017_0002.png" alt="Image 2">
-      <img src="./static/recordings/seqs_017_0003.png" alt="Image 3">
-      <img src="./static/recordings/seqs_017_0004.png" alt="Image 4">
-    </div>
-
-    <!-- iFrame on the right -->
-    <iframe src="about:blank"></iframe>
-  </div>
-
+  <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="./static/glbs/Astronaut.glb" ar shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
 </body>
 </html>
