@@ -635,38 +635,59 @@ model-viewer {
 </div><br>
 </section>
 
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', function () {
+<script>
+  // Grab references to both <model-viewer> elements
   const model1 = document.getElementById('revisit1');
   const model2 = document.getElementById('revisit2');
 
-  let syncing = false;
+  let syncing = false; // Flag to prevent infinite loops
 
-  model1.addEventListener('camera-change', () => {
+  /**
+   * When camera movement finishes in model1,
+   * copy its camera to model2 (if we're not already syncing).
+   */
+  model1.addEventListener('camera-change-finished', () => {
     if (!syncing) {
-      syncing = true; // Prevent infinite loop
+      syncing = true;
       copyCameraSettings(model1, model2);
-      syncing = false;
+      // Use requestAnimationFrame to delay resetting the flag slightly
+      requestAnimationFrame(() => {
+        syncing = false;
+      });
     }
   });
 
-  model2.addEventListener('camera-change', () => {
+  /**
+   * Likewise, when camera movement finishes in model2,
+   * copy its camera to model1.
+   */
+  model2.addEventListener('camera-change-finished', () => {
     if (!syncing) {
-      syncing = true; // Prevent infinite loop
+      syncing = true;
       copyCameraSettings(model2, model1);
-      syncing = false;
+      requestAnimationFrame(() => {
+        syncing = false;
+      });
     }
   });
 
+  /**
+   * Copies the camera orbit and field of view from sourceModel to targetModel
+   * without forcing a new animation loop. 
+   */
   function copyCameraSettings(sourceModel, targetModel) {
+    // Get current camera orbit and FOV from the source
     const orbit = sourceModel.getCameraOrbit();
     const fieldOfView = sourceModel.getFieldOfView();
-    targetModel.cameraOrbit = orbit;
-    targetModel.fieldOfView = fieldOfView;
-    targetModel.jumpCameraToGoal();
+
+    // Apply them to the target
+    targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
+    targetModel.fieldOfView = `${fieldOfView}deg`;
+    
+    // Optional: If you want an immediate snap to that camera position (no transition):
+    // targetModel.jumpCameraToGoal();
   }
-});
-</script> -->
+</script>
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
