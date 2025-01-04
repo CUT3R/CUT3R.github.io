@@ -591,7 +591,7 @@ model-viewer {
     <!-- <iframe class="vframe"
       src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
     </iframe> -->
-    <model-viewer id="model1" src="./static/glbs/revisit-0.glb" alt="Streaming (1st visit)" auto-rotate camera-controls ar>
+    <model-viewer id="revisit1" src="./static/glbs/revisit-0.glb" alt="Streaming (1st visit)" auto-rotate camera-controls ar>
     </model-viewer>
     </div>
     <div>
@@ -600,7 +600,7 @@ model-viewer {
       <!-- <iframe class="vframe"
       src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
     </iframe> -->
-    <model-viewer id="model2" src="./static/glbs/revisit-1.glb" alt="Revisiting (2nd visit)" auto-rotate camera-controls ar>
+    <model-viewer id="revisit2" src="./static/glbs/revisit-1.glb" alt="Revisiting (2nd visit)" auto-rotate camera-controls ar>
     </model-viewer>
     </div>
     </div>
@@ -637,8 +637,8 @@ model-viewer {
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-  const model1 = document.getElementById('model1');
-  const model2 = document.getElementById('model2');
+  const model1 = document.getElementById('revisit1');
+  const model2 = document.getElementById('revisit2');
 
   let syncing = false;
 
