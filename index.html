@@ -57,6 +57,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/lazy.js"></script>
 <style>
 .center-image {
   display: block;
@@ -223,6 +224,8 @@ model-viewer {
             <span class="author-block"><sup>1</sup>UC Berkeley </span>
             &nbsp&nbsp&nbsp&nbsp
             <span class="author-block"><sup>2</sup>Google DeepMind </span>
+            <br>
+            <span class="author-block">(*: equal contribution)</span>
           </div>
 
     
@@ -511,18 +514,18 @@ model-viewer {
 <div id="carousel-results" class="carousel">
     <div class="item item-vid5">
       <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-        <source src="./static/videos/bike-packing_Free_1_compressed.mp4" type="video/mp4">
+        <source data-src="./static/videos/bike-packing_Free_1_compressed.mp4" type="video/mp4">
       </video>
     </div>
     <div class="item item-vid5">
       <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-        <source src="./static/videos/breakdance-flare_Free_1_compressed.mp4" type="video/mp4">
+        <source data-src="./static/videos/breakdance-flare_Free_1_compressed.mp4" type="video/mp4">
       </video>
     </div>
     
     <div class="item item-vid5">
       <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-        <source src="./static/videos/stunt_Free_1_compressed.mp4" type="video/mp4">
+        <source data-src="./static/videos/stunt_Free_1_compressed.mp4" type="video/mp4">
       </video>
     </div>
     <!-- <div class="item item-vid5">
@@ -532,12 +535,12 @@ model-viewer {
     </div> -->
     <div class="item item-vid5">
       <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-        <source src="./static/videos/camel_Free_1.mp4" type="video/mp4">
+        <source data-src="./static/videos/camel_Free_1.mp4" type="video/mp4">
       </video>
     </div>
     <div class="item item-vid5">
       <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-        <source src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
+        <source data-src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
       </video>
     </div>
   </div>
