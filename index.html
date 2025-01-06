@@ -137,7 +137,7 @@ model-viewer {
   grid-template-columns: repeat(2, 1fr); /* two flexible columns */
   grid-template-rows: repeat(2, 1fr);    /* two flexible rows */
   gap: 1vw;                               /* dynamic spacing between images */
-  flex: 1 1 40%;                            /* grid takes up half of the viewport width */
+  flex: 1 0 40%;                            /* grid takes up half of the viewport width */
   max-width: 384px;                       /* max width based on original image width */
 }
 
@@ -148,7 +148,7 @@ model-viewer {
 }
 
 .siframe-class iframe {
-  flex: 1 1 60%;
+  flex: 1 0 60%;
   border-radius: 0.5em;
   max-width: 640px;                       /* max width matches the original design */
   height: auto;                           /* auto height to maintain aspect ratio */
