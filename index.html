@@ -125,10 +125,11 @@ model-viewer {
 
 .siframe-class {
   display: flex;                    /* side by side layout */
-  flex-wrap: wrap;                  /* allows items to wrap if not enough space */
+  flex-wrap: nowrap;                  /* allows items to wrap if not enough space */
   justify-content: center;          /* center items horizontally in the container */
   gap: 1vw;                         /* dynamic spacing based on viewport width */
   padding: 1vw;                     /* padding around the container */
+  align-items: start;
 }
 
 .siframe-class .image-grid {
@@ -136,7 +137,7 @@ model-viewer {
   grid-template-columns: repeat(2, 1fr); /* two flexible columns */
   grid-template-rows: repeat(2, 1fr);    /* two flexible rows */
   gap: 1vw;                               /* dynamic spacing between images */
-  width: 50vw;                            /* grid takes up half of the viewport width */
+  flex: 1 1 40%;                            /* grid takes up half of the viewport width */
   max-width: 384px;                       /* max width based on original image width */
 }
 
@@ -147,8 +148,8 @@ model-viewer {
 }
 
 .siframe-class iframe {
+  flex: 1 1 60%;
   border-radius: 0.5em;
-  width: 50vw;                            /* half of the viewport width */
   max-width: 640px;                       /* max width matches the original design */
   height: auto;                           /* auto height to maintain aspect ratio */
   aspect-ratio: 5 / 4;                    /* maintain a fixed aspect ratio */
@@ -440,7 +441,7 @@ model-viewer {
       <br>
       <h3 class="title is-5">Sparse Image Collection</h3>
         <div id="wrapper" style="
-            display: flex;
+      
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
