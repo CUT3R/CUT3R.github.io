@@ -115,10 +115,12 @@
 
 model-viewer {
   border-radius: 0.5em;
-      width: 32em; 
-      height: 27.5em; 
-      border: none;
-      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 32em; 
+  height: auto;
+  aspect-ratio: 32 / 27.5;
+  border: none;
+  box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
   }
 
 .siframe-class {
@@ -161,8 +163,8 @@ model-viewer {
   }
 
   model-viewer {
-    width: 100%;
-    height: 30em;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 .load img {
