@@ -334,46 +334,8 @@ model-viewer {
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
   <a id="_interactive"></a>
-  <h2 class="title is-3">Results</h2>
+  <h2 class="title is-3">Interactive Reconstruction Results</h2>
     <h3 class="title is-4">4D Reconstruction</h3>
-        <div id="wrapper" style="
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2em;
-          ">
-        <iframe class="vframe"
-          src="https://tmpcut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0" loading="lazy"></iframe>
-          <iframe class="vframe"
-          src="https://tmpcut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0" loading="lazy"></iframe>
-        </div>
-        <br>
-        <!-- <div>
-          (Results are downsampled for efficient online rendering)
-        </div> -->
-        <div
-        class="hide-on-touchscreens"
-        style="
-          display: flex;
-          justify-content: center;
-          gap: 1.5em;
-          padding-top: 0.5em;
-        "
-      >
-        <div>
-          <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
-          drag to rotate
-        </div>
-        <div>
-          <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
-          drag or
-          <strong>WASD</strong>
-          to move
-        </div>
-        <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
-      </div>
-      <br>
     <p>
       Our method can reconstruct 4D dynamic scene in a feed-forward, online manner without global optimization.
       Click below to explore our interactive results!
@@ -427,65 +389,6 @@ model-viewer {
     </div>
   </div>
   </div><br>
-
-  <section class="section has-carousel" id="carousel" style="padding: 0; margin: auto; ">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h3 class="title is-5">More 4D Reconstruction Results</h3>
-    <p> See more examples in our <a href="./gallery.html">gallery</a>.</p>
-  </div>
-  </div>
-  </div>
-  <div id="carousel-results" class="carousel">
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-          <source data-src="./static/videos/bike-packing_Free_1_compressed.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-          <source data-src="./static/videos/breakdance-flare_Free_1_compressed.mp4" type="video/mp4">
-        </video>
-      </div>
-      
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-          <source data-src="./static/videos/stunt_Free_1_compressed.mp4" type="video/mp4">
-        </video>
-      </div>
-      <!-- <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="288px">
-          <source src="./static/videos/bus_Free_1.mp4" type="video/mp4">
-        </video>
-      </div> -->
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-          <source data-src="./static/videos/camel_Free_1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="item item-vid5">
-        <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-          <source data-src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-    <script>
-      $(window).on('load', function () {
-          bulmaCarousel.attach('#carousel-results', {
-            slidesToScroll: 3,
-            slidesToShow: 3,
-            loop: true,
-            infinite: true,
-            initialSlide: 2,
-            autoplay: false,
-            autoplaySpeed: 3000,
-            pagination: false,
-          });
-    
-      });
-    </script>
-  </section>
 
   <br>
   <br>
@@ -602,19 +505,67 @@ model-viewer {
 </section>
 
 
+
+
+
 <section class="section has-carousel" id="carousel" style="padding: 0; margin: auto; ">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h3 class="title is-5">More 3D Reconstruction Results</h3>
-  <p> See more examples in our <a href="./gallery_3D.html">gallery</a>.</p>
+        <h2 class="title is-3">More Reconstruction Results</h2>
+	<p> Our method works for both static and dynamic scenes. See more examples in our <a href="./gallery.html">gallery</a>.</p>
 </div>
 </div>
 </div>
+<div id="carousel-results" class="carousel">
+    <div class="item item-vid5">
+      <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
+        <source data-src="./static/videos/bike-packing_Free_1_compressed.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="item item-vid5">
+      <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
+        <source data-src="./static/videos/breakdance-flare_Free_1_compressed.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <div class="item item-vid5">
+      <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
+        <source data-src="./static/videos/stunt_Free_1_compressed.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- <div class="item item-vid5">
+      <video poster="" id="" autoplay playsinline muted loop height="288px">
+        <source src="./static/videos/bus_Free_1.mp4" type="video/mp4">
+      </video>
+    </div> -->
+    <div class="item item-vid5">
+      <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
+        <source data-src="./static/videos/camel_Free_1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="item item-vid5">
+      <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
+        <source data-src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#carousel-results', {
+          slidesToScroll: 3,
+          slidesToShow: 3,
+          loop: true,
+          infinite: true,
+          initialSlide: 2,
+          autoplay: false,
+          autoplaySpeed: 3000,
+          pagination: false,
+        });
+  
+    });
+  </script>
 </section>
-
-
-
 
 <section class="section">
   <div class="container is-max-desktop">
