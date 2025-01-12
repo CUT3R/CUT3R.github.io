@@ -218,12 +218,9 @@
             text-align: left;
         }
 
-        /* nav {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
+        nav {
             text-align: center;
-        } */
+        }
 
         nav ul {
             list-style: none;
@@ -231,16 +228,25 @@
             margin: 20px auto;
             display: flex;
             justify-content: center;
+            align-items: stretch;
+            width: 100%;
             gap: 10px;
             /* Add spacing between buttons */
         }
 
         nav ul li {
-            display: inline;
+            flex: 1; /* Distribute space evenly */
+    display: flex; /* Make li use flex to inherit stretching behavior */
+    margin: 0; /* Remove any default margin */
         }
 
         nav ul li a {
-            display: inline-block;
+            display: flex;
+            /* Changed from inline-block to flex to allow centering content inside the link */
+            align-items: center;
+            /* Center text vertically */
+            justify-content: center;
+            /* Center text horizontally */
             background-color: #007BFF;
             color: white;
             padding: 10px 20px;
@@ -250,6 +256,12 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            min-height: 50px;
+            flex-grow: 1;
+            /* Fixed height for uniform appearance */
+            box-sizing: border-box;
+            /* Ensures padding is included in the height */
+            overflow: hidden;
         }
 
 
@@ -445,7 +457,7 @@
     <script src="./static/js/nav.js"></script>
 
     <section id="video_4d" class="section dynamic-section">
-        <div class="container is-max-desktop">
+        <!-- <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h3 class="title is-4">4D Reconstruction</h3>
@@ -469,9 +481,6 @@
                             loading="lazy"></iframe>
                     </div>
                     <br>
-                    <!-- <div>
-            (Results are downsampled for efficient online rendering)
-          </div> -->
                     <div class="hide-on-touchscreens" style="
             display: flex;
             justify-content: center;
@@ -516,12 +525,12 @@
                     <p> See more examples in our <a href="./gallery.html">gallery</a>.</p>
                 </div>
             </div>
-        </div><br>
+        </div><br> -->
     </section>
 
 
     <section id="video_3d" class="section dynamic-section">
-        <div class="container is-max-desktop">
+        <!-- <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">3D Reconstruction (Video)</h2>
@@ -576,7 +585,8 @@
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
                                 loading="lazy">
-                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
+                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4"
+                                    type="video/mp4">
                             </video>
                         </div>
                         <div class="item item-vid5">
@@ -588,7 +598,8 @@
                         </div>
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
+                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4"
+                                    type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -609,11 +620,11 @@
                     </script>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section id="photo" class="section dynamic-section">
-        <div class="container is-max-desktop">
+        <!-- <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">3D Reconstruction (Photo Collection)</h2>
@@ -677,11 +688,11 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section id="unseen" class="section dynamic-section">
-        <div class="container is-max-desktop">
+        <!-- <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">Inferring Unseen Structure</h2>
@@ -695,7 +706,7 @@
                     </video>
                 </div>
             </div>
-        </div><br>
+        </div><br> -->
     </section>
 
 
