@@ -3,10 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Viewer Example</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <title>Dynamic Experiment Results</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1, footer h2 {
+    color: #333;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+.content {
+    display: none; /* Initially hide all dynamic sections */
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f4f4f4;
+}
+
+.active {
+    display: block; /* Display the active section */
+}
+    </style>
 </head>
 <body>
-  <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="./static/glbs/Astronaut.glb" ar shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+  <header>
+    <h1>Welcome to Our Project</h1>
+    <p>This is an introduction and overview of the project...</p>
+</header>
+    <nav>
+        <ul>
+            <li><a href="#experiment1" onclick="showSection('experiment1')">Experiment 1</a></li>
+            <li><a href="#experiment2" onclick="showSection('experiment2')">Experiment 2</a></li>
+            <li><a href="#experiment3" onclick="showSection('experiment3')">Experiment 3</a></li>
+            <li><a href="#experiment4" onclick="showSection('experiment4')">Experiment 4</a></li>
+        </ul>
+    </nav>
+
+    <div id="experiment1" class="content">
+        <h2>Experiment 1 Results</h2>
+        <p>Details of Experiment 1...</p>
+    </div>
+    <div id="experiment2" class="content">
+        <h2>Experiment 2 Results</h2>
+        <p>Details of Experiment 2...</p>
+    </div>
+    <div id="experiment3" class="content">
+        <h2>Experiment 3 Results</h2>
+        <p>Details of Experiment 3...</p>
+    </div>
+    <div id="experiment4" class="content">
+        <h2>Experiment 4 Results</h2>
+        <p>Details of Experiment 4...</p>
+    </div>
+
+    <footer>
+      <h2>Contact Us</h2>
+      <p>Email: contact@example.com</p>
+      <p>Phone: (123) 456-7890</p>
+  </footer>
+
+    <script>
+      function showSection(id) {
+    // Hide all sections
+    var sections = document.getElementsByClassName('content');
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = 'none';
+    }
+
+    // Show the selected section
+    var selectedSection = document.getElementById(id);
+    selectedSection.style.display = 'block';
+}
+    </script>
 </body>
 </html>
