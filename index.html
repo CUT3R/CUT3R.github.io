@@ -218,17 +218,21 @@
             text-align: left;
         }
 
-        nav {
+        /* nav {
             background-color: #333;
             color: white;
             padding: 10px 0;
             text-align: center;
-        }
+        } */
 
         nav ul {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            /* Add spacing between buttons */
         }
 
         nav ul li {
@@ -236,15 +240,31 @@
         }
 
         nav ul li a {
+            display: inline-block;
+            background-color: #007BFF;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
+
         nav ul li a:hover {
-            background-color: #f5e508;
+            background-color: #0056b3;
+            transform: scale(1.05);
+            /* Slightly enlarge the button on hover */
         }
+
+        nav ul li a:active {
+            background-color: #003f7f;
+            transform: scale(0.95);
+            /* Simulate a button press */
+        }
+
 
         .dynamic-section {
             display: none;
@@ -413,9 +433,10 @@
                 <nav>
                     <ul>
                         <li><a href="#video_4d" onclick="showSection('video_4d')">4D Reconstruction</a></li>
-                        <li><a href="#video_3d" onclick="showSection('video_3d')">3D Video Reconstruction</a></li>
-                        <li><a href="#photo" onclick="showSection('photo')">Sparse Image Reconstruction</a></li>
-                        <li><a href="#unseen" onclick="showSection('unseen')">Infer Unseen Structure</a></li>
+                        <li><a href="#video_3d" onclick="showSection('video_3d')">3D Reconstruction (Video)</a></li>
+                        <li><a href="#photo" onclick="showSection('photo')">3D Reconstruction (Photo Collection)</a>
+                        </li>
+                        <li><a href="#unseen" onclick="showSection('unseen')">Inferring Unseen Structure</a></li>
                     </ul>
                 </nav>
             </div>
@@ -428,6 +449,11 @@
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h3 class="title is-4">4D Reconstruction</h3>
+                    <p>
+                        Our method can reconstruct 4D dynamic scene in a feed-forward, online manner without global
+                        optimization.
+                    </p>
+                    <br>
                     <div id="wrapper" style="
               display: flex;
               flex-wrap: nowrap;
@@ -465,105 +491,32 @@
                         <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
                     </div>
                     <br>
-                    <p>
-                        Our method can reconstruct 4D dynamic scene in a feed-forward, online manner without global
-                        optimization.
-                        Click below to explore our interactive results!
+                    <p id="click-interactive"
+                        style="font-size: 20px; font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 20px auto; padding: 20px; border-left: 5px solid #007BFF; border-right: 5px solid #007BFF; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                        <a href="./interactive.html"
+                            style="color: #007BFF; font-weight: bold; text-decoration: none; transition: color 0.3s; background-color: transparent;">Click
+                            here to explore more 4D interactive results</a>!
                     </p>
-                    <br>
-                    <a href="./interactive.html" target="_blank"
-                        style="position: relative; display: block; overflow: hidden">
-                        <video src="recordings/teaser.mp4" style="opacity: 50%; display: block" width="100%" loop
-                            autoplay playsinline muted id="interactive-demo-video" loading="lazy"></video>
-                        <button style="
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #8e2de2;
-            /* background: linear-gradient(to right, #8e2de2, #4a00e0); */
-            box-shadow: 0 0 2em 0 rgba(255, 255, 50, 1);
-            whitespace: nowrap;
-            width: 200px;
-            height: 50px;
-            color: white;
-            font-size: 16px;
-            border-radius: 25px; /* Rounded corners */
-            border: none; /* Removes any border */
-          ">
-                            <i class="ti ti-hand-click"></i>
-                            Open Interactive Results
-                        </button>
-                    </a>
                     <script>
-                        // Make this video play slower.
-                        document.addEventListener("DOMContentLoaded", function () {
-                            var video = document.getElementById("interactive-demo-video");
-                            video.playbackRate = 0.6;
+                        // Get the paragraph element
+                        var para = document.getElementById('click-interactive');
+
+                        // Add event listeners for mouse enter and mouse leave
+                        para.addEventListener('mouseenter', function () {
+                            para.style.fontSize = '22px'; // Increase font size
+                            para.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)'; // Enhance shadow
+                        });
+
+                        para.addEventListener('mouseleave', function () {
+                            para.style.fontSize = '18px'; // Reset font size
+                            para.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)'; // Reset shadow
                         });
                     </script>
+                    <br>
+                    <p> See more examples in our <a href="./gallery.html">gallery</a>.</p>
                 </div>
             </div>
         </div><br>
-
-        <section class="section has-carousel" id="carousel" style="padding: 0; margin: auto; ">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
-                        <h3 class="title is-5">More 4D Reconstruction Results</h3>
-                        <p> See more examples in our <a href="./gallery.html">gallery</a>.</p>
-                    </div>
-                </div>
-            </div>
-            <div id="carousel-results" class="carousel">
-                <div class="item item-vid5">
-                    <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-                        <source data-src="./static/videos/bike-packing_Free_1_compressed.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item item-vid5">
-                    <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-                        <source data-src="./static/videos/breakdance-flare_Free_1_compressed.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="item item-vid5">
-                    <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-                        <source data-src="./static/videos/stunt_Free_1_compressed.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <!-- <div class="item item-vid5">
-          <video poster="" id="" autoplay playsinline muted loop height="288px">
-            <source src="./static/videos/bus_Free_1.mp4" type="video/mp4">
-          </video>
-        </div> -->
-                <div class="item item-vid5">
-                    <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-                        <source data-src="./static/videos/camel_Free_1.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="item item-vid5">
-                    <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-                        <source data-src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <script>
-                $(window).on('load', function () {
-                    bulmaCarousel.attach('#carousel-results', {
-                        slidesToScroll: 3,
-                        slidesToShow: 3,
-                        loop: true,
-                        infinite: true,
-                        initialSlide: 2,
-                        autoplay: false,
-                        autoplaySpeed: 3000,
-                        pagination: false,
-                    });
-
-                });
-            </script>
-        </section>
     </section>
 
 
@@ -571,7 +524,7 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-4">3D Video Reconstruction</h2>
+                    <h2 class="title is-4">3D Reconstruction (Video)</h2>
 
                     <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global
                         optimization, both from videos and sparse image collections.</p>
@@ -619,7 +572,41 @@
 
                     <h3 class="title is-4">More 3D Video Reconstruction Results</h3>
                     <p> See more examples in our <a href="./gallery_3D.html">gallery</a>.</p>
+                    <div id="carousel-results" class="carousel">
+                        <div class="item item-vid5">
+                            <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
+                                loading="lazy">
+                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item item-vid5">
+                            <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
+                                loading="lazy">
+                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="item item-vid5">
+                            <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
+                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <script>
+                        $(window).on('load', function () {
+                            bulmaCarousel.attach('#carousel-results', {
+                                slidesToScroll: 1,
+                                slidesToShow: 1,
+                                loop: true,
+                                infinite: true,
+                                initialSlide: 1,
+                                autoplay: false,
+                                autoplaySpeed: 3000,
+                                pagination: false,
+                            });
 
+                        });
+                    </script>
                 </div>
             </div>
         </div>
@@ -629,7 +616,7 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-4">Sparse Image Reconstruction</h2>
+                    <h2 class="title is-4">3D Reconstruction (Photo Collection)</h2>
 
                     <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global
                         optimization, both from videos and sparse image collections.</p>
@@ -697,7 +684,7 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-4">Infer Unseen Structure</h2>
+                    <h2 class="title is-4">Inferring Unseen Structure</h2>
                     <p>
                         Given a camera query and the current reconstruction result, our method can infer the unseen
                         structure from a novel viewpoint, outputting both a depth map and RGB image at the new view.
@@ -712,6 +699,21 @@
     </section>
 
 
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <nav>
+                    <ul>
+                        <li><a href="#video_4d" onclick="showSection('video_4d')">4D Reconstruction</a></li>
+                        <li><a href="#video_3d" onclick="showSection('video_3d')">3D Reconstruction (Video)</a></li>
+                        <li><a href="#photo" onclick="showSection('photo')">3D Reconstruction (Photo Collection)</a>
+                        </li>
+                        <li><a href="#unseen" onclick="showSection('unseen')">Inferring Unseen Structure</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -723,8 +725,412 @@
 
 
 
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">State Analysis</h2>
+                    <div class="columns is-centered has-text-justified">
+                        <p>
+                            Our model continuously updates
+                            its state representation as new data arrives. As more observations accumulate, the state
+                            should
+                            be able to refine its understanding of the 3D world, leading
+                            to improved predictions. Compared to online, revisiting
+                            incorporates global context which improves overall reconstruction
+                            results, especially in the highlighted regions.
+
+                            We demonstrate this capability of our method below.
+                            we feed the observations twice, allowing the state to keep updating in the second pass,
+                            and report the reconstruction results <strong>before and after</strong> the revisiting
+                            process.
+                        </p>
+                    </div>
+                    <br>
+                    <br>
+
+                    <h3><strong>Input Images</strong></h3>
+                    <div id="state-analysis-input" class="carousel">
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2297.086.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2299.086.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2301.085.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2303.084.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2305.083.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2307.082.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2309.081.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2311.081.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2313.080.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2315.079.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2317.078.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2319.077.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2321.077.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs/41126410_2323.076.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                    </div>
+                    <script>
+                        $(window).on('load', function () {
+                            bulmaCarousel.attach('#state-analysis-input', {
+                                slidesToScroll: 5,
+                                slidesToShow: 5,
+                                loop: false,
+                                autoplay: false,
+                            });
+
+                        });
+                    </script>
+
+                    <br>
+                    <br>
+                    <div id="wrapper" style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 2em;
+                ">
+                        <div style="flex: 1 1 auto;">
+                            <h3><strong>Streaming (1st visit)</strong></h3>
+                            <br>
+                            <!-- <iframe class="vframe"
+                src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+              </iframe> -->
+                            <model-viewer id="model1" src="./static/glbs_gd/revisit-0.glb" alt="Streaming (1st visit)"
+                                camera-controls interaction-prompt="none">
+                            </model-viewer>
+                        </div>
+                        <div style="flex: 1 1 auto;">
+                            <h3><strong>Revisiting (2nd visit)</strong></h3>
+                            <br>
+                            <!-- <iframe class="vframe"
+                src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+              </iframe> -->
+                            <model-viewer id="model2" src="./static/glbs_gd/revisit-1.glb" alt="Revisiting (2nd visit)"
+                                camera-controls interaction-prompt="none">
+                            </model-viewer>
+                        </div>
+                    </div>
+                    <script>
+                        // Grab references to both <model-viewer> elements
+                        const model1 = document.getElementById('model1');
+                        const model2 = document.getElementById('model2');
+
+                        // This flag prevents us from triggering a sync loop
+                        let syncing = false;
+
+                        // We'll use these variables to store the timeout IDs for debouncing
+                        let syncTimeout1 = null;
+                        let syncTimeout2 = null;
+
+                        // How long to wait (in ms) after the user stops moving the camera
+                        // before we sync to the other model
+                        const SYNC_DELAY_MS = 100;
+
+                        /**
+                         * Whenever model1's camera changes, wait briefly to see if the user
+                         * continues moving the camera. If they don't, sync model1's camera to model2.
+                         */
+                        model1.addEventListener('camera-change', () => {
+                            if (!syncing) {
+                                // Clear any pending sync timeouts for model1
+                                if (syncTimeout1) {
+                                    clearTimeout(syncTimeout1);
+                                }
+                                // Set a new timeout
+                                syncTimeout1 = setTimeout(() => {
+                                    syncing = true;
+                                    copyCameraSettings(model1, model2);
+                                    // Use requestAnimationFrame to delay resetting the flag slightly
+                                    requestAnimationFrame(() => {
+                                        syncing = false;
+                                    });
+                                }, SYNC_DELAY_MS);
+                            }
+                        });
+
+                        /**
+                         * Whenever model2's camera changes, do the same but in reverse.
+                         */
+                        model2.addEventListener('camera-change', () => {
+                            if (!syncing) {
+                                if (syncTimeout2) {
+                                    clearTimeout(syncTimeout2);
+                                }
+                                syncTimeout2 = setTimeout(() => {
+                                    syncing = true;
+                                    copyCameraSettings(model2, model1);
+                                    requestAnimationFrame(() => {
+                                        syncing = false;
+                                    });
+                                }, SYNC_DELAY_MS);
+                            }
+                        });
+
+                        /**
+                         * Copies the camera orbit and field of view from sourceModel to targetModel.
+                         * This function does NOT trigger a new animation loop automatically.
+                         */
+                        function copyCameraSettings(sourceModel, targetModel) {
+                            // Get current camera orbit and FOV from the source
+                            const orbit = sourceModel.getCameraOrbit();    // returns {theta, phi, radius}
+                            const fieldOfView = sourceModel.getFieldOfView(); // returns a number in degrees
+                            const target = sourceModel.getCameraTarget();
+                            // Apply them to the target (in the correct format)
+                            targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
+                            targetModel.fieldOfView = `${fieldOfView}deg`;
+                            targetModel.cameraTarget = `${target.x}m ${target.y}m ${target.z}m`;
+                            // If you want an immediate snap to that camera position (no transition), uncomment:
+                            // targetModel.jumpCameraToGoal();
+                        }
+                    </script>
+                    <br>
+                    <div>
+                        (Results are downsampled for efficient online rendering)
+                    </div>
+                    <div class="hide-on-touchscreens" style="
+                display: flex;
+                justify-content: center;
+                gap: 1.5em;
+                padding-top: 0.5em;
+              ">
+                        <div>
+                            <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
+                            drag to rotate
+                        </div>
+                        <div>
+                            <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
+                            drag or
+                            <strong>WASD</strong>
+                            to move
+                        </div>
+                        <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+                    </div>
+
+                    <br>
+                    <br>
 
 
+                    <h3><strong>Input Images</strong></h3>
+                    <div id="state-analysis-input-2" class="carousel">
+                        <div class="item">
+                            <img src="./static/glbs2/frame0235.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0215.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0195.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0175.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0155.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0135.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0115.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0095.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0075.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0055.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0035.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <div class="item">
+                            <img src="./static/glbs2/frame0015.png" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                    </div>
+                    <script>
+                        $(window).on('load', function () {
+                            bulmaCarousel.attach('#state-analysis-input-2', {
+                                slidesToScroll: 4,
+                                slidesToShow: 4,
+                                loop: false,
+                                autoplay: false,
+                            });
+
+                        });
+                    </script>
+
+                    <br>
+                    <br>
+                    <div id="wrapper" style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+          ">
+                        <div style="flex: 1 1 auto;">
+                            <h3><strong>Streaming (1st visit)</strong></h3>
+                            <br>
+                            <!-- <iframe class="vframe"
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+          </iframe> -->
+                            <model-viewer id="model3" src="./static/glbs_gd/revisit2-0.glb" alt="Streaming (1st visit)"
+                                camera-controls interaction-prompt="none">
+                            </model-viewer>
+                        </div>
+                        <div style="flex: 1 1 auto;">
+                            <h3><strong>Revisiting (2nd visit)</strong></h3>
+                            <br>
+                            <!-- <iframe class="vframe"
+          src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+          </iframe> -->
+                            <model-viewer id="model4" src="./static/glbs_gd/revisit2-1.glb" alt="Revisiting (2nd visit)"
+                                camera-controls interaction-prompt="none">
+                            </model-viewer>
+                        </div>
+                    </div>
+                    <script>
+                        // Grab references to both <model-viewer> elements
+                        const model3 = document.getElementById('model3');
+                        const model4 = document.getElementById('model4');
+
+                        // This flag prevents us from triggering a sync loop
+                        let syncing2 = false;
+
+                        // We'll use these variables to store the timeout IDs for debouncing
+                        let syncTimeout12 = null;
+                        let syncTimeout22 = null;
+
+                        // How long to wait (in ms) after the user stops moving the camera
+                        // before we sync to the other model
+                        const SYNC_DELAY_MS2 = 100;
+
+                        /**
+                         * Whenever model1's camera changes, wait briefly to see if the user
+                         * continues moving the camera. If they don't, sync model1's camera to model2.
+                         */
+                        model3.addEventListener('camera-change', () => {
+                            if (!syncing2) {
+                                // Clear any pending sync timeouts for model1
+                                if (syncTimeout12) {
+                                    clearTimeout(syncTimeout12);
+                                }
+                                // Set a new timeout
+                                syncTimeout12 = setTimeout(() => {
+                                    syncing2 = true;
+                                    copyCameraSettings(model3, model4);
+                                    // Use requestAnimationFrame to delay resetting the flag slightly
+                                    requestAnimationFrame(() => {
+                                        syncing2 = false;
+                                    });
+                                }, SYNC_DELAY_MS2);
+                            }
+                        });
+
+                        /**
+                         * Whenever model2's camera changes, do the same but in reverse.
+                         */
+                        model4.addEventListener('camera-change', () => {
+                            if (!syncing2) {
+                                if (syncTimeout22) {
+                                    clearTimeout(syncTimeout22);
+                                }
+                                syncTimeout22 = setTimeout(() => {
+                                    syncing2 = true;
+                                    copyCameraSettings(model4, model3);
+                                    requestAnimationFrame(() => {
+                                        syncing2 = false;
+                                    });
+                                }, SYNC_DELAY_MS2);
+                            }
+                        });
+
+                        /**
+                         * Copies the camera orbit and field of view from sourceModel to targetModel.
+                         * This function does NOT trigger a new animation loop automatically.
+                         */
+                        function copyCameraSettings(sourceModel, targetModel) {
+                            // Get current camera orbit and FOV from the source
+                            const orbit = sourceModel.getCameraOrbit();    // returns {theta, phi, radius}
+                            const fieldOfView = sourceModel.getFieldOfView(); // returns a number in degrees
+                            const target = sourceModel.getCameraTarget();
+
+                            // Apply them to the target (in the correct format)
+                            targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
+                            targetModel.fieldOfView = `${fieldOfView}deg`;
+                            targetModel.cameraTarget = `${target.x}m ${target.y}m ${target.z}m`;
+
+                            // If you want an immediate snap to that camera position (no transition), uncomment:
+                            // targetModel.jumpCameraToGoal();
+                        }
+                    </script>
+                    <br>
+                    <div>
+                        (Results are downsampled for efficient online rendering)
+                    </div>
+                    <div class="hide-on-touchscreens" style="
+          display: flex;
+          justify-content: center;
+          gap: 1.5em;
+          padding-top: 0.5em;
+          ">
+                        <div>
+                            <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
+                            drag to rotate
+                        </div>
+                        <div>
+                            <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
+                            drag or
+                            <strong>WASD</strong>
+                            to move
+                        </div>
+                        <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div><br>
+    </section>
 
 
 

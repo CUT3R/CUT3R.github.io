@@ -1,117 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Experiment Results</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-body, html {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header, footer {
-    background-color: #f8f8f8;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1, footer h2 {
-    color: #333;
-}
-
-nav {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-}
-
-.content {
-    display: none; /* Initially hide all dynamic sections */
-    padding: 20px;
-    margin-top: 20px;
-    background-color: #f4f4f4;
-}
-
-.active {
-    display: block; /* Display the active section */
-}
-    </style>
-</head>
-<body>
-  <header>
-    <h1>Welcome to Our Project</h1>
-    <p>This is an introduction and overview of the project...</p>
-</header>
-    <nav>
-        <ul>
-            <li><a href="#experiment1" onclick="showSection('experiment1')">Experiment 1</a></li>
-            <li><a href="#experiment2" onclick="showSection('experiment2')">Experiment 2</a></li>
-            <li><a href="#experiment3" onclick="showSection('experiment3')">Experiment 3</a></li>
-            <li><a href="#experiment4" onclick="showSection('experiment4')">Experiment 4</a></li>
-        </ul>
-    </nav>
-
-    <div id="experiment1" class="content">
-        <h2>Experiment 1 Results</h2>
-        <p>Details of Experiment 1...</p>
-    </div>
-    <div id="experiment2" class="content">
-        <h2>Experiment 2 Results</h2>
-        <p>Details of Experiment 2...</p>
-    </div>
-    <div id="experiment3" class="content">
-        <h2>Experiment 3 Results</h2>
-        <p>Details of Experiment 3...</p>
-    </div>
-    <div id="experiment4" class="content">
-        <h2>Experiment 4 Results</h2>
-        <p>Details of Experiment 4...</p>
-    </div>
-
-    <footer>
-      <h2>Contact Us</h2>
-      <p>Email: contact@example.com</p>
-      <p>Phone: (123) 456-7890</p>
-  </footer>
-
-    <script>
-      function showSection(id) {
-    // Hide all sections
-    var sections = document.getElementsByClassName('content');
-    for (var i = 0; i < sections.length; i++) {
-        sections[i].style.display = 'none';
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Scene Reconstruction</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        margin: 40px;
+        color: #333;
     }
 
-    // Show the selected section
-    var selectedSection = document.getElementById(id);
-    selectedSection.style.display = 'block';
-}
-    </script>
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-left: 5px solid #5c67f2;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    p:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+    }
+
+    a {
+        color: #5c67f2;
+        font-weight: bold;
+        text-decoration: none;
+        position: relative;
+    }
+
+    a:hover {
+        color: #ffffff;
+        background-color: #5c67f2;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    strong {
+        position: relative;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+    <p>
+        Our method can reconstruct 4D dynamic scene in a feed-forward, online manner without global optimization.
+    </p>
+    <p>
+        Click <a href="./interactive.html"><strong>HERE</strong></a> to explore more 4D interactive results!
+    </p>
 </body>
 </html>
