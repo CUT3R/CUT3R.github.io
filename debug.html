@@ -3,16 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notification Display</title>
+<title>Video Carousel</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.js"></script>
 </head>
 <body>
-<div style="text-align: center; padding: 20px; font-family: Arial, sans-serif; background-color: #f2f2f2; width: 100%; box-sizing: border-box;">
-    <div style="font-weight: bold; color: #333; padding: 10px; background-color: #ffffff; margin-bottom: 8px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      Following: Viewpoint following the camera
-    </div>
-    <div style="font-weight: bold; color: #333; padding: 10px; background-color: #ffffff; margin-bottom: 8px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      Fixed: Viewpoint fixed in space
-    </div>
+
+<div id="carousel-results" class="carousel">
+  <div class="carousel-item">
+    <video controls width="640" height="360">
+      <source src="path_to_video_1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="carousel-item">
+    <video controls width="640" height="360">
+      <source src="path_to_video_2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="carousel-item">
+    <video controls width="640" height="360">
+      <source src="path_to_video_3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
+
+<script>
+  $(window).on('load', function () {
+    bulmaCarousel.attach('#carousel-results', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true,
+      infinite: true,
+      initialSlide: 1,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      pagination: false,
+    });
+  });
+</script>
+
 </body>
 </html>
