@@ -1,50 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video Carousel</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://unpkg.com/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bulma Carousel with Custom Arrows</title>
+
+  <!-- Bulma CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  />
+
+  <!-- Bulma Carousel CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css"
+  />
+
+  <!-- Font Awesome (for arrow icons) -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+
+  <style>
+    /* Center the container on the page */
+    section.section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    /* Override default arrow styles */
+    .carousel-nav-left,
+    .carousel-nav-right {
+      /* Make the arrow container circular and semi-transparent */
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+      cursor: pointer; /* Show pointer on hover */
+    }
+
+    /* Increase arrow icon size and color */
+    .carousel-nav-left i,
+    .carousel-nav-right i {
+      color: #fff;     /* White icons */
+      font-size: 1.5rem;  /* Larger icon size */
+    }
+
+    /* Hover effect for arrow containers */
+    .carousel-nav-left:hover,
+    .carousel-nav-right:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Adjust the position of the arrows if desired */
+    .carousel-nav-left {
+      left: 0.5rem;
+    }
+    .carousel-nav-right {
+      right: 0.5rem;
+    }
+
+    /* Just to ensure images fit well */
+    .carousel .item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
 
-<div id="carousel-results" class="carousel">
-  <div class="carousel-item">
-    <video controls width="640" height="360">
-      <source src="path_to_video_1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div class="carousel-item">
-    <video controls width="640" height="360">
-      <source src="path_to_video_2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div class="carousel-item">
-    <video controls width="640" height="360">
-      <source src="path_to_video_3.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</div>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Bulma Carousel with Custom Arrows</h1>
 
-<script>
-  $(window).on('load', function () {
-    bulmaCarousel.attach('#carousel-results', {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      loop: true,
-      infinite: true,
-      initialSlide: 1,
-      autoplay: false,
-      autoplaySpeed: 3000,
-      pagination: false,
-    });
-  });
+    <!-- Carousel Container -->
+    <div id="carousel-demo" class="carousel">
+      <div class="item item-1">
+        <img 
+          src="https://via.placeholder.com/800x400/3498db/ffffff?text=Slide+1" 
+          alt="Slide 1" 
+        />
+      </div>
+      <div class="item item-2">
+        <img 
+          src="https://via.placeholder.com/800x400/e74c3c/ffffff?text=Slide+2" 
+          alt="Slide 2" 
+        />
+      </div>
+      <div class="item item-3">
+        <img 
+          src="https://via.placeholder.com/800x400/2ecc71/ffffff?text=Slide+3" 
+          alt="Slide 3" 
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bulma Carousel JS -->
+<script 
+  src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js">
 </script>
 
+<script>
+  // Initialize the carousel on the #carousel-demo element
+  bulmaCarousel.attach('#carousel-demo', {
+    slidesToShow: 1,    // Show one slide at a time
+    slidesToScroll: 1,  // Scroll one slide per navigation
+    arrows: true,       // Enable custom navigation arrows
+    autoplay: false,    // Disable auto-sliding
+    loop: true          // Enable looping
+  });
+</script>
 </body>
 </html>
