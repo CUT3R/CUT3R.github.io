@@ -130,28 +130,18 @@ function showSection(id) {
                     <div id="carousel-results" class="carousel">
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-                            <source data-src="./static/videos/bike-packing_Free_1_compressed.mp4" type="video/mp4">
+                            <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-                            <source data-src="./static/videos/breakdance-flare_Free_1_compressed.mp4" type="video/mp4">
+                            <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
                             </video>
                         </div>
                         
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-                            <source data-src="./static/videos/stunt_Free_1_compressed.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="item item-vid5">
-                            <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-                            <source data-src="./static/videos/camel_Free_1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="item item-vid5">
-                            <video poster="" id="" autoplay playsinline muted loop height="288px" loading="lazy">
-                            <source data-src="./static/videos/car-shadow_Free_1.mp4" type="video/mp4">
+                            <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -270,11 +260,11 @@ function initCarouselResults() {
       });
       
     bulmaCarousel.attach('#carousel-results', {
-      slidesToScroll: 3,
-      slidesToShow: 3,
+      slidesToScroll: 1,
+      slidesToShow: 1,
       loop: true,
       infinite: true,
-      initialSlide: 2,
+      initialSlide: 1,
       autoplay: false,
       autoplaySpeed: 3000,
       pagination: false
