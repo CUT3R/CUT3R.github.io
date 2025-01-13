@@ -239,7 +239,7 @@ function showSection(id) {
     const sections = document.getElementsByClassName('dynamic-section');
     for (let i = 0; i < sections.length; i++) {
         sections[i].style.display = 'none';
-        sections[i].innerHTML = '';
+        sections[i].innerHTML = contentMap[id] || `<p>No content for section "${id}".</p>`;
     }
 
     // Load content only for the clicked (or default) section
