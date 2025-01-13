@@ -3,59 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dynamic Scene Reconstruction</title>
-<style>
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f4f4f9;
-        margin: 40px;
-        color: #333;
-    }
-
-    p {
-        font-size: 18px;
-        line-height: 1.6;
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #ffffff;
-        border-left: 5px solid #5c67f2;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    p:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 16px rgba(0,0,0,0.2);
-    }
-
-    a {
-        color: #5c67f2;
-        font-weight: bold;
-        text-decoration: none;
-        position: relative;
-    }
-
-    a:hover {
-        color: #ffffff;
-        background-color: #5c67f2;
-        padding: 5px 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    strong {
-        position: relative;
-        font-size: 20px;
-    }
-</style>
+<title>Notification Display</title>
 </head>
 <body>
-    <p>
-        Our method can reconstruct 4D dynamic scene in a feed-forward, online manner without global optimization.
-    </p>
-    <p>
-        Click <a href="./interactive.html"><strong>HERE</strong></a> to explore more 4D interactive results!
-    </p>
+<div style="text-align: center; padding: 20px; font-family: Arial, sans-serif; background-color: #f2f2f2; width: 100%; box-sizing: border-box;">
+    <div style="font-weight: bold; color: #333; padding: 10px; background-color: #ffffff; margin-bottom: 8px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      Following: Viewpoint following the camera
+    </div>
+    <div style="font-weight: bold; color: #333; padding: 10px; background-color: #ffffff; margin-bottom: 8px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      Fixed: Viewpoint fixed in space
+    </div>
+</div>
 </body>
 </html>
