@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Model Viewer</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
+    <title>Image Grid Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);  /* Creates 5 columns */
+            grid-template-rows: repeat(2, auto);    /* Creates 2 rows */
+            gap: 10px;                             /* Sets space between grid items */
+            max-width: 1000px;                     /* Adjust based on your preference */
+            margin: auto;                          /* Center align the grid */
+        }
+        .grid-container img {
+            width: 100%;   /* Sets the image width to fill the grid column */
+            height: auto;  /* Maintains the aspect ratio of the images */
+        }
+    </style>
 </head>
 <body>
-    <model-viewer src="./static/glbs_gd/revisit2-0.glb" alt="A 3D model" auto-rotate camera-controls></model-viewer>
+    <div id="image-grid" class="grid-container">
+        <!-- Replace 'src' with your actual image paths -->
+        <img src="https://via.placeholder.com/150" alt="Image 1">
+        <img src="https://via.placeholder.com/150" alt="Image 2">
+        <img src="https://via.placeholder.com/150" alt="Image 3">
+        <img src="https://via.placeholder.com/150" alt="Image 4">
+        <img src="https://via.placeholder.com/150" alt="Image 5">
+        <img src="https://via.placeholder.com/150" alt="Image 6">
+        <img src="https://via.placeholder.com/150" alt="Image 7">
+        <img src="https://via.placeholder.com/150" alt="Image 8">
+        <img src="https://via.placeholder.com/150" alt="Image 9">
+        <img src="https://via.placeholder.com/150" alt="Image 10">
+    </div>
 </body>
 </html>
