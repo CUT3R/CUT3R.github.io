@@ -953,6 +953,10 @@
                             targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
                             targetModel.fieldOfView = `${fieldOfView}deg`;
                             targetModel.cameraTarget = `${target.x}m ${target.y}m ${target.z}m`;
+
+                            console.log('Camera Orbit:', targetModel.cameraOrbit);
+                            console.log('Camera FOV:', targetModel.fieldOfView);
+                            console.log('Camera Target:', targetModel.cameraTarget);
                             // If you want an immediate snap to that camera position (no transition), uncomment:
                             // targetModel.jumpCameraToGoal();
                         }
@@ -1135,6 +1139,10 @@
                             targetModel.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
                             targetModel.fieldOfView = `${fieldOfView}deg`;
                             targetModel.cameraTarget = `${target.x}m ${target.y}m ${target.z}m`;
+
+                            console.log('Camera Orbit:', targetModel.cameraOrbit);
+                            console.log('Camera FOV:', targetModel.fieldOfView);
+                            console.log('Camera Target:', targetModel.cameraTarget);
 
                             // If you want an immediate snap to that camera position (no transition), uncomment:
                             // targetModel.jumpCameraToGoal();
