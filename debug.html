@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Grid Example</title>
+    <title>Minimal Viser Example</title>
     <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);  /* Creates 5 columns */
-            grid-template-rows: repeat(2, auto);    /* Creates 2 rows */
-            gap: 10px;                             /* Sets space between grid items */
-            max-width: 1000px;                     /* Adjust based on your preference */
-            margin: auto;                          /* Center align the grid */
-        }
-        .grid-container img {
-            width: 100%;   /* Sets the image width to fill the grid column */
-            height: auto;  /* Maintains the aspect ratio of the images */
+        .vframe {
+            border-radius: 0.5em;
+            width: 50%;
+            height: auto;
+            aspect-ratio: 32 / 27.5;
+            max-width: 32em;
+            max-height: 27.5em;
+            border: none;
+            box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
+
 <body>
-    <div id="image-grid" class="grid-container">
-        <!-- Replace 'src' with your actual image paths -->
-        <img src="https://via.placeholder.com/150" alt="Image 1">
-        <img src="https://via.placeholder.com/150" alt="Image 2">
-        <img src="https://via.placeholder.com/150" alt="Image 3">
-        <img src="https://via.placeholder.com/150" alt="Image 4">
-        <img src="https://via.placeholder.com/150" alt="Image 5">
-        <img src="https://via.placeholder.com/150" alt="Image 6">
-        <img src="https://via.placeholder.com/150" alt="Image 7">
-        <img src="https://via.placeholder.com/150" alt="Image 8">
-        <img src="https://via.placeholder.com/150" alt="Image 9">
-        <img src="https://via.placeholder.com/150" alt="Image 10">
+    <div>
+        <iframe class="vframe"
+            src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_025_d4_qq.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
+            loading="lazy"></iframe>
     </div>
 </body>
+
 </html>
