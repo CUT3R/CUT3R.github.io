@@ -93,7 +93,7 @@ function showSection(id) {
                     gap: 2em;
                   ">
                         <iframe class="vframe"
-                            src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_025_d4_qq.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
+                            src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
                             loading="lazy"></iframe>
                         <iframe class="vframe"
                             src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
