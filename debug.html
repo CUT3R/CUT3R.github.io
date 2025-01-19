@@ -1,30 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Viser Example</title>
-    <style>
-        .vframe {
-            border-radius: 0.5em;
-            width: 50%;
-            height: auto;
-            aspect-ratio: 32 / 27.5;
-            max-width: 32em;
-            max-height: 27.5em;
-            border: none;
-            box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+<meta charset="UTF-8">
+<title>Minimal Example with iFrames and Buttons</title>
+<style>
+    .iframe-container {
+        width: 50%; /* Adjust the width as needed */
+        max-width: 32em;
+    }
+
+    .vframe {
+        border-radius: 0.5em;
+        width: 100%; /* Makes the iframe responsive within its container */
+        aspect-ratio: 32 / 27.5;
+        max-height: 27.5em;
+        border: none;
+        box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    button {
+        display: block; /* Ensures the button is a block element to fill the container */
+        width: 100%;
+        padding: 10px 0; /* Adds some padding for aesthetics */
+        margin-top: 10px; /* Space between the iframe and the button */
+        cursor: pointer; /* Indicates the element is clickable */
+    }
+
+    #wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start; /* Aligns items at the top of the container */
+        gap: 2em;
+    }
+
+    @media (max-width: 768px) {
+        .iframe-container {
+            width: 100%;
         }
-    </style>
+    }
+</style>
 </head>
-
 <body>
-    <div>
+<div id="wrapper">
+    <div class="iframe-container">
         <iframe class="vframe"
-            src="https://tmpcut3r.github.io/build/?playbackPath=/static/recordings/3d_2_025_d4_qq.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
+            src="https://example.com"
             loading="lazy"></iframe>
+        <button onclick="openInNewTab(this)" data-link="https://example.com">Open in New Tab</button>
     </div>
-</body>
+    <div class="iframe-container">
+        <iframe class="vframe"
+            src="https://example.org"
+            loading="lazy"></iframe>
+        <button onclick="openInNewTab(this)" data-link="https://example.org">Open in New Tab</button>
+    </div>
+</div>
 
+<script>
+    function openInNewTab(element) {
+        var url = element.getAttribute('data-link');
+        window.open(url, '_blank').focus();
+    }
+</script>
+</body>
 </html>

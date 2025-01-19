@@ -18,12 +18,18 @@ function showSection(id) {
               align-items: center;
               gap: 2em;
             ">
+                        <div class="iframe-container">
                         <iframe class="vframe"
                             src="https://cut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
                             loading="lazy"></iframe>
+                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">Open in New Tab</button>
+                        </div>
+                        <div class="iframe-container">
                         <iframe class="vframe"
                             src="https://cut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
                             loading="lazy"></iframe>
+                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">Open in New Tab</button>
+                        </div>
                     </div>
                     <br>
                     <!-- <div>
@@ -92,12 +98,18 @@ function showSection(id) {
                     align-items: center;
                     gap: 2em;
                   ">
+                        <div class="iframe-container">
                         <iframe class="vframe"
                             src="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
                             loading="lazy"></iframe>
+                        <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">Open in New Tab</button>
+                        </div>
+                        <div class="iframe-container">
                         <iframe class="vframe"
                             src="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
                             loading="lazy"></iframe>
+                        <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">Open in New Tab</button>
+                        </div>
                     </div>
                     <br>
                     <div>
@@ -183,10 +195,13 @@ function showSection(id) {
                                 <img src="./static/recordings/seq_013_0003.png" alt="Image 3" loading="lazy">
                                 <img src="./static/recordings/seq_013_0004.png" alt="Image 4" loading="lazy">
                             </div>
+                            <div class="iframe-container">
                             <iframe
                                 src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0"
                                 loading="lazy">
                             </iframe>
+                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0">Open in New Tab</button>
+                            </div>
                         </div>
                         <div class="siframe-class">
                             <div class="image-grid">
@@ -195,10 +210,13 @@ function showSection(id) {
                                 <img src="./static/recordings/seqs_017_0003.png" alt="Image 3" loading="lazy">
                                 <img src="./static/recordings/seqs_017_0004.png" alt="Image 4" loading="lazy">
                             </div>
+                            <div class="iframe-container">
                             <iframe
                                 src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0"
                                 loading="lazy">
                             </iframe>
+                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0">Open in New Tab</button>
+                        </div>
                         </div>
                     </div>
 
