@@ -853,9 +853,14 @@
 
                             We demonstrate this capability of our method below.
 
-                            We introduce a new setup called <strong>revisiting</strong>: after running our method online to capture a final state informed by all images, we freeze this state and reuse it to reprocess the images, enhancing prediction accuracy. This differs from the <strong>online</strong> setup, where the state refines its understanding in real-time without prior full scene context.
-                            
-                            Below, we compare the reconstruction results of the <strong>online</strong> and <strong>revisiting</strong>
+                            We introduce a new setup called <strong>revisiting</strong>: after running our method online
+                            to capture a final state informed by all images, we freeze this state and reuse it to
+                            reprocess the images, enhancing prediction accuracy. This differs from the
+                            <strong>online</strong> setup, where the state refines its understanding in real-time
+                            without prior full scene context.
+
+                            Below, we compare the reconstruction results of the <strong>online</strong> and
+                            <strong>revisiting</strong>
                             process.
                         </p>
                     </div>
@@ -863,6 +868,11 @@
                     <br>
 
                     <h3><strong>Input Images</strong></h3>
+                    <p style="color: gray;">This is the order in which the images are seen. As you can see there is a
+                        big discontinuity
+                        between the first an the second image, hence the exact prediction of the location of the TV is
+                        suboptimial at first. But after seeing all the images, the location of the TV correctly updates
+                    </p>
                     <div id="state-analysis-input" class="grid-container-2x6">
                         <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
                         <img src="./static/glbs/41126410_2297.086.jpg" alt="MY ALT TEXT" loading="lazy" />
@@ -951,7 +961,7 @@
                             <!-- <iframe class="vframe"
                 src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
               </iframe> -->
-                            <model-viewer id="model1" camera-orbit="0.966rad 1.54rad 16.4m" camera-fov="17.6deg"
+                            <model-viewer id="model1" camera-orbit="0.966rad 1.54rad 16.4m"
                                 camera-target="1.33m -0.32m 1.6m" src="./static/glbs_gd/revisit-0-new-new.glb"
                                 alt="Online" camera-controls interaction-prompt="none">
                             </model-viewer>
@@ -962,13 +972,34 @@
                             <!-- <iframe class="vframe"
                 src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
               </iframe> -->
-                            <model-viewer id="model2" camera-orbit="0.966rad 1.54rad 16.4m" camera-fov="17.6deg"
+                            <model-viewer id="model2" camera-orbit="0.966rad 1.54rad 16.4m" 
                                 camera-target="1.33m -0.32m 1.6m" src="./static/glbs_gd/revisit-1-new-new.glb"
                                 alt="Revisiting" camera-controls interaction-prompt="none">
                             </model-viewer>
                         </div>
                     </div>
                     <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const modelViewer1 = document.querySelector('#model1');
+                            const modelViewer2 = document.querySelector('#model2');
+
+                            modelViewer1.addEventListener('load', function () {
+                                const threeCamera = modelViewer1.getCameraOrbit();
+                                const fov = 17.6; // Desired FOV in degrees
+
+                                // Access the Three.js camera directly
+                                modelViewer1.camera.fieldOfView = fov;
+                                modelViewer1.camera.updateProjectionMatrix();
+                            });
+                            modelViewer2.addEventListener('load', function () {
+                                const threeCamera = modelViewer2.getCameraOrbit();
+                                const fov = 17.6; // Desired FOV in degrees
+
+                                // Access the Three.js camera directly
+                                modelViewer2.camera.fieldOfView = fov;
+                                modelViewer2.camera.updateProjectionMatrix();
+                            });
+                        });
                         // Grab references to both <model-viewer> elements
                         const model1 = document.getElementById('model1');
                         const model2 = document.getElementById('model2');
