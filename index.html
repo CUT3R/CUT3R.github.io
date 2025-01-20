@@ -129,6 +129,17 @@
             box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
         }
 
+        .large-vframe{
+            border-radius: 0.5em;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 32 / 27.5;
+            max-width: 64em;
+            max-height: 55em;
+            border: none;
+            box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+        }
+
         button {
             display: block;
             /* Ensures the button is a block element to fill the container */
@@ -208,9 +219,9 @@
 
         @media (max-width: 768px) {
 
-            /* .vframe {
+            .large-vframe {
                 width: 100%;
-            } */
+            }
             .iframe-container {
                 width: 100%;
             }
@@ -1186,7 +1197,7 @@
                                 camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-1-new-new.glb"
                                 alt="Revisiting" camera-controls interaction-prompt="none">
                             </model-viewer> -->
-                            <iframe class="vframe"
+                            <iframe class="large-vframe"
           src="https://cut3r.github.io/build/?playbackPath=/static/recordings/chair_illusion.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
           </iframe>
                         </div>
