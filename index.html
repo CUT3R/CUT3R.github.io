@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Our unified framework reasons about the 3D world in an online, sequential manner to solve various 3D tasks.">
+    <meta name="description"
+        content="Our unified framework reasons about the 3D world in an online, sequential manner to solve various 3D tasks.">
     <meta name="keywords" content="CUT3R">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CUT3R: Continuous 3D Perception Model with Persistent State</title>
@@ -112,7 +113,8 @@
         }
 
         .iframe-container {
-            width: 50%; /* Adjust the width as needed */
+            width: 50%;
+            /* Adjust the width as needed */
             max-width: 32em;
         }
 
@@ -128,11 +130,15 @@
         }
 
         button {
-            display: block; /* Ensures the button is a block element to fill the container */
+            display: block;
+            /* Ensures the button is a block element to fill the container */
             width: 100%;
-            padding: 10px 0; /* Adds some padding for aesthetics */
-            margin-top: 10px; /* Space between the iframe and the button */
-            cursor: pointer; /* Indicates the element is clickable */
+            padding: 10px 0;
+            /* Adds some padding for aesthetics */
+            margin-top: 10px;
+            /* Space between the iframe and the button */
+            cursor: pointer;
+            /* Indicates the element is clickable */
         }
 
         model-viewer {
@@ -201,6 +207,7 @@
         }
 
         @media (max-width: 768px) {
+
             /* .vframe {
                 width: 100%;
             } */
@@ -332,16 +339,25 @@
 
         .grid-container-2x6 {
             display: grid;
-            grid-template-columns: repeat(6, 1fr); /* 5 columns */
-            grid-template-rows: repeat(2, auto);  /* 2 rows, each row height adjusts to content */
-            gap: 10px;  /* Space between images */
-            padding: 20px; /* Padding around the grid */
-            max-width: 80%; /* Ensures the container does not overflow its content area */
-            margin: auto; /* Centers the container */
+            grid-template-columns: repeat(6, 1fr);
+            /* 5 columns */
+            grid-template-rows: repeat(2, auto);
+            /* 2 rows, each row height adjusts to content */
+            gap: 10px;
+            /* Space between images */
+            padding: 20px;
+            /* Padding around the grid */
+            max-width: 80%;
+            /* Ensures the container does not overflow its content area */
+            margin: auto;
+            /* Centers the container */
         }
+
         .grid-container-2x6 img {
-            width: 100%; /* Each image will take full width of its cell */
-            height: auto; /* Height adjusts to maintain aspect ratio */
+            width: 100%;
+            /* Each image will take full width of its cell */
+            height: auto;
+            /* Height adjusts to maintain aspect ratio */
         }
     </style>
 </head>
@@ -459,7 +475,7 @@
                             style="text-align: center; padding-bottom: 5px; padding-top: 5px; background-color: #d0d5ec;">
                             <h6 style="text-align: center; color:rgb(0, 0, 0)">
                                 Our unified framework reasons about the 3D world in an <strong>online,
-                                    sequential</strong> manner to solve various 3D tasks.
+                                    sequential</strong> manner directly from RGB inputs to solve various 3D tasks.
                         </div>
                     </div>
                 </div>
@@ -476,19 +492,26 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            We propose a novel unified framework capable of solving a broad range of 3D tasks. At the
-                            core of our approach is an online stateful recurrent model that continuously updates its
-                            state representation with each new observation. Given a stream of images, our method
-                            leverages the evolving state to generate metric-scale pointmaps for each input in an online
-                            manner. These pointmaps reside within a common coordinate system, accumulating into a
-                            coherent 3D scene reconstruction. Our model captures rich priors of real-world scenes: not
-                            only can it predict accurate pointmaps from image observations, but it can also infer unseen
-                            structures beyond the coverage of the input images through a raymap probe. Our method is
-                            simple yet highly flexible, naturally accepting varying lengths of image sequences and
-                            working seamlessly with both video streams and unordered photo collections. We evaluate our
-                            method on various 3D/4D tasks including monocular/video depth estimation, camera estimation,
-                            multi-view reconstruction, and achieve competitive or state-of-the-art performance.
-                            Additionally, we showcase intriguing behaviors enabled by our state representation.
+                            We present a unified framework capable of solving a broad
+                            range of 3D tasks. Our approach features a stateful recurrent
+                            model that continuously updates its state representation with
+                            each new observation. Given a stream of images, this evolving state can be used to generate
+                            metric-scale pointmaps
+                            (per-pixel 3D points) for each new input in an online fashion.
+                            These pointmaps reside within a common coordinate system,
+                            and can be accumulated into a coherent, dense scene reconstruction that updates as new
+                            images arrive. Our model,
+                            called <strong>CUT3R (Continuous Updating Transformer for 3D
+                                Reconstruction)</strong>, captures rich priors of real-world scenes:
+                            not only can it predict accurate pointmaps from image observations, ranging from a single
+                            image to many, but it can
+                            also infer unseen regions of the scene by probing at virtual,
+                            unobserved views. Our method is simple yet highly flexible,
+                            naturally accepting varying length of images that may be
+                            either video streams or unordered photo collections, containing both static and dynamic
+                            content. We evaluate our
+                            method on various 3D/4D tasks and demonstrate competitive or state-of-the-art performance in
+                            each.
                         </p>
                     </div>
                 </div>
@@ -507,7 +530,8 @@
                 <br>
                 <nav>
                     <ul>
-                        <li><a href="javascript:void(0);" onclick="showSection('video_4d')">4D Reconstruction</a></li>
+                        <li><a href="javascript:void(0);" onclick="showSection('video_4d')">Dynamic Scene
+                                Reconstruction</a></li>
                         <li><a href="javascript:void(0);" onclick="showSection('video_3d')">3D Reconstruction
                                 (Video)</a></li>
                         <li><a href="javascript:void(0);" onclick="showSection('photo')">3D Reconstruction (Photo
@@ -781,7 +805,8 @@
             <div class="column is-four-fifths">
                 <nav>
                     <ul>
-                        <li><a href="javascript:void(0);" onclick="showSection('video_4d')">4D Reconstruction</a></li>
+                        <li><a href="javascript:void(0);" onclick="showSection('video_4d')">Dynamic Scene
+                                Reconstruction</a></li>
                         <li><a href="javascript:void(0);" onclick="showSection('video_3d')">3D Reconstruction
                                 (Video)</a></li>
                         <li><a href="javascript:void(0);" onclick="showSection('photo')">3D Reconstruction (Photo
@@ -1114,8 +1139,9 @@
                             <!-- <iframe class="vframe"
           src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
           </iframe> -->
-                            <model-viewer id="model3" camera-orbit="-4.01rad 1.727rad 2.3m" camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-0-new-new.glb" alt="Streaming (1st visit)"
-                                camera-controls interaction-prompt="none">
+                            <model-viewer id="model3" camera-orbit="-4.01rad 1.727rad 2.3m"
+                                camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-0-new-new.glb"
+                                alt="Streaming (1st visit)" camera-controls interaction-prompt="none">
                             </model-viewer>
                         </div>
                         <div style="flex: 1 1 auto;">
@@ -1124,8 +1150,9 @@
                             <!-- <iframe class="vframe"
           src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
           </iframe> -->
-                            <model-viewer id="model4" camera-orbit="-4.01rad 1.727rad 2.3m" camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-1-new-new.glb" alt="Revisiting (2nd visit)"
-                                camera-controls interaction-prompt="none">
+                            <model-viewer id="model4" camera-orbit="-4.01rad 1.727rad 2.3m"
+                                camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-1-new-new.glb"
+                                alt="Revisiting (2nd visit)" camera-controls interaction-prompt="none">
                             </model-viewer>
                         </div>
                     </div>
