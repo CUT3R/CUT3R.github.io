@@ -849,13 +849,13 @@
                             its state representation as new data arrives. As more observations accumulate, the state
                             should
                             be able to refine its understanding of the 3D world, leading
-                            to improved predictions. Compared to online, revisiting
-                            incorporates global context which improves overall reconstruction
-                            results, especially in the highlighted regions.
+                            to improved predictions.
 
                             We demonstrate this capability of our method below.
-                            we feed the observations twice, allowing the state to keep updating in the second pass,
-                            and report the reconstruction results <strong>before and after</strong> the revisiting
+
+                            We introduce a new setup called <strong>revisiting</strong>: after running our method online to capture a final state informed by all images, we freeze this state and reuse it to reprocess the images, enhancing prediction accuracy. This differs from the <strong>online</strong> setup, where the state refines its understanding in real-time without prior full scene context.
+                            
+                            Below, we compare the reconstruction results of the <strong>online</strong> and <strong>revisiting</strong>
                             process.
                         </p>
                     </div>
@@ -946,25 +946,25 @@
                   gap: 2em;
                 ">
                         <div style="flex: 1 1 auto;">
-                            <h3><strong>Streaming (1st visit)</strong></h3>
+                            <h3><strong>Online</strong></h3>
                             <br>
                             <!-- <iframe class="vframe"
                 src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
               </iframe> -->
-                            <model-viewer id="model1" camera-orbit="0.966rad 1.54rad 9.2m"
+                            <model-viewer id="model1" camera-orbit="0.966rad 1.54rad 16.4m" camera-fov="17.6deg"
                                 camera-target="1.33m -0.32m 1.6m" src="./static/glbs_gd/revisit-0-new-new.glb"
-                                alt="Streaming (1st visit)" camera-controls interaction-prompt="none">
+                                alt="Online" camera-controls interaction-prompt="none">
                             </model-viewer>
                         </div>
                         <div style="flex: 1 1 auto;">
-                            <h3><strong>Revisiting (2nd visit)</strong></h3>
+                            <h3><strong>Revisiting</strong></h3>
                             <br>
                             <!-- <iframe class="vframe"
                 src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
               </iframe> -->
-                            <model-viewer id="model2" camera-orbit="0.966rad 1.54rad 9.2m"
+                            <model-viewer id="model2" camera-orbit="0.966rad 1.54rad 16.4m" camera-fov="17.6deg"
                                 camera-target="1.33m -0.32m 1.6m" src="./static/glbs_gd/revisit-1-new-new.glb"
-                                alt="Revisiting (2nd visit)" camera-controls interaction-prompt="none">
+                                alt="Revisiting" camera-controls interaction-prompt="none">
                             </model-viewer>
                         </div>
                     </div>
@@ -1137,25 +1137,25 @@
             gap: 2em;
           ">
                         <div style="flex: 1 1 auto;">
-                            <h3><strong>Streaming (1st visit)</strong></h3>
+                            <h3><strong>Online</strong></h3>
                             <br>
                             <!-- <iframe class="vframe"
           src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
           </iframe> -->
                             <model-viewer id="model3" camera-orbit="-4.01rad 1.727rad 2.3m"
                                 camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-0-new-new.glb"
-                                alt="Streaming (1st visit)" camera-controls interaction-prompt="none">
+                                alt="Online" camera-controls interaction-prompt="none">
                             </model-viewer>
                         </div>
                         <div style="flex: 1 1 auto;">
-                            <h3><strong>Revisiting (2nd visit)</strong></h3>
+                            <h3><strong>Revisiting</strong></h3>
                             <br>
                             <!-- <iframe class="vframe"
           src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
           </iframe> -->
                             <model-viewer id="model4" camera-orbit="-4.01rad 1.727rad 2.3m"
                                 camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-1-new-new.glb"
-                                alt="Revisiting (2nd visit)" camera-controls interaction-prompt="none">
+                                alt="Revisiting" camera-controls interaction-prompt="none">
                             </model-viewer>
                         </div>
                     </div>
