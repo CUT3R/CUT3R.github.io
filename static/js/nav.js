@@ -60,7 +60,7 @@ function showSection(id) {
                         <a href="./interactive.html" target="_blank"
                             style="color: #007BFF; font-weight: bold; text-decoration: none; transition: color 0.3s; background-color: transparent;">
                             Explore more interactive results for dynamic scene reconstruction!
-                            </a>!
+                            </a>
                     </p>
                     <script>
                         // Get the paragraph element
