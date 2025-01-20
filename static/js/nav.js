@@ -20,15 +20,15 @@ function showSection(id) {
             ">
                         <div class="iframe-container">
                         <iframe class="vframe"
-                            src="https://cut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
+                            src="https://cut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.8"
                             loading="lazy"></iframe>
-                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/recordings/006545_mpii_test.mp4&baseSpeed=0.5">Open in New Tab to See Original Video</button>
+                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/recordings/006545_mpii_test.mp4&baseSpeed=0.8">Open in New Tab to See Original Video</button>
                         </div>
                         <div class="iframe-container">
                         <iframe class="vframe"
-                            src="https://cut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
+                            src="https://cut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.8"
                             loading="lazy"></iframe>
-                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/recordings/06eb2803.mp4&baseSpeed=0.5">Open in New Tab to See Original Video</button>
+                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/recordings/06eb2803.mp4&baseSpeed=0.8">Open in New Tab to See Original Video</button>
                         </div>
                     </div>
                     <br>
@@ -52,6 +52,7 @@ function showSection(id) {
                             to move
                         </div>
                         <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+                        <div><strong>Click <i class="fas fa-pause"></i></strong> to pause</div>
                     </div>
                     <br>
                     <p id="click-interactive"
@@ -102,13 +103,13 @@ function showSection(id) {
                         <iframe class="vframe"
                             src="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
                             loading="lazy"></iframe>
-                        <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">Open in New Tab</button>
+                        <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/static/recordings/3d_1_027.mp4&baseSpeed=0.5">Open in New Tab to See Original Video</button>
                         </div>
                         <div class="iframe-container">
                         <iframe class="vframe"
                             src="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4_2.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
                             loading="lazy"></iframe>
-                        <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4_2.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">Open in New Tab</button>
+                        <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4_2.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/static/recordings/3d_2_018.mp4&baseSpeed=0.5">Open in New Tab to See Original Video</button>
                         </div>
                     </div>
                     <br>
@@ -132,6 +133,7 @@ function showSection(id) {
                             to move
                         </div>
                         <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+                        <div><strong>Click <i class="fas fa-pause"></i></strong> to pause</div>
                     </div>
 
                     <br>
@@ -241,6 +243,7 @@ function showSection(id) {
                             to move
                         </div>
                         <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
+                        <div><strong>Click <i class="fas fa-pause"></i></strong> to pause</div>
                     </div>
 
                 </div>
