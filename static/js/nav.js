@@ -166,7 +166,7 @@ function showSection(id) {
                         
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
-                            <source data-src="./static/videos/gallery/codec_3d/teaser_batch_2_027.mp4" type="video/mp4">
+                            <source data-src="./static/videos/gallery/codec_3d/seqs_023.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
