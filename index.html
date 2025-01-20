@@ -1106,7 +1106,7 @@
                     <h3><strong>Input Video</strong></h3>
                     <br>
                     <video width="320" height="240" autoplay loop muted playsinline>
-                        <source src="./static/videos/revisit.mp4" type="video/mp4">
+                        <source src="./static/recordings/chair_illusion.mp4" type="video/mp4">
                     </video>
                     <!-- <div id="state-analysis-input-2" class="carousel">
                         <div class="item">
@@ -1168,12 +1168,12 @@
             gap: 2em;
           ">
                         <div style="flex: 1 1 auto;">
-                            <h3><strong>Online</strong></h3>
-                            <br>
+                            <!-- <h3><strong>Online</strong></h3> -->
+                            <!-- <br> -->
                             <!-- <iframe class="vframe"
           src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
           </iframe> -->
-                            <model-viewer id="model3" camera-orbit="-4.01rad 1.727rad 2.3m"
+                            <!-- <model-viewer id="model3" camera-orbit="-4.01rad 1.727rad 2.3m"
                                 camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-0-new-new.glb"
                                 alt="Online" camera-controls interaction-prompt="none">
                             </model-viewer>
@@ -1181,16 +1181,17 @@
                         <div style="flex: 1 1 auto;">
                             <h3><strong>Revisiting</strong></h3>
                             <br>
-                            <!-- <iframe class="vframe"
-          src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
-          </iframe> -->
+                            
                             <model-viewer id="model4" camera-orbit="-4.01rad 1.727rad 2.3m"
                                 camera-target="0.27m -0.326m 0.14m" src="./static/glbs_gd/revisit2-1-new-new.glb"
                                 alt="Revisiting" camera-controls interaction-prompt="none">
-                            </model-viewer>
+                            </model-viewer> -->
+                            <iframe class="vframe"
+          src="https://cut3r.github.io/build/?playbackPath=/static/recordings/chair_illusion.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
+          </iframe>
                         </div>
                     </div>
-                    <script>
+                    <!-- <script>
                         // Grab references to both <model-viewer> elements
                         const model3 = document.getElementById('model3');
                         const model4 = document.getElementById('model4');
@@ -1272,7 +1273,7 @@
                     <br>
                     <div>
                         (Results are downsampled for efficient online rendering and synced for ~100ms delay)
-                    </div>
+                    </div> -->
                     <div class="hide-on-touchscreens" style="
           display: flex;
           justify-content: center;
