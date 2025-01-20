@@ -152,10 +152,17 @@
             /* Indicates the element is clickable */
         }
 
+        .modelviewer-container {
+            width: 50%;
+            /* Adjust the width as needed */
+            max-width: 32em;
+        }
+
         model-viewer {
             border-radius: 0.5em;
             width: 100%;
             max-width: 32em;
+            max-height: 27.5em;
             height: auto;
             aspect-ratio: 32 / 27.5;
             border: none;
@@ -961,12 +968,12 @@
                     <br>
                     <div id="wrapper" style="
                   display: flex;
-                  flex-wrap: wrap;
+                  flex-wrap: nowrap;
                   justify-content: center;
                   align-items: center;
                   gap: 2em;
                 ">
-                        <div style="flex: 1 1 auto;">
+                        <div class="modelviewer-container">
                             <h3><strong>Online</strong></h3>
                             <br>
                             <!-- <iframe class="vframe"
@@ -977,7 +984,7 @@
                                 alt="Online" camera-controls interaction-prompt="none">
                             </model-viewer>
                         </div>
-                        <div style="flex: 1 1 auto;">
+                        <div class="modelviewer-container">
                             <h3><strong>Revisiting</strong></h3>
                             <br>
                             <!-- <iframe class="vframe"
