@@ -106,9 +106,9 @@ function showSection(id) {
                         </div>
                         <div class="iframe-container">
                         <iframe class="vframe"
-                            src="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
+                            src="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4_2.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
                             loading="lazy"></iframe>
-                        <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">Open in New Tab</button>
+                        <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_2_018_gd4_2.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0">Open in New Tab</button>
                         </div>
                     </div>
                     <br>
