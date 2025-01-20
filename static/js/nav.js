@@ -138,16 +138,18 @@ function showSection(id) {
                     <br>
 
                     <h3 class="title is-4">More 3D Video Reconstruction Results</h3>
-                    <p> See more examples in our <a href="./gallery_3D.html">gallery</a>.</p>
+                    
                     <br>
-                    <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif; background-color: #f2f2f2; width: 100%; box-sizing: border-box;">
-                        <div style="color: #333; padding: 10px; background-color: #ffffff; margin-bottom: 8px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div style="text-align: center; padding: 5px; font-family: Arial, sans-serif; background-color: #f2f2f2; width: 100%; box-sizing: border-box; display: flex;">
+                        <div style="color: #333; padding: 5px; background-color: #ffffff; margin-right: 4px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 1;">
                             <span style="font-weight: bold;">Following:</span> <span style="font-weight: normal;">Viewpoint following the camera</span>
                         </div>
-                        <div style="color: #333; padding: 10px; background-color: #ffffff; margin-bottom: 8px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="color: #333; padding: 5px; background-color: #ffffff; margin-left: 4px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 1;">
                             <span style="font-weight: bold;">Fixed:</span> <span style="font-weight: normal;">Viewpoint fixed in space</span>
                         </div>
                     </div>
+
+
                     <div id="carousel-results" class="carousel">
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto" loading="lazy">
@@ -166,6 +168,8 @@ function showSection(id) {
                             </video>
                         </div>
                     </div>
+                    <br>
+                    <p> See more examples in our <a href="./gallery_3D.html">gallery</a>.</p>
                 </div>
             </div>
         </div>
@@ -243,7 +247,7 @@ function showSection(id) {
             </div>
         </div>
         `,
-        'unseen':`
+        'unseen': `
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
@@ -275,7 +279,7 @@ function showSection(id) {
     selectedSection.style.display = 'block';
 
     if (id === 'video_3d') {
-        initCarouselResults(); 
+        initCarouselResults();
     }
 }
 
@@ -284,19 +288,19 @@ function initCarouselResults() {
         const realSrc = srcTag.getAttribute('data-src');
         srcTag.setAttribute('src', realSrc);
         srcTag.removeAttribute('data-src');
-      });
-      
-    bulmaCarousel.attach('#carousel-results', {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      loop: true,
-      infinite: true,
-      initialSlide: 1,
-      autoplay: false,
-      autoplaySpeed: 3000,
-      pagination: false
     });
-  }
+
+    bulmaCarousel.attach('#carousel-results', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        loop: true,
+        infinite: true,
+        initialSlide: 1,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        pagination: false
+    });
+}
 
 // Show default section on page load
 document.addEventListener('DOMContentLoaded', function () {
