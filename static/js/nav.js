@@ -5,9 +5,9 @@ function showSection(id) {
             <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h3 class="title is-4">4D Reconstruction</h3>
+                    <h3 class="title is-4">Dynamic Scene Reconstruction</h3>
                     <p>
-                        Our method can reconstruct 4D dynamic scene in a feed-forward, online manner without global
+                        Our method can reconstruct dynamic scene in a feed-forward, online manner without global
                         optimization.
                     </p>
                     <br>
@@ -59,7 +59,7 @@ function showSection(id) {
                         style="font-size: 20px; font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 20px auto; padding: 20px; border-left: 5px solid #007BFF; border-right: 5px solid #007BFF; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                         <a href="./interactive.html"
                             style="color: #007BFF; font-weight: bold; text-decoration: none; transition: color 0.3s; background-color: transparent;">Click
-                            here to explore more 4D interactive results</a>!
+                            here to explore more dynamic interactive results</a>!
                     </p>
                     <script>
                         // Get the paragraph element
