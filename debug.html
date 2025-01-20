@@ -1,3 +1,172 @@
-<p>Here is some text.</p>
-<hr>
-<p>Here is some more text after a thematic break.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minimal Paged Video Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+    h1 {
+      text-align: center;
+    }
+
+    /* Container for all thumbnails */
+    #thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      margin-bottom: 1em;
+    }
+    /* Individual thumbnail styling */
+    .thumbnail {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      width: 230px; /* adjust as needed */
+      text-align: center;
+    }
+    /* Pagination controls */
+    .pagination-container {
+      text-align: center;
+      margin-top: 1em;
+    }
+    .pagination-container button {
+      margin: 0 5px;
+      padding: 0.5em 1em;
+      cursor: pointer;
+    }
+    .pagination-container button[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Minimal Paged Video Gallery</h1>
+
+  <!-- Video thumbnails will appear here -->
+  <div id="thumbnails"></div>
+
+  <!-- Pagination buttons will appear here -->
+  <div class="pagination-container" id="paginationControls"></div>
+
+  <script>
+    // Example video filenames: replace with real paths/URLs
+    // (You can have as many as you like)
+    const videoPaths = [
+      "video1.mp4",
+      "video2.mp4",
+      "video3.mp4",
+      "video4.mp4",
+      "video5.mp4",
+      "video6.mp4",
+      "video7.mp4",
+      "video8.mp4"
+    ];
+
+    // How many videos to show per page:
+    const itemsPerPage = 2;
+
+    // State: current page and total pages
+    let currentPage = 1;
+    let totalPages = Math.ceil(videoPaths.length / itemsPerPage);
+
+    // Once the page is loaded, display the first page
+    document.addEventListener("DOMContentLoaded", () => {
+      showPage(currentPage);
+      createPaginationControls();
+    });
+
+    // This function renders the videos for the specified page number
+    function showPage(pageNumber) {
+      const thumbnails = document.getElementById("thumbnails");
+      thumbnails.innerHTML = ""; // Clear existing
+
+      // Calculate slice indices
+      const startIndex = (pageNumber - 1) * itemsPerPage;
+      const endIndex = Math.min(startIndex + itemsPerPage, videoPaths.length);
+
+      const pageItems = videoPaths.slice(startIndex, endIndex);
+
+      // Create DOM elements for each video
+      pageItems.forEach(videoPath => {
+        const thumb = document.createElement("div");
+        thumb.className = "thumbnail";
+
+        const videoEl = document.createElement("video");
+        videoEl.src = videoPath; 
+        videoEl.controls = true;  
+        videoEl.width = 200;     // just an example
+        videoEl.style.display = "block";
+        videoEl.style.margin = "0 auto";
+
+        // Optionally auto-play / loop if you want:
+        // videoEl.autoplay = true;
+        // videoEl.loop = true;
+        // videoEl.muted = true;
+
+        thumb.appendChild(videoEl);
+
+        // Optional caption
+        const caption = document.createElement("p");
+        caption.textContent = videoPath;
+        thumb.appendChild(caption);
+
+        // Add to thumbnails container
+        thumbnails.appendChild(thumb);
+      });
+    }
+
+    // Builds the Prev/Next page buttons (and numeric buttons)
+    function createPaginationControls() {
+      const container = document.getElementById("paginationControls");
+      container.innerHTML = "";
+
+      // "Prev" button
+      const prevBtn = document.createElement("button");
+      prevBtn.textContent = "Prev";
+      prevBtn.disabled = (currentPage === 1);
+      prevBtn.onclick = () => {
+        if (currentPage > 1) {
+          currentPage--;
+          showPage(currentPage);
+          createPaginationControls();
+        }
+      };
+      container.appendChild(prevBtn);
+
+      // Numeric page buttons
+      for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement("button");
+        pageBtn.textContent = i;
+        pageBtn.disabled = (i === currentPage);
+        pageBtn.onclick = () => {
+          currentPage = i;
+          showPage(currentPage);
+          createPaginationControls();
+        };
+        container.appendChild(pageBtn);
+      }
+
+      // "Next" button
+      const nextBtn = document.createElement("button");
+      nextBtn.textContent = "Next";
+      nextBtn.disabled = (currentPage === totalPages);
+      nextBtn.onclick = () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          showPage(currentPage);
+          createPaginationControls();
+        }
+      };
+      container.appendChild(nextBtn);
+    }
+  </script>
+
+</body>
+</html>
