@@ -57,9 +57,10 @@ function showSection(id) {
                     <br>
                     <p id="click-interactive"
                         style="font-size: 20px; font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 20px auto; padding: 20px; border-left: 5px solid #007BFF; border-right: 5px solid #007BFF; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-                        <a href="./interactive.html"
-                            style="color: #007BFF; font-weight: bold; text-decoration: none; transition: color 0.3s; background-color: transparent;">Click
-                            here to explore more dynamic interactive results</a>!
+                        <a href="./interactive.html" target="_blank"
+                            style="color: #007BFF; font-weight: bold; text-decoration: none; transition: color 0.3s; background-color: transparent;">
+                            Explore more interactive results for dynamic scene reconstruction!
+                            </a>!
                     </p>
                     <script>
                         // Get the paragraph element
