@@ -101,7 +101,7 @@ function showSection(id) {
                   ">
                         <div class="iframe-container">
                         <iframe class="vframe"
-                            src="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0"
+                            src="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=-3.44652427,0.10633461,-0.49854992&initialCameraLookAt=-0.16225029,1.00471075,0.03985959&initialCameraUp=-0.09300407,-0.5189403,0.84973596"
                             loading="lazy"></iframe>
                         <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/3d_1_027.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/static/recordings/3d_1_027.mp4&baseSpeed=0.5">Open in New Tab for Better Visualization</button>
                         </div>
