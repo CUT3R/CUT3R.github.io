@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="description"
-        content="Our unified framework reasons about the 3D world in an online, sequential manner to solve various 3D tasks.">
+        content="A unified framework for online, sequential 3D reasoning from RGB-only inputs.">
     <meta name="keywords" content="CUT3R">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CUT3R: Continuous 3D Perception Model with Persistent State</title>
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CUT3R: Continuous 3D Perception Model with Persistent State">
     <meta name="twitter:description"
-        content="Our unified framework reasons about the 3D world in an online, sequential manner to solve various 3D tasks.">
+        content="A unified framework for online, sequential 3D reasoning from RGB-only inputs.">
     <meta name="twitter:image" content="https://cut3r.github.io/static/images/icon.png">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,600|Noto+Sans:400,600|Castoro:400,600"
         rel="stylesheet">
@@ -425,8 +425,8 @@
                         <div class="notification is-centered is-info is-rounded"
                             style="text-align: center; padding-bottom: 5px; padding-top: 5px; background-color: #d0d5ec;">
                             <h6 style="text-align: center; color:rgb(0, 0, 0)">
-                                Our unified framework reasons about the 3D world in an <strong>online,
-                                    sequential</strong> manner directly from RGB inputs to solve various 3D tasks.
+                                A unified framework for <strong>online, sequential</strong> 3D reasoning from RGB-only
+                                inputs.
                         </div>
                     </div>
                 </div>
@@ -452,16 +452,16 @@
                             These pointmaps reside within a common coordinate system,
                             and can be accumulated into a coherent, dense scene reconstruction that updates as new
                             images arrive. Our model,
-                            called <strong>CUT3R (Continuous Updating Transformer for 3D
-                                Reconstruction)</strong>, captures rich priors of real-world scenes:
-                            not only can it predict accurate pointmaps from image observations, but it can
-                            also infer unseen regions of the scene by probing at virtual,
-                            unobserved views. Our method is simple yet highly flexible,
-                            naturally accepting varying length of images that may be
-                            either video streams or unordered photo collections, containing both static and dynamic
-                            content. We evaluate our
-                            method on various 3D/4D tasks and demonstrate competitive or state-of-the-art performance in
-                            each.
+                            called <strong>CUT3R</strong> (<strong>C</strong>ontinuous <strong>U</strong>pdating <strong>T</strong>ransformer for <strong>3D</strong>
+                            <strong>R</strong>econstruction), captures rich priors of real-world scenes:
+                            not only can it predict accurate pointmaps from image observations, but it can also infer
+                            unseen regions of the scene
+                            by probing at virtual, unobserved views. Our method is simple yet highly flexible, naturally
+                            accepting varying length of
+                            images that may be either video streams or unordered photo
+                            collections, containing both static and dynamic content. We
+                            evaluate our method on various 3D/4D tasks and demonstrate competitive or state-of-the-art
+                            performance in each.
                         </p>
                     </div>
                 </div>
@@ -669,22 +669,20 @@
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
                                 loading="lazy">
-                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4"
-                                    type="video/mp4">
+                                <source src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
                                 loading="lazy">
-                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_028.mp4"
-                                    type="video/mp4">
+                                <source src="./static/videos/gallery/codec_3d/teaser_batch_1_028.mp4" type="video/mp4">
                             </video>
                         </div>
 
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
                                 loading="lazy">
-                                <source data-src="./static/videos/gallery/codec_3d/seqs_023.mp4" type="video/mp4">
+                                <source src="./static/videos/gallery/codec_3d/seqs_023.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -701,7 +699,8 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">3D Reconstruction (Photo Collection)</h2>
 
-                    <p>Our method can reconstruct 3D scenes from sparse photo collections in an online manner, processing them as sequences.</p>
+                    <p>Our method can reconstruct 3D scenes from sparse photo collections in an online manner,
+                        processing them as sequences.</p>
                     <br>
 
                     <div id="wrapper" style="
@@ -719,11 +718,13 @@
                                 <img src="./static/recordings/seq_013_0004.png" alt="Image 4" loading="lazy">
                             </div>
                             <div class="iframe-container">
-                            <iframe
-                                src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0"
-                                loading="lazy">
-                            </iframe>
-                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0">Open in New Tab</button>
+                                <iframe
+                                    src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0"
+                                    loading="lazy">
+                                </iframe>
+                                <button onclick="openInNewTab(this)"
+                                    data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0">Open
+                                    in New Tab</button>
                             </div>
                         </div>
                         <div class="siframe-class">
@@ -734,12 +735,14 @@
                                 <img src="./static/recordings/seqs_017_0004.png" alt="Image 4" loading="lazy">
                             </div>
                             <div class="iframe-container">
-                            <iframe
-                                src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0"
-                                loading="lazy">
-                            </iframe>
-                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0">Open in New Tab</button>
-                        </div>
+                                <iframe
+                                    src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0"
+                                    loading="lazy">
+                                </iframe>
+                                <button onclick="openInNewTab(this)"
+                                    data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0">Open
+                                    in New Tab</button>
+                            </div>
                         </div>
                     </div>
 
@@ -774,8 +777,9 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">Inferring Unseen Structure</h2>
                     <p style="text-align: left;">
-                        In addition to reconstructing scenes from image observations, 
-                        our method can infer unseen structures from virtual viewpoints within the reconstructed scene, predicting colored pointmaps at each virtual view.
+                        In addition to reconstructing scenes from image observations,
+                        our method can infer unseen structures from virtual viewpoints within the reconstructed scene,
+                        predicting colored pointmaps at each virtual view.
                     </p>
                     <br>
                     <video width="100%" controls preload="none" poster="./static/images/unseen_poster.jpg">
