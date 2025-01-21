@@ -129,13 +129,13 @@
             box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
         }
 
-        .large-vframe{
+        .large-vframe {
             border-radius: 0.5em;
             width: 100%;
             height: auto;
-            aspect-ratio: 32 / 27.5;
+            aspect-ratio: 32 / 18;
             max-width: 64em;
-            max-height: 55em;
+            max-height: 36em;
             border: none;
             box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
         }
@@ -229,6 +229,7 @@
             .large-vframe {
                 width: 100%;
             }
+
             .iframe-container {
                 width: 100%;
             }
@@ -545,7 +546,8 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Results</h2>
                 <p>
-                    Our unified framework tackles various 3D tasks. Select each tab below to explore the results for each task.
+                    Our unified framework tackles various 3D tasks. Select each tab below to explore the results for
+                    each task.
                 </p>
                 <nav>
                     <ul>
@@ -819,7 +821,7 @@
     </section>
 
 
-    <div class="container is-max-desktop">
+    <!-- <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
                 <nav>
@@ -842,7 +844,7 @@
             var url = element.getAttribute('data-link');
             window.open(url, '_blank').focus();
         }
-    </script>
+    </script> -->
 
 
 
@@ -862,7 +864,8 @@
                     <div class="columns is-centered has-text-justified">
                         <p>
                             Our model continuously updates
-                            its state representation as new data arrives. As more observations become available, the state should
+                            its state representation as new data arrives. As more observations become available, the
+                            state should
                             refine its understanding of the 3D world.
                             In this section, we demonstrate this capability of our method.
                         </p>
@@ -872,31 +875,42 @@
 
                     <h2 class="title is-4">Online vs. Revisiting</h2>
                     <div class="columns is-centered has-text-justified">
-                    <p>
-                         When running our method online,  the state has access only to the context available up to the current time, without information from future observations.
-                         Can the model perform better with additional context?
-                         To explore this, we introduce a new experimental setup called <strong>revisiting</strong>: the method is first run through all images to allow the state to accumulate the full context. We then freeze this final state and reprocess the same set of images to generate predictions. This operation evaluates the 3D understanding captured by the final state. Below, we compare the reconstruction results of the <strong>online</strong> and <strong>revisiting</strong> setups, demonstrating that revisiting produces improved reconstructions.
+                        <p>
+                            When running our method online, the state has access only to the context available up to the
+                            current time, without information from future observations.
+                            Can the model perform better with additional context?
+                            To explore this, we introduce a new experimental setup called <strong>revisiting</strong>:
+                            the method is first run through all images to allow the state to accumulate the full
+                            context. We then freeze this final state and reprocess the same set of images to generate
+                            predictions. This operation evaluates the 3D understanding captured by the final state.
+                            Below, we compare the reconstruction results of the <strong>online</strong> and
+                            <strong>revisiting</strong> setups, demonstrating that revisiting produces improved
+                            reconstructions.
 
-                    </p>
+                        </p>
                     </div>
-
-                    <!--<h3><strong>Input Images</strong></h3>-->
-                    <div id="state-analysis-input" class="grid-container-2x6">
-                        <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2297.086.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2299.086.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2301.085.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2303.084.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2305.083.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2307.082.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2309.081.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2311.081.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2313.080.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2315.079.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        <img src="./static/glbs/41126410_2317.078.jpg" alt="MY ALT TEXT" loading="lazy" />
+                    <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                        <!--<h3><strong>Input Images</strong></h3>-->
+                        <div id="state-analysis-input" class="grid-container-2x6">
+                            <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2297.086.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2299.086.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2301.085.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2303.084.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2305.083.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2307.082.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2309.081.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2311.081.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2313.080.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2315.079.jpg" alt="MY ALT TEXT" loading="lazy" />
+                            <img src="./static/glbs/41126410_2317.078.jpg" alt="MY ALT TEXT" loading="lazy" />
+                        </div>
+                        <p style="color: gray; width: 80%; text-align: justify;">The images are provided to the model in this order. A significant
+                            viewpoint change between the first and second images, which do not overlap, results in an
+                            initially suboptimal prediction of the TV's location. However, after processing all the
+                            images, the TV's location is accurately updated, as shown in the results below.
+                        </p>
                     </div>
-                        <p style="color: gray;">The images are provided to the model in this order. A significant viewpoint change between the first and second images, which do not overlap, results in an initially suboptimal prediction of the TV's location. However, after processing all the images, the TV's location is accurately updated, as shown in the results below.
-                    </p>
                     <!-- <div id="state-analysis-input" class="carousel">
                         <div class="item">
                             <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
@@ -982,7 +996,7 @@
                             <!-- <iframe class="vframe"
                 src="https://cut3r.github.io/build/?playbackPath=/static/recordings/revisit-1.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.5">
               </iframe> -->
-                            <model-viewer id="model2" camera-orbit="0.966rad 1.54rad 16.4m" 
+                            <model-viewer id="model2" camera-orbit="0.966rad 1.54rad 16.4m"
                                 camera-target="1.33m -0.32m 1.6m" src="./static/glbs_gd/revisit-1-new-new.glb"
                                 alt="Revisiting" camera-controls interaction-prompt="none">
                             </model-viewer>
@@ -1112,12 +1126,19 @@
                     <br>
                     <br>
 
-                  <h2 class="title is-4">An illusion example</h2>
-                  <div class="columns is-centered has-text-justified">
-                    <p>
-                    We demonstrate our results on an intriguing illusion video. When observing only the first frame, the scene appears to be a 3D chair due to our prior knowledge. However, with more observations, it becomes evident that it is actually a 2D plane. Our online reconstruction results are presented below. Our method captures rich prior knowledge (predicting the first frame as a 3D chair) but updates its understanding as more observations are processed, ultimately recognizing the scene as a plane. Notably, even when the final viewpoint closely resembles the initial one, the model maintains its belief that the scene is flat. This highlights the state’s ability to effectively update based on additional observations.  
-                    </p>
-                  </div>
+                    <h2 class="title is-4">An illusion example</h2>
+                    <div class="columns is-centered has-text-justified">
+                        <p>
+                            We demonstrate our results on an intriguing illusion video. When observing only the first
+                            frame, the scene appears to be a 3D chair due to our prior knowledge. However, with more
+                            observations, it becomes evident that it is actually a 2D plane. Our online reconstruction
+                            results are presented below. Our method captures rich prior knowledge (predicting the first
+                            frame as a 3D chair) but updates its understanding as more observations are processed,
+                            ultimately recognizing the scene as a plane. Notably, even when the final viewpoint closely
+                            resembles the initial one, the model maintains its belief that the scene is flat. This
+                            highlights the state’s ability to effectively update based on additional observations.
+                        </p>
+                    </div>
 
                     <!-- <h3><strong>Input Video</strong></h3>
                     <br>
@@ -1203,8 +1224,8 @@
                                 alt="Revisiting" camera-controls interaction-prompt="none">
                             </model-viewer> -->
                             <iframe class="large-vframe"
-          src="https://cut3r.github.io/build/?playbackPath=/static/recordings/chair_illusion.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,1.0&baseSpeed=0.5&synchronizedVideoOverlay=/static/recordings/chair_illusion.mp4">
-          </iframe>
+                                src="https://cut3r.github.io/build/?playbackPath=/static/recordings/chair_illusion.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,1.0&baseSpeed=0.5&synchronizedVideoOverlay=/static/recordings/chair_illusion.mp4">
+                            </iframe>
                         </div>
                     </div>
                     <!-- <script>
@@ -1327,50 +1348,58 @@
     <hr>
 
     <section class="section">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Method Overview</h2>
-                <div class="content has-text-centered">
-                    <div>
-                        <img src="./static/images/method1.png" alt="Reconstruction"
-                            class="blend-img-background center-image" width="80%" loading="lazy" />
-                    </div>
-                    <div class="content has-text-justified">
-                        <p>
-                            Given a sequence of images as input, our method performs online dense 3D reconstruction.
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Method Overview</h2>
+                    <div class="content has-text-centered">
+                        <div>
+                            <img src="./static/images/method1_2.png" alt="Reconstruction"
+                                class="blend-img-background center-image" width="80%" loading="lazy" />
+                        </div>
+                        <div class="content has-text-justified">
+                            <p>
+                                Given a sequence of images as input, our method performs online dense 3D reconstruction.
 
-                            At the core of our method is a state representation that keeps updating as each new
-                            observation
-                            comes in.
+                                At the core of our method is a state representation that keeps updating as each new
+                                observation
+                                comes in.
 
-                            Given the current image, we first use a vit encoder to encode it into token representations.
-                            The image tokens then interact with the state tokens through a joint process of state update
-                            and
-                            state readout. The final outputs from state readout are the pointmaps and camera parameters
-                            for
-                            the current observation. At the same time, the state update module incorporates the current
-                            observation to update the state.
+                                Given the current image, we first use a vit encoder to encode it into token
+                                representations.
+                                The image tokens then interact with the state tokens through a joint process of state
+                                update
+                                and
+                                state readout. The final outputs from state readout are the pointmaps and camera
+                                parameters
+                                for
+                                the current observation. At the same time, the state update module incorporates the
+                                current
+                                observation to update the state.
 
-                            We repeat the process for every image, and their outputs accumulate into dense scene
-                            reconstruction over time.
-                        </p>
-                    </div>
+                                We repeat the process for every image, and their outputs accumulate into dense scene
+                                reconstruction over time.
+                            </p>
+                        </div>
 
-                    <div>
-                        <img src="./static/images/method2.png" alt="Inference" class="blend-img-background center-image"
-                            width="80%" loading="lazy" />
-                    </div>
-                    <div class="level-set has-text-justified">
-                        <p>
-                            Not only can our method reconstructs the scene given image observations, it can also infer
-                            new
-                            structures unseen by the input images.
-                            Given a query camera as shown as the blue camera, we use its raymap to query the current
-                            state
-                            to read out its corresponding point map.
-                            Adding this inferred point map to the existing reconstruction makes the reconstruction more
-                            complete.
-                        </p>
+                        <div>
+                            <img src="./static/images/method2_2.png" alt="Inference"
+                                class="blend-img-background center-image" width="80%" loading="lazy" />
+                        </div>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Not only can our method reconstructs the scene given image observations, it can also
+                                infer
+                                new
+                                structures unseen by the input images.
+                                Given a query camera as shown as the blue camera, we use its raymap to query the current
+                                state
+                                to read out its corresponding point map.
+                                Adding this inferred point map to the existing reconstruction makes the reconstruction
+                                more
+                                complete.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1383,8 +1412,13 @@
             <div class="column is-half"><br><br>
                 <h2 class="title is-3">Acknowledgements</h2>
                 <div class="content has-text-justified">
-                   We would like to thank Noah Snavely, Haiwen Feng, Chung Min Kim,  Justin Kerr, Songwei Ge, Chenfeng Xu, Letian Fu, and Ren Wang for helpful discussions. We especially thank Noah Snavely for his guidance and support.
-This project is supported in part by DARPA No.~HR001123C0021, IARPA DOI/IBC No.~140D0423C0035, NSF:CNS-2235013, Bakar Fellows, ONR, MURI, TRI and BAIR sponsors. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions.
+                    We would like to thank Noah Snavely, Haiwen Feng, Chung Min Kim, Justin Kerr, Songwei Ge, Chenfeng
+                    Xu, Letian Fu, and Ren Wang for helpful discussions. We especially thank Noah Snavely for his
+                    guidance and support.
+                    This project is supported in part by DARPA No.~HR001123C0021, IARPA DOI/IBC No.~140D0423C0035,
+                    NSF:CNS-2235013, Bakar Fellows, ONR, MURI, TRI and BAIR sponsors. The views and conclusions
+                    contained herein are those of the authors and do not represent the official policies or endorsements
+                    of these institutions.
                 </div>
             </div>
         </div>
