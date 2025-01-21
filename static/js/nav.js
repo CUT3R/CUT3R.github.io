@@ -285,11 +285,12 @@ function showSection(id) {
 }
 
 function initCarouselResults() {
-    // document.querySelectorAll('#carousel-results video source[data-src]').forEach(srcTag => {
-    //     const realSrc = srcTag.getAttribute('data-src');
-    //     srcTag.setAttribute('src', realSrc);
-    //     srcTag.removeAttribute('data-src');
-    // });
+    document.querySelectorAll('#carousel-results video source[data-src]').forEach(srcTag => {
+        const realSrc = srcTag.getAttribute('data-src');
+        console.log(realSrc)
+        srcTag.setAttribute('src', realSrc);
+        srcTag.removeAttribute('data-src');
+    });
 
     bulmaCarousel.attach('#carousel-results', {
         slidesToScroll: 1,
