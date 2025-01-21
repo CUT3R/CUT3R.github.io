@@ -498,91 +498,6 @@
     <script defer src="./static/js/nav.js"></script>
 
     <section id="video_4d" class="section dynamic-section">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <h3 class="title is-4">Dynamic Scene Reconstruction</h3>
-                    <p>
-                        Our method can reconstruct dynamic scenes in a feed-forward, online manner without per-video
-                        optimization.
-                    </p>
-                    <br>
-                    <div id="wrapper" style="
-              display: flex;
-              flex-wrap: nowrap;
-              justify-content: center;
-              align-items: center;
-              gap: 2em;
-            ">
-                        <div class="iframe-container">
-                            <iframe class="vframe"
-                                src="https://cut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.8"
-                                loading="lazy"></iframe>
-                            <button onclick="openInNewTab(this)"
-                                data-link="https://cut3r.github.io/build/?playbackPath=/recordings/006545_mpii_test.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/recordings/006545_mpii_test.mp4&baseSpeed=0.8">Open
-                                in New Tab for Better Visualization</button>
-                        </div>
-                        <div class="iframe-container">
-                            <iframe class="vframe"
-                                src="https://cut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&baseSpeed=0.8"
-                                loading="lazy"></iframe>
-                            <button onclick="openInNewTab(this)"
-                                data-link="https://cut3r.github.io/build/?playbackPath=/recordings/06eb2803.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,0.0&synchronizedVideoOverlay=/recordings/06eb2803.mp4&baseSpeed=0.8">Open
-                                in New Tab for Better Visualization</button>
-                        </div>
-                    </div>
-                    <br>
-                    <!-- <div>
-            (Results are downsampled for efficient online rendering)
-          </div> -->
-                    <div class="hide-on-touchscreens" style="
-            display: flex;
-            justify-content: center;
-            gap: 1.5em;
-            padding-top: 0.5em;
-          ">
-                        <div>
-                            <i class="ti ti-view-360-arrow"></i> <strong>Left-click</strong> and
-                            drag to rotate
-                        </div>
-                        <div>
-                            <i class="ti ti-arrows-move"></i> <strong>Right-click</strong> and
-                            drag or
-                            <strong>WASD</strong>
-                            to move
-                        </div>
-                        <div><i class="ti ti-zoom"></i> <strong>Scroll</strong> to zoom</div>
-                        <div><strong>Click <i class="fas fa-pause"></i></strong> to pause</div>
-                    </div>
-                    <br>
-                    <p id="click-interactive"
-                        style="font-size: 20px; font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 20px auto; padding: 20px; border-left: 5px solid #007BFF; border-right: 5px solid #007BFF; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-                        <a href="./interactive.html" target="_blank"
-                            style="color: #007BFF; font-weight: bold; text-decoration: none; transition: color 0.3s; background-color: transparent;">
-                            Explore more interactive results for dynamic scene reconstruction!
-                        </a>
-                    </p>
-                    <script>
-                        // Get the paragraph element
-                        var para = document.getElementById('click-interactive');
-
-                        // Add event listeners for mouse enter and mouse leave
-                        para.addEventListener('mouseenter', function () {
-                            para.style.fontSize = '22px'; // Increase font size
-                            para.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)'; // Enhance shadow
-                        });
-
-                        para.addEventListener('mouseleave', function () {
-                            para.style.fontSize = '18px'; // Reset font size
-                            para.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)'; // Reset shadow
-                        });
-                    </script>
-                    <br>
-                    <p> See more dynamic reconstruction results on DAVIS dataset in our <a
-                            href="./gallery.html">gallery</a>.</p>
-                </div>
-            </div>
-        </div><br>
     </section>
 
 
@@ -669,20 +584,22 @@
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
                                 loading="lazy">
-                                <source src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4" type="video/mp4">
+                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_005.mp4"
+                                    type="video/mp4">
                             </video>
                         </div>
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
                                 loading="lazy">
-                                <source src="./static/videos/gallery/codec_3d/teaser_batch_1_028.mp4" type="video/mp4">
+                                <source data-src="./static/videos/gallery/codec_3d/teaser_batch_1_028.mp4"
+                                    type="video/mp4">
                             </video>
                         </div>
 
                         <div class="item item-vid5">
                             <video poster="" id="" autoplay playsinline muted loop height="450px" width="auto"
                                 loading="lazy">
-                                <source src="./static/videos/gallery/codec_3d/seqs_023.mp4" type="video/mp4">
+                                <source data-src="./static/videos/gallery/codec_3d/seqs_023.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -699,8 +616,7 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">3D Reconstruction (Photo Collection)</h2>
 
-                    <p>Our method can reconstruct 3D scenes from sparse photo collections in an online manner,
-                        processing them as sequences.</p>
+                    <p>Our method can reconstruct 3D scenes from sparse photo collections in an online manner, processing them as sequences.</p>
                     <br>
 
                     <div id="wrapper" style="
@@ -718,13 +634,11 @@
                                 <img src="./static/recordings/seq_013_0004.png" alt="Image 4" loading="lazy">
                             </div>
                             <div class="iframe-container">
-                                <iframe
-                                    src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0"
-                                    loading="lazy">
-                                </iframe>
-                                <button onclick="openInNewTab(this)"
-                                    data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0">Open
-                                    in New Tab</button>
+                            <iframe
+                                src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0"
+                                loading="lazy">
+                            </iframe>
+                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0">Open in New Tab</button>
                             </div>
                         </div>
                         <div class="siframe-class">
@@ -735,14 +649,12 @@
                                 <img src="./static/recordings/seqs_017_0004.png" alt="Image 4" loading="lazy">
                             </div>
                             <div class="iframe-container">
-                                <iframe
-                                    src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0"
-                                    loading="lazy">
-                                </iframe>
-                                <button onclick="openInNewTab(this)"
-                                    data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0">Open
-                                    in New Tab</button>
-                            </div>
+                            <iframe
+                                src="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0"
+                                loading="lazy">
+                            </iframe>
+                            <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seqs_017_1_0.viser&initialCameraPosition=-6.0,2.5,5.0&initialCameraLookAt=5.0,8.0,0.0">Open in New Tab</button>
+                        </div>
                         </div>
                     </div>
 
@@ -777,9 +689,8 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">Inferring Unseen Structure</h2>
                     <p style="text-align: left;">
-                        In addition to reconstructing scenes from image observations,
-                        our method can infer unseen structures from virtual viewpoints within the reconstructed scene,
-                        predicting colored pointmaps at each virtual view.
+                        In addition to reconstructing scenes from image observations, 
+                        our method can infer unseen structures from virtual viewpoints within the reconstructed scene, predicting colored pointmaps at each virtual view.
                     </p>
                     <br>
                     <video width="100%" controls preload="none" poster="./static/images/unseen_poster.jpg">
@@ -1184,13 +1095,13 @@
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-justified">
-                <div class="column is-four-fifths">
-
+            <div class="column is-four-fifths">
+                
                     <h2 class="title">BibTeX</h2>
                     <pre><code>TODO</code></pre>
-
-                </div>
+                
             </div>
+        </div>
         </div>
     </section>
 
