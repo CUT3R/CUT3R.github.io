@@ -7,7 +7,7 @@ function showSection(id) {
                 <div class="column is-four-fifths">
                     <h3 class="title is-4">Dynamic Scene Reconstruction</h3>
                     <p>
-                        Our method can reconstruct dynamic scene in a feed-forward, online manner without global
+                        Our method can reconstruct dynamic scenes in a feed-forward, online manner without per-video
                         optimization.
                     </p>
                     <br>
@@ -78,7 +78,7 @@ function showSection(id) {
                         });
                     </script>
                     <br>
-                    <p> See more examples in our <a href="./gallery.html">gallery</a>.</p>
+                    <p> See more dynamic reconstruction results on DAVIS dataset in our <a href="./gallery.html">gallery</a>.</p>
                 </div>
             </div>
         </div><br>
@@ -89,9 +89,8 @@ function showSection(id) {
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">3D Reconstruction (Video)</h2>
 
-                    <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global
-                        optimization, both from videos and sparse image collections.</p>
-                    <br>
+                    <p>Our method can reconstruct the 3D scenes from videos in a feed-forward, online manner without global
+                        optimization.</p>
                     <br>
                     <div id="wrapper" style="
                     display: flex;
@@ -140,7 +139,7 @@ function showSection(id) {
                     <br>
                     <br>
 
-                    <h3 class="title is-4">More 3D Video Reconstruction Results</h3>
+                    <!--<h3 class="title is-5">More Video Reconstruction Results</h3> -->
                     
                     <br>
                     <div style="text-align: center; padding: 5px; font-family: Arial, sans-serif; background-color: #f2f2f2; width: 100%; box-sizing: border-box; display: flex;">
@@ -172,7 +171,7 @@ function showSection(id) {
                         </div>
                     </div>
                     <br>
-                    <p> See more examples in our <a href="./gallery_3D.html">gallery</a>.</p>
+                    <p> See more reconstruction results in our <a href="./gallery_3D.html">gallery</a>.</p>
                 </div>
             </div>
         </div>
@@ -183,9 +182,7 @@ function showSection(id) {
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">3D Reconstruction (Photo Collection)</h2>
 
-                    <p>Our method reconstructs the 3D static scene in a feed-forward, online manner without global
-                        optimization, both from videos and sparse image collections.</p>
-                    <br>
+                    <p>Our method can reconstruct 3D scenes from sparse photo collections in an online manner, processing them as sequences.</p>
                     <br>
 
                     <div id="wrapper" style="
@@ -256,9 +253,9 @@ function showSection(id) {
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h2 class="title is-4">Inferring Unseen Structure</h2>
-                    <p>
-                        Given a camera query and the current reconstruction result, our method can infer the unseen
-                        structure from a novel viewpoint, outputting both a depth map and RGB image at the new view.
+                    <p style="text-align: left;">
+                        In addition to reconstructing scenes from image observations, 
+                        our method can infer unseen structures from virtual viewpoints within the reconstructed scene, predicting colored pointmaps at each virtual view.
                     </p>
                     <br>
                     <video width="100%" controls preload="none" poster="./static/images/unseen_poster.jpg">

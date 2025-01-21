@@ -545,9 +545,8 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Results</h2>
                 <p>
-                    Select each tab to view our results across different 3D tasks.
+                    Our unified framework tackles various 3D tasks. Select each tab below to explore the results for each task.
                 </p>
-                <br>
                 <nav>
                     <ul>
                         <li><a href="javascript:void(0);" onclick="showSection('video_4d')">Dynamic Scene
@@ -863,33 +862,25 @@
                     <div class="columns is-centered has-text-justified">
                         <p>
                             Our model continuously updates
-                            its state representation as new data arrives. As more observations accumulate, the state
-                            should
-                            be able to refine its understanding of the 3D world, leading
-                            to improved predictions.
-
-                            We demonstrate this capability of our method below.
-
-                            We introduce a new setup called <strong>revisiting</strong>: after running our method online
-                            to capture a final state informed by all images, we freeze this state and reuse it to
-                            reprocess the images, enhancing prediction accuracy. This differs from the
-                            <strong>online</strong> setup, where the state refines its understanding in real-time
-                            without prior full scene context.
-
-                            Below, we compare the reconstruction results of the <strong>online</strong> and
-                            <strong>revisiting</strong>
-                            process.
+                            its state representation as new data arrives. As more observations become available, the state should
+                            refine its understanding of the 3D world.
+                            In this section, we demonstrate this capability of our method.
                         </p>
                     </div>
                     <br>
                     <br>
 
-                    <h3><strong>Input Images</strong></h3>
-                    <p style="color: gray;">This is the order in which the images are seen. As you can see there is a
-                        big discontinuity
-                        between the first an the second image, hence the exact prediction of the location of the TV is
-                        suboptimial at first. But after seeing all the images, the location of the TV correctly updates
+                    <h2 class="title is-4">Online vs. Revisiting</h2>
+                    <div class="columns is-centered has-text-justified">
+                    <p>
+                         When running our method online,  the state has access only to the context available up to the current time, without information from future observations.
+                         Can the model perform better with additional context?
+                         To explore this, we introduce a new experimental setup called <strong>revisiting</strong>: the method is first run through all images to allow the state to accumulate the full context. We then freeze this final state and reprocess the same set of images to generate predictions. This operation evaluates the 3D understanding captured by the final state. Below, we compare the reconstruction results of the <strong>online</strong> and <strong>revisiting</strong> setups, demonstrating that revisiting produces improved reconstructions.
+
                     </p>
+                    </div>
+
+                    <!--<h3><strong>Input Images</strong></h3>-->
                     <div id="state-analysis-input" class="grid-container-2x6">
                         <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
                         <img src="./static/glbs/41126410_2297.086.jpg" alt="MY ALT TEXT" loading="lazy" />
@@ -904,6 +895,8 @@
                         <img src="./static/glbs/41126410_2315.079.jpg" alt="MY ALT TEXT" loading="lazy" />
                         <img src="./static/glbs/41126410_2317.078.jpg" alt="MY ALT TEXT" loading="lazy" />
                     </div>
+                        <p style="color: gray;">The images are provided to the model in this order. A significant viewpoint change between the first and second images, which do not overlap, results in an initially suboptimal prediction of the TV's location. However, after processing all the images, the TV's location is accurately updated, as shown in the results below.
+                    </p>
                     <!-- <div id="state-analysis-input" class="carousel">
                         <div class="item">
                             <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
@@ -1119,6 +1112,12 @@
                     <br>
                     <br>
 
+                  <h2 class="title is-4">An illusion example</h2>
+                  <div class="columns is-centered has-text-justified">
+                    <p>
+                    We demonstrate our results on an intriguing illusion video. When observing only the first frame, the scene appears to be a 3D chair due to our prior knowledge. However, with more observations, it becomes evident that it is actually a 2D plane. Our online reconstruction results are presented below. Our method captures rich prior knowledge (predicting the first frame as a 3D chair) but updates its understanding as more observations are processed, ultimately recognizing the scene as a plane. Notably, even when the final viewpoint closely resembles the initial one, the model maintains its belief that the scene is flat. This highlights the state’s ability to effectively update based on additional observations.  
+                    </p>
+                  </div>
 
                     <!-- <h3><strong>Input Video</strong></h3>
                     <br>
@@ -1384,7 +1383,8 @@
             <div class="column is-half"><br><br>
                 <h2 class="title is-3">Acknowledgements</h2>
                 <div class="content has-text-justified">
-                    Anything
+                   We would like to thank Noah Snavely, Haiwen Feng, Chung Min Kim,  Justin Kerr, Songwei Ge, Chenfeng Xu, Letian Fu, and Ren Wang for helpful discussions. We especially thank Noah Snavely for his guidance and support.
+This project is supported in part by DARPA No.~HR001123C0021, IARPA DOI/IBC No.~140D0423C0035, NSF:CNS-2235013, Bakar Fellows, ONR, MURI, TRI and BAIR sponsors. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions.
                 </div>
             </div>
         </div>
