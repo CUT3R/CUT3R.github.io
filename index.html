@@ -297,6 +297,7 @@
 
         .dynamic-section {
             display: none;
+            padding: 1rem 0;
         }
 
 
@@ -391,7 +392,7 @@
                         <div class="column has-text-centered">
                             <div class="publication-links">
                                 <span class="link-block">
-                                    <a href="TODO" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="http://arxiv.org/abs/2501.12387" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="ai ai-arxiv"></i>
                                         </span>
@@ -449,7 +450,7 @@
         <div class="container fluid">
             <div class="hero-body is-max-widescreen">
                 <div class="columns is-centered">
-                    <div class="column is-centered is-four-fifths">
+                    <div class="column is-centered is-full">
                         <div class="notification is-centered is-info is-rounded"
                             style="text-align: center; padding-bottom: 5px; padding-top: 5px; background-color: #ffffff;">
                             <h6 style="text-align: center; color:rgb(0, 0, 0); font-size: 18px">
@@ -460,7 +461,7 @@
                     </div>
                 </div>
                 <center>
-                    <video id="teaser" preload="auto" autoplay muted loop playsinline width="80%"
+                    <video id="teaser" preload="auto" autoplay muted loop playsinline width="95%"
                         style="pointer-events: none;">
                         <source src="./static/videos/teaser_compressed.mp4" type="video/mp4">
                     </video>
@@ -470,9 +471,7 @@
         </div>
     </section>
 
-    <hr>
-
-    <section class="section">
+    <section class="section has-background-light">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
@@ -506,8 +505,7 @@
         </div><br>
     </section>
 
-    <hr>
-
+    <section class="section">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
@@ -561,18 +559,9 @@
 
     <section id="unseen" class="section dynamic-section">
     </section>
+    </section>
 
-
-
-
-
-    <hr>
-
-
-
-
-
-    <section class="section">
+    <section class="section has-background-light">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
@@ -592,16 +581,12 @@
                     <h2 class="title is-4">Online vs. Revisiting</h2>
                     <div class="columns is-centered has-text-justified">
                         <p>
-                            When running our method online, the state has access only to the context available up to the
-                            current time, without information from future observations.
-                            Can the model perform better with additional context?
-                            To explore this, we introduce a new experimental setup called <strong>revisiting</strong>:
-                            the method is first run through all images to allow the state to accumulate the full
-                            context. We then freeze this final state and reprocess the same set of images to generate
-                            predictions. This operation evaluates the 3D understanding captured by the final state.
-                            Below, we compare the reconstruction results of the <strong>online</strong> and
-                            <strong>revisiting</strong> setups, demonstrating that revisiting produces improved
-                            reconstructions.
+                            When running our method online, the state has access only to the context available up to the current time,
+                             without information from future observations. Can the model perform better with additional context? 
+                             To explore this, we introduce a new experimental setup called <strong>revisiting</strong>: 
+                             we first run the method through all images so the state can see the full context, 
+                             then freeze this final state and reprocess the same set of images to generate predictions—this operation evaluates the 3D understanding captured by the final state. 
+                             Below, we compare the reconstruction results of the <strong>online</strong> and <strong>revisiting</strong> setups, showing that revisiting produces improved reconstructions.
 
                         </p>
                     </div>
@@ -621,14 +606,14 @@
                             <img src="./static/glbs/41126410_2317.078.jpg" alt="MY ALT TEXT" loading="lazy" />
                         </div> -->
                         <br>
-                        <div style="width: 80%;">
+                        <div style="width: 100%;">
                         <img src="./static/images/revisit.png" loading="lazy" />
                     </div>
-                        <p style="color: gray; width: 80%; text-align: justify;">The images are provided to the model in
-                            this order. A significant
-                            viewpoint change between the first and second images, which do not overlap, results in an
-                            initially suboptimal prediction of the TV's location. However, after processing all the
-                            images, the TV's location is accurately updated, as shown in the results below.
+                        <p style="color: gray; width: 100%; text-align: justify;">
+                            The images are provided to the model in this order. 
+                            Because the first and second images do not overlap (a significant viewpoint change), the model initially produces 
+                            a suboptimal prediction of the second image, causing the TV and coffee table to overlap (shown below on the left). 
+                            However, when revisiting the scene with the final state (i.e., with the full context), the prediction for the TV, coffee table and sofa become more accurate (shown below on the right).
                         </p>
                     </div>
 
@@ -792,14 +777,11 @@
                             observations, it becomes evident that it is actually a 2D plane. Our online reconstruction
                             results are presented below. Our method captures rich prior knowledge (predicting the first
                             frame as a 3D chair) but updates its understanding as more observations are processed,
-                            ultimately recognizing the scene as a plane. Notably, even when the final viewpoint closely
+                            ultimately recognizing the scene as a plane. Notably, even when the final frame of the video closely
                             resembles the initial one, the model maintains its belief that the scene is flat. This
                             highlights the state's ability to effectively update based on additional observations.
                         </p>
                     </div>
-
-
-                    <br>
                     <br>
                     <div id="wrapper" style="
             display: flex;
@@ -868,9 +850,6 @@
         </div><br>
     </section>
 
-
-    <hr>
-
     <section class="section">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
@@ -930,16 +909,15 @@
         </div>
     </section>
 
-    <hr>
     <section class="section">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths"><br><br>
                     <h2 class="title is-3">Acknowledgements</h2>
                     <div class="content has-text-justified">
-                        We would like to thank Noah Snavely, Haiwen Feng, Chung Min Kim, Justin Kerr, Songwei Ge,
+                        We would like to thank Haiwen Feng, Chung Min Kim, Justin Kerr, Songwei Ge,
                         Chenfeng
-                        Xu, Letian Fu, and Ren Wang for helpful discussions. And we thank Brent Yi for his support in the online visualization. We especially thank Noah Snavely for his
+                        Xu, Letian Fu, and Ren Wang for helpful discussions. And we thank Brent Yi for his support on the interactive visualization. We especially thank Noah Snavely for his
                         guidance and support.
                         This project is supported in part by DARPA No.~HR001123C0021, IARPA DOI/IBC No.~140D0423C0035,
                         NSF:CNS-2235013, Bakar Fellows, ONR, MURI, TRI and BAIR sponsors. The views and conclusions
@@ -963,7 +941,14 @@
                 <div class="column is-four-fifths">
 
                     <h2 class="title">BibTeX</h2>
-                    <pre><code>TODO</code></pre>
+                    <pre><code>
+    @misc{cut3r,
+        Author = {Qianqian Wang and Yifei Zhang and Aleksander Holynski and Alexei A. Efros and Angjoo Kanazawa},
+        Title = {Continuous 3D Perception Model with Persistent State},
+        Year = {2025},
+        Eprint = {arXiv:2501.12387},
+        }
+                    </code></pre>
 
                 </div>
             </div>
