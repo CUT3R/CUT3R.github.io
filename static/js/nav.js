@@ -271,17 +271,17 @@ function showSection(id) {
     const sections = document.getElementsByClassName('dynamic-section');
     for (let i = 0; i < sections.length; i++) {
         sections[i].style.display = 'none';
-        sections[i].innerHTML = '';
+        // sections[i].innerHTML = '';
     }
 
     // Load content only for the clicked (or default) section
     const selectedSection = document.getElementById(id);
-    selectedSection.innerHTML = contentMap[id] || `<p>No content for section "${id}".</p>`;
+    // selectedSection.innerHTML = contentMap[id] || `<p>No content for section "${id}".</p>`;
     selectedSection.style.display = 'block';
 
-    if (id === 'video_3d') {
-        initCarouselResults();
-    }
+    // if (id === 'video_3d') {
+    //     initCarouselResults();
+    // }
 }
 
 function initCarouselResults() {
