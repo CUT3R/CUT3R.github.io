@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-        content="A unified framework for online, sequential 3D reasoning from RGB-only inputs.">
+    <meta name="description" content="An online 3D reasoning framework for various 3D tasks from only RGB inputs.">
     <meta name="keywords" content="CUT3R">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CUT3R: Continuous 3D Perception Model with Persistent State</title>
@@ -29,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CUT3R: Continuous 3D Perception Model with Persistent State">
     <meta name="twitter:description"
-        content="A unified framework for online, sequential 3D reasoning from RGB-only inputs.">
+        content="An online 3D reasoning framework for various 3D tasks from only RGB inputs.">
     <meta name="twitter:image" content="https://cut3r.github.io/static/images/icon.png">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,600|Noto+Sans:400,600|Castoro:400,600"
         rel="stylesheet">
@@ -264,8 +263,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #007BFF;
-            color: white;
+            background-color: #f5f5f5;
+            color: #363636;
             padding: 10px 20px;
             text-decoration: none;
             border: none;
@@ -281,12 +280,12 @@
 
 
         nav ul li a:hover {
-            background-color: #0056b3;
+            background-color: #e4e4e4;
             transform: scale(1.05);
         }
 
         nav ul li a:active {
-            background-color: #003f7f;
+            background-color: #d3d3d3;
             transform: scale(0.95);
         }
 
@@ -310,6 +309,29 @@
         .grid-container-2x6 img {
             width: 100%;
             height: auto;
+        }
+
+        .grid-container-1x6 {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(1, auto);
+            gap: 10px;
+            padding: 20px;
+            max-width: 80%;
+            margin: auto;
+        }
+
+        .grid-container-1x6 img {
+            width: 100%;
+            height: auto;
+        }
+
+        .panel-style {
+            background-color: #fafafa;
+            padding: 20px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -373,17 +395,24 @@
                                 </span>
                                 <!-- Video Link. -->
 
-                                <!-- <span class="link-block">
-<a href="#_interactive" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" style="fill: #ffdf0f"><path d="M256 0c-25.3 0-47.2 14.7-57.6 36c-7-2.6-14.5-4-22.4-4c-35.3 0-64 28.7-64 64V261.5l-2.7-2.7c-25-25-65.5-25-90.5 0s-25 65.5 0 90.5L106.5 437c48 48 113.1 75 181 75H296h8c1.5 0 3-.1 4.5-.4c91.7-6.2 165-79.4 171.1-171.1c.3-1.5 .4-3 .4-4.5V160c0-35.3-28.7-64-64-64c-5.5 0-10.9 .7-16 2V96c0-35.3-28.7-64-64-64c-7.9 0-15.4 1.4-22.4 4C303.2 14.7 281.3 0 256 0zM240 96.1c0 0 0-.1 0-.1V64c0-8.8 7.2-16 16-16s16 7.2 16 16V95.9c0 0 0 .1 0 .1V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96c0 0 0 0 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16v55.9c0 0 0 .1 0 .1v80c0 13.3 10.7 24 24 24s24-10.7 24-24V160.1c0 0 0-.1 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16V332.9c-.1 .6-.1 1.3-.2 1.9c-3.4 69.7-59.3 125.6-129 129c-.6 0-1.3 .1-1.9 .2H296h-8.5c-55.2 0-108.1-21.9-147.1-60.9L52.7 315.3c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L119 336.4c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V96c0-8.8 7.2-16 16-16c8.8 0 16 7.1 16 15.9V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96.1z"></path></svg>
-                  </span>
-                  <span>Interactive Results</span>
-                </a>
-              </span> -->
+                                <span class="link-block">
+                                    <a href="interactive.html" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
+                                                style="fill: #ffdf0f">
+                                                <path
+                                                    d="M256 0c-25.3 0-47.2 14.7-57.6 36c-7-2.6-14.5-4-22.4-4c-35.3 0-64 28.7-64 64V261.5l-2.7-2.7c-25-25-65.5-25-90.5 0s-25 65.5 0 90.5L106.5 437c48 48 113.1 75 181 75H296h8c1.5 0 3-.1 4.5-.4c91.7-6.2 165-79.4 171.1-171.1c.3-1.5 .4-3 .4-4.5V160c0-35.3-28.7-64-64-64c-5.5 0-10.9 .7-16 2V96c0-35.3-28.7-64-64-64c-7.9 0-15.4 1.4-22.4 4C303.2 14.7 281.3 0 256 0zM240 96.1c0 0 0-.1 0-.1V64c0-8.8 7.2-16 16-16s16 7.2 16 16V95.9c0 0 0 .1 0 .1V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96c0 0 0 0 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16v55.9c0 0 0 .1 0 .1v80c0 13.3 10.7 24 24 24s24-10.7 24-24V160.1c0 0 0-.1 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16V332.9c-.1 .6-.1 1.3-.2 1.9c-3.4 69.7-59.3 125.6-129 129c-.6 0-1.3 .1-1.9 .2H296h-8.5c-55.2 0-108.1-21.9-147.1-60.9L52.7 315.3c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L119 336.4c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V96c0-8.8 7.2-16 16-16c8.8 0 16 7.1 16 15.9V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96.1z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <span>Interactive Results</span>
+                                    </a>
+                                </span>
                                 <!-- Supp Link. -->
                                 <span class="link-block">
-                                    <a href="gallery.html" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="gallery.html" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-images"></i>
                                         </span>
@@ -414,22 +443,24 @@
     <section class="hero teaser">
         <div class="container fluid">
             <div class="hero-body is-max-widescreen">
+                <div class="columns is-centered">
+                    <div class="column is-centered is-four-fifths">
+                        <div class="notification is-centered is-info is-rounded"
+                            style="text-align: center; padding-bottom: 5px; padding-top: 5px; background-color: #ffffff;">
+                            <h6 style="text-align: center; color:rgb(0, 0, 0); font-size: 18px">
+                                <strong>TL;DR:</strong> An online 3D reasoning framework for various 3D tasks from only
+                                RGB inputs.
+                            </h6>
+                        </div>
+                    </div>
+                </div>
                 <center>
                     <video id="teaser" preload="auto" autoplay muted loop playsinline width="80%"
                         style="pointer-events: none;">
                         <source src="./static/videos/teaser_compressed.mp4" type="video/mp4">
                     </video>
                 </center>
-                <div class="columns is-centered">
-                    <div class="column is-centered is-four-fifths">
-                        <div class="notification is-centered is-info is-rounded"
-                            style="text-align: center; padding-bottom: 5px; padding-top: 5px; background-color: #d0d5ec;">
-                            <h6 style="text-align: center; color:rgb(0, 0, 0)">
-                                A unified framework for <strong>online, sequential</strong> 3D reasoning from RGB-only
-                                inputs.
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -452,7 +483,8 @@
                             These pointmaps reside within a common coordinate system,
                             and can be accumulated into a coherent, dense scene reconstruction that updates as new
                             images arrive. Our model,
-                            called <strong>CUT3R</strong> (<strong>C</strong>ontinuous <strong>U</strong>pdating <strong>T</strong>ransformer for <strong>3D</strong>
+                            called <strong>CUT3R</strong> (<strong>C</strong>ontinuous <strong>U</strong>pdating
+                            <strong>T</strong>ransformer for <strong>3D</strong>
                             <strong>R</strong>econstruction), captures rich priors of real-world scenes:
                             not only can it predict accurate pointmaps from image observations, but it can also infer
                             unseen regions of the scene
@@ -481,14 +513,18 @@
                 </p>
                 <nav>
                     <ul>
-                        <li><a href="javascript:void(0);" onclick="showSection('video_4d')">Dynamic Scene
+                        <li><a class="is-light" href="javascript:void(0);" onclick="showSection('video_4d')">Dynamic
+                                Scene
                                 Reconstruction</a></li>
-                        <li><a href="javascript:void(0);" onclick="showSection('video_3d')">3D Reconstruction
+                        <li><a class="is-light" href="javascript:void(0);" onclick="showSection('video_3d')">3D
+                                Reconstruction
                                 (Video)</a></li>
-                        <li><a href="javascript:void(0);" onclick="showSection('photo')">3D Reconstruction (Photo
+                        <li><a class="is-light" href="javascript:void(0);" onclick="showSection('photo')">3D
+                                Reconstruction (Photo
                                 Collection)</a>
                         </li>
-                        <li><a href="javascript:void(0);" onclick="showSection('unseen')">Inferring Unseen Structure</a>
+                        <li><a class="is-light" href="javascript:void(0);" onclick="showSection('unseen')">Inferring
+                                Unseen Structure</a>
                         </li>
                     </ul>
                 </nav>
@@ -554,7 +590,7 @@
                         </p>
                     </div>
                     <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-                        <div id="state-analysis-input" class="grid-container-2x6">
+                        <div id="state-analysis-input" class="grid-container-1x6">
                             <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
                             <img src="./static/glbs/41126410_2297.086.jpg" alt="MY ALT TEXT" loading="lazy" />
                             <img src="./static/glbs/41126410_2299.086.jpg" alt="MY ALT TEXT" loading="lazy" />
@@ -904,13 +940,13 @@
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-justified">
-            <div class="column is-four-fifths">
-                
+                <div class="column is-four-fifths">
+
                     <h2 class="title">BibTeX</h2>
                     <pre><code>TODO</code></pre>
-                
+
+                </div>
             </div>
-        </div>
         </div>
     </section>
 

@@ -4,7 +4,7 @@ function showSection(id) {
         'video_4d': `
             <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
+                <div class="column is-four-fifths  panel-style">
                     <h3 class="title is-4">Dynamic Scene Reconstruction</h3>
                     <p>
                         Our method can reconstruct dynamic scenes in a feed-forward, online manner without per-video
@@ -55,13 +55,18 @@ function showSection(id) {
                         <div><strong>Click <i class="fas fa-pause"></i></strong> to pause</div>
                     </div>
                     <br>
-                    <p id="click-interactive"
-                        style="font-size: 20px; font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 20px auto; padding: 20px; border-left: 5px solid #007BFF; border-right: 5px solid #007BFF; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-                        <a href="./interactive.html" target="_blank"
-                            style="color: #007BFF; font-weight: bold; text-decoration: none; transition: color 0.3s; background-color: transparent;">
-                            Explore more interactive results for dynamic scene reconstruction!
-                            </a>
-                    </p>
+                    <button onclick="window.location.href='./interactive.html';" target="_blank"
+        style="font-size: 24px; font-family: 'Arial', sans-serif; background-color: #009688; color: white; margin: 20px auto; display: block; padding: 25px 20px; border: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+    <span class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
+                                                style="fill: #ffdf0f">
+                                                <path
+                                                    d="M256 0c-25.3 0-47.2 14.7-57.6 36c-7-2.6-14.5-4-22.4-4c-35.3 0-64 28.7-64 64V261.5l-2.7-2.7c-25-25-65.5-25-90.5 0s-25 65.5 0 90.5L106.5 437c48 48 113.1 75 181 75H296h8c1.5 0 3-.1 4.5-.4c91.7-6.2 165-79.4 171.1-171.1c.3-1.5 .4-3 .4-4.5V160c0-35.3-28.7-64-64-64c-5.5 0-10.9 .7-16 2V96c0-35.3-28.7-64-64-64c-7.9 0-15.4 1.4-22.4 4C303.2 14.7 281.3 0 256 0zM240 96.1c0 0 0-.1 0-.1V64c0-8.8 7.2-16 16-16s16 7.2 16 16V95.9c0 0 0 .1 0 .1V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96c0 0 0 0 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16v55.9c0 0 0 .1 0 .1v80c0 13.3 10.7 24 24 24s24-10.7 24-24V160.1c0 0 0-.1 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16V332.9c-.1 .6-.1 1.3-.2 1.9c-3.4 69.7-59.3 125.6-129 129c-.6 0-1.3 .1-1.9 .2H296h-8.5c-55.2 0-108.1-21.9-147.1-60.9L52.7 315.3c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L119 336.4c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V96c0-8.8 7.2-16 16-16c8.8 0 16 7.1 16 15.9V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96.1z">
+                                                </path>
+                                            </svg>
+                                        </span>
+        Explore more interactive results for dynamic scene reconstruction!
+</button>
                     <script>
                         // Get the paragraph element
                         var para = document.getElementById('click-interactive');
@@ -86,7 +91,7 @@ function showSection(id) {
         'video_3d': `
             <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
+                <div class="column is-four-fifths panel-style">
                     <h2 class="title is-4">3D Reconstruction (Video)</h2>
 
                     <p>Our method can reconstruct the 3D scenes from videos in a feed-forward, online manner without global
@@ -142,11 +147,11 @@ function showSection(id) {
                     <!--<h3 class="title is-5">More Video Reconstruction Results</h3> -->
                     
                     <br>
-                    <div style="text-align: center; padding: 5px; font-family: Arial, sans-serif; background-color: #f2f2f2; width: 100%; box-sizing: border-box; display: flex;">
-                        <div style="color: #333; padding: 5px; background-color: #ffffff; margin-right: 4px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 1;">
+                    <div style="text-align: center; padding: 5px; font-family: Arial, sans-serif; background-color: #ffffff; width: 100%; box-sizing: border-box; display: flex;">
+                        <div style="color: #333; padding: 5px; background-color: #ffffff; margin-right: 4px; border-radius: 5px; flex: 1;">
                             <span style="font-weight: bold;">Following:</span> <span style="font-weight: normal;">Viewpoint following the camera</span>
                         </div>
-                        <div style="color: #333; padding: 5px; background-color: #ffffff; margin-left: 4px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex: 1;">
+                        <div style="color: #333; padding: 5px; background-color: #ffffff; margin-left: 4px; border-radius: 5px; flex: 1;">
                             <span style="font-weight: bold;">Fixed:</span> <span style="font-weight: normal;">Viewpoint fixed in space</span>
                         </div>
                     </div>
@@ -179,7 +184,7 @@ function showSection(id) {
         'photo': `
             <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
+                <div class="column is-four-fifths panel-style">
                     <h2 class="title is-4">3D Reconstruction (Photo Collection)</h2>
 
                     <p>Our method can reconstruct 3D scenes from sparse photo collections in an online manner, processing them as sequences.</p>
@@ -192,7 +197,7 @@ function showSection(id) {
                             align-items: center;
                             gap: 2em;
                         ">
-                        <div class="siframe-class">
+                        <!-- <div class="siframe-class">
                             <div class="image-grid">
                                 <img src="./static/recordings/seq_013_0001.png" alt="Image 1" loading="lazy">
                                 <img src="./static/recordings/seq_013_0002.png" alt="Image 2" loading="lazy">
@@ -206,7 +211,7 @@ function showSection(id) {
                             </iframe>
                             <button onclick="openInNewTab(this)" data-link="https://cut3r.github.io/build/?playbackPath=/static/recordings/seq_013_1_0.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=-1.0,0.0,0.0">Open in New Tab</button>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="siframe-class">
                             <div class="image-grid">
                                 <img src="./static/recordings/seqs_017_0001.png" alt="Image 1" loading="lazy">
@@ -251,7 +256,7 @@ function showSection(id) {
         'unseen': `
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
+                <div class="column is-four-fifths panel-style">
                     <h2 class="title is-4">Inferring Unseen Structure</h2>
                     <p style="text-align: left;">
                         In addition to reconstructing scenes from image observations, 
