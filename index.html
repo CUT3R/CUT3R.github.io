@@ -289,6 +289,11 @@
             transform: scale(0.95);
         }
 
+        nav ul li a.active {
+            background-color: #cccccc; /* Change color to indicate active tab */
+            color: #000000; /* Optional: Change text color if needed */
+        }
+
 
         .dynamic-section {
             display: none;
@@ -513,22 +518,33 @@
                 </p>
                 <nav>
                     <ul>
-                        <li><a class="is-light" href="javascript:void(0);" onclick="showSection('video_4d')">Dynamic
+                        <li><a id="nav1" href="javascript:void(0);" onclick="showSection('video_4d');setActive('nav1');">Dynamic
                                 Scene
                                 Reconstruction</a></li>
-                        <li><a class="is-light" href="javascript:void(0);" onclick="showSection('video_3d')">3D
+                        <li><a id="nav2" href="javascript:void(0);" onclick="showSection('video_3d');setActive('nav2');">3D
                                 Reconstruction
                                 (Video)</a></li>
-                        <li><a class="is-light" href="javascript:void(0);" onclick="showSection('photo')">3D
+                        <li><a id="nav3" href="javascript:void(0);" onclick="showSection('photo');setActive('nav3');">3D
                                 Reconstruction (Photo
                                 Collection)</a>
                         </li>
-                        <li><a class="is-light" href="javascript:void(0);" onclick="showSection('unseen')">Inferring
+                        <li><a id="nav4" href="javascript:void(0);" onclick="showSection('unseen');setActive('nav4');">Inferring
                                 Unseen Structure</a>
                         </li>
                     </ul>
                 </nav>
             </div>
+            <script>
+                function setActive(activeId) {
+                    // Remove 'active' class from all links
+                    document.querySelectorAll('nav ul li a').forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+                
+                    // Add 'active' class to the clicked link
+                    document.getElementById(activeId).classList.add('active');
+                }
+                </script>
         </div>
     </div>
     <script defer src="./static/js/nav.js"></script>
@@ -590,7 +606,7 @@
                         </p>
                     </div>
                     <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-                        <div id="state-analysis-input" class="grid-container-1x6">
+                        <!-- <div id="state-analysis-input" class="grid-container-1x6">
                             <img src="./static/glbs/41126410_2253.870.jpg" alt="MY ALT TEXT" loading="lazy" />
                             <img src="./static/glbs/41126410_2297.086.jpg" alt="MY ALT TEXT" loading="lazy" />
                             <img src="./static/glbs/41126410_2299.086.jpg" alt="MY ALT TEXT" loading="lazy" />
@@ -603,7 +619,11 @@
                             <img src="./static/glbs/41126410_2313.080.jpg" alt="MY ALT TEXT" loading="lazy" />
                             <img src="./static/glbs/41126410_2315.079.jpg" alt="MY ALT TEXT" loading="lazy" />
                             <img src="./static/glbs/41126410_2317.078.jpg" alt="MY ALT TEXT" loading="lazy" />
-                        </div>
+                        </div> -->
+                        <br>
+                        <div style="width: 80%;">
+                        <img src="./static/images/revisit.png" loading="lazy" />
+                    </div>
                         <p style="color: gray; width: 80%; text-align: justify;">The images are provided to the model in
                             this order. A significant
                             viewpoint change between the first and second images, which do not overlap, results in an
@@ -790,7 +810,7 @@
           ">
                         <div style="flex: 1 1 auto;">
                             <iframe class="large-vframe"
-                                data-src="https://cut3r.github.io/build/?playbackPath=/static/recordings/chair_illusion.viser&initialCameraPosition=0.0,-1.0,1.0&initialCameraLookAt=0.0,1.0,1.0&baseSpeed=0.5&synchronizedVideoOverlay=/static/recordings/chair_illusion.mp4">
+                                data-src="https://cut3r.github.io/build/?playbackPath=/static/recordings/chair_illusion.viser&initialCameraPosition=3.09977686,-1.68505675,0.57576257&initialCameraLookAt=0.74977609,-0.36596893,0.43648563&baseSpeed=0.5&synchronizedVideoOverlay=/static/recordings/chair_illusion.mp4">
                             </iframe>
                         </div>
                     </div>
@@ -919,7 +939,7 @@
                     <div class="content has-text-justified">
                         We would like to thank Noah Snavely, Haiwen Feng, Chung Min Kim, Justin Kerr, Songwei Ge,
                         Chenfeng
-                        Xu, Letian Fu, and Ren Wang for helpful discussions. We especially thank Noah Snavely for his
+                        Xu, Letian Fu, and Ren Wang for helpful discussions. And we thank Brent Yi for his support in the online visualization. We especially thank Noah Snavely for his
                         guidance and support.
                         This project is supported in part by DARPA No.~HR001123C0021, IARPA DOI/IBC No.~140D0423C0035,
                         NSF:CNS-2235013, Bakar Fellows, ONR, MURI, TRI and BAIR sponsors. The views and conclusions
